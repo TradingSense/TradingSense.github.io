@@ -12,6 +12,10 @@
 
 
 <head>
+
+
+
+
 <link rel="icon" href="untitled-4.png">
 <title>TradingSense</title>
 <meta charset="UTF-8">
@@ -27,6 +31,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </style>
 </head>
 <body style="background-color:white;">
+
+
+
 <div class="w3-display-container w3-container">
 
 
@@ -47,10 +54,62 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   
 </div>
 
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style='padding-top:80px'>
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Quotes</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "description": "TSLA",
+      "proName": "NASDAQ:TSLA"
+    },
+    {
+      "description": "",
+      "proName": "NASDAQ:AMZN"
+    },
+    {
+      "description": "",
+      "proName": "NASDAQ:NVDA"
+    },
+    {
+      "description": "",
+      "proName": "NASDAQ:GOOGL"
+    }
+  ],
+  "colorTheme": "light",
+  "isTransparent": true,
+  "showSymbolLogo": true,
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+
+
+
 <!-- Header -->
 <div class="w3-container" id="about">
 <div class="w3-content" >
-<h1 style="padding-top:100px">Sense The Market With Machine Learning </h1>
+<h1 style="padding-top:70px">Sense The Market With Machine Learning </h1>
 <div class="w3-container" id="about">
 <div class="w3-content">
 	<p>TradingSense provides trading signals and stock market information to investors. Using machine learning, we forecast the price of the most popular stocks and backtest these forecasts to ensure we are providing the most accurate information to investors. Money flow index and williams percent range are incorporated into our machine learning software to determine the best trading move for investors. 
@@ -75,7 +134,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div class="w3-container" id="about">
 <div class="w3-content">
 		<h1>Benefits of TradingSense</h1>
-	<p>Unlike other market signalling software, TradingSense combines some of the most accurate trade indicators with machine learning to provide a completely new way for investors to analyze their investments. </p>	
+	<p>Unlike other market signalling software, TradingSense combines some of the most accurate trade indicators with machine learning to provide a completley new way for investors to analyze their investments. </p>	
 	<h1>Indicators</h1>
 	<p>Buy - Signaled when stock is considered to be at a low according to Williams Range, MFI is approaching overvalued state, and LTSM forecasts stock to increase in price</p>
 	<p>Sell - Signaled when stock is at a high according to Williams Range, MfI is approaching undervalued state, and LTSM forecasts decrease in price.</p>
@@ -87,11 +146,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 	<p>v1.1.3 Fixed Datetime bug 5-27-22</p>
 	<p>v1.1.2 Added Backtesting Accuracy Metric 5-25-22</p>
 	
-	
+	<p><p>Programmed using python, our software is lightweight and is constantly undergoing updates to improve accuracy and functionality. Users experiencing any issues should email tradingsenseapp@gmail.com</p></p>
 </div>
 <!-- About Container -->
-	
-	
+
 
 
 
@@ -108,3 +166,4 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </footer>
 
 </html>
+
