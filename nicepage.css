@@ -37160,12 +37160,8 @@ a.u-link.u-text-hover-grey-90:hover {
   height: 100%;
 }
 
-.u-header .u-text-1 {
-  margin: -51px 16px 0 auto;
-}
-
 .u-header .u-menu-1 {
-  margin: -23px auto 30px 126px;
+  margin: -54px auto 0 126px;
 }
 
 .u-header .u-nav-1 {
@@ -37178,6 +37174,20 @@ a.u-link.u-text-hover-grey-90:hover {
   letter-spacing: 0px;
 }
 
+.u-header .u-text-1 {
+  font-size: 1.25rem;
+  margin: -33px 84px 0 auto;
+}
+
+.u-header .u-text-2 {
+  font-size: 1.125rem;
+  margin: -22px 30px 45px auto;
+}
+@media (max-width: 1199px) {
+  .u-header .u-text-2 {
+    margin-top: -22px;
+  }
+}
 
 
 @media (max-width: 575px) {
@@ -37197,31 +37207,18 @@ a.u-link.u-text-hover-grey-90:hover {
   margin: 30px -10px 0;
 }
 
-.u-footer .u-social-icons-1 {
-  height: 32px;
-  min-height: 16px;
-  width: 32px;
-  min-width: 16px;
-  margin: -28px auto 0 458px;
-}
-
-.u-footer .u-icon-1 {
-  color: rgb(85, 172, 238) !important;
-  height: 100%;
-}
-
 .u-footer .u-text-2 {
-  margin: 25px -19px 0 0;
+  margin: 29px -19px 0 0;
 }
 
 .u-footer .u-text-3 {
-  margin: 38px -19px 0 0;
+  margin: 33px -10px 0;
 }
 
 .u-footer .u-image-1 {
   width: 66px;
   height: 66px;
-  margin: -45px auto 29px 441px;
+  margin: -45px 394px 33px auto;
 }
 
 .u-footer .u-logo-image-1 {
@@ -37234,10 +37231,6 @@ a.u-link.u-text-hover-grey-90:hover {
     margin-left: 0;
   }
 
-  .u-footer .u-social-icons-1 {
-    margin-top: -28px;
-  }
-
   .u-footer .u-text-2 {
     width: 417px;
     margin-right: 0;
@@ -37245,34 +37238,31 @@ a.u-link.u-text-hover-grey-90:hover {
 
   .u-footer .u-text-3 {
     margin-right: 0;
+    margin-left: 0;
   }
 
   .u-footer .u-image-1 {
     margin-top: -45px;
-    margin-left: 364px;
+    margin-right: 325px;
   }
 }
 @media (max-width: 991px) {
   .u-footer .u-image-1 {
-    margin-left: 279px;
+    margin-right: 249px;
   }
 }
 @media (max-width: 767px) {
   .u-footer .u-image-1 {
-    margin-left: 209px;
+    margin-right: 187px;
   }
 }
 @media (max-width: 575px) {
-  .u-footer .u-social-icons-1 {
-    margin-left: 308px;
-  }
-
   .u-footer .u-text-2 {
     width: 340px;
   }
 
   .u-footer .u-image-1 {
-    margin-left: 132px;
+    margin-right: 118px;
   }
 }
 
