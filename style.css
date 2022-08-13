@@ -1,0 +1,338 @@
+
+li,a,button{
+	font-family:Arial;
+	font-weight:500;
+	font-size:16px;
+	color:000;
+		
+}
+
+
+header{
+	
+	display:flex;
+	justify-content:space-between;
+	align-items: center;
+	padding: 0px 10%;
+	
+}
+
+body{
+	background-color:#fff ;
+	text-align: center;
+	
+	
+}
+.table{
+	border-collapse: collapse;
+	background-color: #fff;
+	border-radius:8px;
+	#box-shadow:0px 10px 30px 5px rgba(0,0,0,0.1);
+	margin: 25px auto;
+	font-family: "Arial";
+	text-align: center;
+	float:center;
+}	
+.table tr{
+	
+	border-bottom: 1px solid #d3d3d3;
+	
+}
+.table thead tr{
+	font-weight: bold;
+}
+
+.header{
+	border-style: solid;
+	border-width: 0px 0px 0px ;
+	border-color: #757575;
+	background-color:#fff;
+	box-shadow:0px 10px 30px 5px rgba(0,0,0,0.1);
+	border-radius:8px;
+}	
+.logo{
+	height:70px;
+	width:70px;
+	margin-top:0px;
+	float:left;
+	margin:0px;
+	cursor:pointer;
+	
+}
+.logotext{
+	color:#000;
+	font-size:18px;
+	font-family:Arial;
+	text-align:left;
+	margin-top:0px;
+	float:left;
+	margin:0px;
+	line-height:70px;
+	padding-left:0px;
+	
+}
+.search{
+	width:500px;
+	height:30px;
+	float:center;
+	margin:20px;
+	border-radius:8px;
+	border-width: 0.3px 0.3px 0.3px 
+}
+
+.nav__links{
+	list-style:none;
+	
+	
+}
+.nav__links li {
+	display:inline-block;
+	padding:0px 20px;
+	
+}
+
+.nav__links li a {
+	transition: all 0.3s ease 0s ;
+	text-decoration: none;
+	color:#000;
+}
+.nav__links li a:hover{
+	color:rgba(255,0,0,0.8);
+	
+}
+
+button{
+	color:#fff;
+	padding:9px 25px;
+	background-color:rgba(255,0,0,0.8);
+	border:none;
+	border-radius:50px;
+	cursor:pointer;
+	transition: all 0.3s ease 0s ;
+}
+button:hover{
+		background-color:rgba(255,0,0,0.4);
+	
+}
+
+.tweets{
+	float:left;
+	
+	
+}
+.companylogos{
+	 width: 25%;
+		object-fit: contain;
+    
+	
+	
+}
+
+.box{
+width: 200px;
+height: 100px;
+padding-top:20px;
+text-align:center;
+box-shadow:0px 10px 30px 5px rgba(0,0,0,0.1);
+border-radius:8px;
+}
+
+.logofeed{
+	height:50px;
+	width:50px;
+	margin-top:0px;
+	float:center-left;
+	margin:0px;
+	cursor:pointer;
+	
+	
+}
+
+.feed{
+	text-align:left;
+	border-bottom: 1px solid #d3d3d3;
+	width:60%;
+	margin: 0 auto;
+	float:center;
+}
+
+
+.feedname{
+	color:#d3d3d3;
+	font-family: "Arial";
+	
+	
+}
+.yolo{
+	font-family: "Arial";
+	font-weight: ;
+	
+}
+
+.head{
+	font-weight:Bold ;
+	font-size:40px;
+	text-align:center;
+	font-family: "Arial";
+}
+
+.container{
+	background-color:;
+	height:400px;
+	padding-top:100px;
+}
+
+.sub{
+	font-weight:normal;
+	font-size:20px;
+	text-align:center;
+	font-family: "Arial";
+	
+	
+}
+
+.market{
+width: 100%;
+height:500px;
+box-shadow:0px 10px 30px 5px rgba(0,0,0,0.1);
+border-radius:8px;
+	
+	
+}
+
+.movers{
+	font-weight:Bold ;
+	font-size:20px;
+
+	
+	font-family: "Arial";
+	
+}
+
+
+.subtable{
+	border-collapse: collapse;
+	background-color: #fff;
+	width:100%;
+	border-radius:8px;
+	box-shadow:0px 10px 30px 5px rgba(0,0,0,0.1);
+	margin: 25px auto;
+	font-family: "Arial";
+	text-align: center;
+	float:center;
+}
+.subtable tr, td{
+
+border-color:#d3d3d3;
+	
+	
+}
+.subtable thead{
+		font-weight:Bold ;
+
+}
+
+.subtable td{
+	padding: 10px 10px;
+	
+}
+
+.footer{
+	background-color:#707070;
+	
+}
+
+
+
+.cont{
+	align-items:left;
+	
+	
+}
+
+.change{
+	padding-left:20px;
+	font-weight:Bold ;
+	font-size:25px;
+	font-family: "Arial";
+	float:left;
+	
+	
+	
+}
+.forecast{
+	padding-left:10px;
+	font-weight:Bold ;
+	font-size:25px;
+	font-family: "Arial";
+	float:left;
+	
+	
+	
+}
+
+
+.price{
+	padding-left:10px;
+	font-weight:Bold ;
+	font-size:25px;
+	font-family: "Arial";
+
+	text-align:left;
+	
+	
+}
+
+.exchange{
+	padding-left:10px;
+	font-weight:Bold ;
+	font-size:15px;
+	font-family: "Arial";
+	color:#d3d3d3;
+	text-align:left;
+	
+	
+}
+
+.name{
+	padding-left:10px;
+	font-weight:Bold ;
+	font-size:25px;
+	font-family: "Arial";
+	padding-top:100px;
+	text-align:left;
+	
+	
+}
+.overview td{border-bottom: 1px solid #d3d3d3;	padding: 10px 10px;}
+.overview{
+	border-collapse: collapse;
+	background-color: #fff;
+	width:25%;
+	margin-left:25px;
+	font-family: "Arial";
+	text-align: center;
+	float:left;
+	
+}
+.indicators td{border-bottom: 1px solid #d3d3d3;	padding: 10px 10px;}
+.indicators{
+	
+	border-collapse: collapse;
+	background-color: #fff;
+	width:25%;
+	
+	margin-left:25px;
+	font-family: "Arial";
+	text-align: center;
+`	float:left;
+	
+}
+.summ{	
+	width:60%;
+	margin-left:25px;
+	font-family: "Arial";
+	text-align: center;
+`	float:left;
+	padding-bottom:50px;
+}
