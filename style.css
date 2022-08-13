@@ -148,6 +148,15 @@ border-radius:8px;
 	
 }
 
+.notice{
+	font-weight: ;
+	font-size:12px;
+	font-family: "Arial";
+	color:#d3d3d3;
+	
+	
+}
+
 .feed{
 	text-align:left;
 	border-bottom: 1px solid #d3d3d3;
