@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8927651371422323"
+         crossorigin="anonymous"></script>
+        <title>TradingSense | Stock Market Intelligence and Forecasting</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style2.css" >
+        <header class='header'>
+         <script src=
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+            </script>
+        <img  class='logo' src="./logo2.png">
+
+        <div class='nav'>
+
+		
+        
+            
+        </header>
+        
+        
+        <body>
+		
+		
+	<div class='container'>   
+		<h1 class='head1'>Market By Rating</h1>
+		<h2 class='sub'>Stock Ratings, Financials, Reccomendations</h2>
+		</div>
+		</h2>
+					
+		
+		
+<hr class='ider'>
+
+
+<div class='searchcont'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<input  style='background-color:#1a1f20;border:0px;' class='search' id="gfg" type="text" placeholder="Search Stocks...">
+
+</div>
+
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<table class='sortable'>
+
+                 <thead style='margin:0px;'>
+                        <td style="background-color:#0a0d0d;">Symbol</td>
+                        <td>Name</td>
+			<td>Opportunity Rating</td>
+			<td>Asset Rating</td>
+			<td>Prev Close</td>
+                        <td>Price</td>
+                        <td>24hr(%)</td>
+                        <td>Recommendation</td>
+		
+                         
+                 </thead>
+                 
+                 <tbody id='geeks'>
+
+
+
+
+
+        
+
+             <tr class='item1'>
+                    <td style="background-color:#0a0d0d;"><p style='margin:0px;' id='MMMsymbol'></p></td>
+                    <td><a class='link'href='MMM.html'><p  style='margin:0px;'id='MMMname'></p></a></td>
+		    <td>15<meter min="-100" low="0" optimum="100" high="40" max="100" value='15'></meter></td>
+                    <td>0<meter min="-100" low="0" optimum="100" high="40" max="100" value='0'></meter></td>
+                    <td><p style='margin:0px;' id='MMMclose'></p></td>
+		    <td><p style='margin:0px;' id='MMMpricejs'></p></td>
+                    <td><p style='margin:0px;' id='MMMchange'></p></td>
+                    <td id='MMMrecc'>Hold</td>
+
+					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						document.getElementById('MMMsymbol').innerHTML=symbolquote['Ticker']
+						document.getElementById('MMMname').innerHTML=symbolquote['Name']
+						document.getElementById('MMMclose').innerHTML=symbolquote['PrevClose']
+						document.getElementById('MMMpricejs').innerHTML=symbolquote['Last']
+						document.getElementById('MMMchange').innerHTML=symbolquote['ChangePercent']
+					
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="http://feeds.financialcontent.com/JSQuote?Ticker=MMM"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('MMMpricejs').innerHTML > document.getElementById('MMMclose').innerHTML){
+					document.getElementById('MMMpricejs').style.color ='#00e673'
+					document.getElementById('MMMchange').style.color ='#00e673'
+					}
+					
+					
+					else if (document.getElementById('MMMpricejs').innerHTML < document.getElementById('MMMclose').innerHTML){
+					
+					document.getElementById('MMMpricejs').style.color ='#ff1a1a'
+					document.getElementById('MMMchange').style.color ='#ff1a1a'
+					
+					}
+					
+					
+									
+					
+					
+					</script>
+
+                                        
+                    
+
+             <tr class='item1'>
+                    <td style="background-color:#0a0d0d;"><p style='margin:0px;' id='AOSsymbol'></p></td>
+                    <td><a class='link'href='AOS.html'><p  style='margin:0px;'id='AOSname'></p></a></td>
+		    <td>15<meter min="-100" low="0" optimum="100" high="40" max="100" value='15'></meter></td>
+                    <td>80<meter min="-100" low="0" optimum="100" high="40" max="100" value='80'></meter></td>
+                    <td><p style='margin:0px;' id='AOSclose'></p></td>
+		    <td><p style='margin:0px;' id='AOSpricejs'></p></td>
+                    <td><p style='margin:0px;' id='AOSchange'></p></td>
+                    <td id='AOSrecc'>Hold</td>
+
+					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						document.getElementById('AOSsymbol').innerHTML=symbolquote['Ticker']
+						document.getElementById('AOSname').innerHTML=symbolquote['Name']
+						document.getElementById('AOSclose').innerHTML=symbolquote['PrevClose']
+						document.getElementById('AOSpricejs').innerHTML=symbolquote['Last']
+						document.getElementById('AOSchange').innerHTML=symbolquote['ChangePercent']
+					
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="http://feeds.financialcontent.com/JSQuote?Ticker=AOS"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('AOSpricejs').innerHTML > document.getElementById('AOSclose').innerHTML){
+					document.getElementById('AOSpricejs').style.color ='#00e673'
+					document.getElementById('AOSchange').style.color ='#00e673'
+					}
+					
+					
+					else if (document.getElementById('AOSpricejs').innerHTML < document.getElementById('AOSclose').innerHTML){
+					
+					document.getElementById('AOSpricejs').style.color ='#ff1a1a'
+					document.getElementById('AOSchange').style.color ='#ff1a1a'
+					
+					}
+					
+					
+									
+					
+					
+					</script>
+
+                                        
+                    
+
+             <tr class='item1'>
+                    <td style="background-color:#0a0d0d;"><p style='margin:0px;' id='ABTsymbol'></p></td>
+                    <td><a class='link'href='ABT.html'><p  style='margin:0px;'id='ABTname'></p></a></td>
+		    <td>15<meter min="-100" low="0" optimum="100" high="40" max="100" value='15'></meter></td>
+                    <td>-20<meter min="-100" low="0" optimum="100" high="40" max="100" value='-20'></meter></td>
+                    <td><p style='margin:0px;' id='ABTclose'></p></td>
+		    <td><p style='margin:0px;' id='ABTpricejs'></p></td>
+                    <td><p style='margin:0px;' id='ABTchange'></p></td>
+                    <td id='ABTrecc'>Buy</td>
+
+					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						document.getElementById('ABTsymbol').innerHTML=symbolquote['Ticker']
+						document.getElementById('ABTname').innerHTML=symbolquote['Name']
+						document.getElementById('ABTclose').innerHTML=symbolquote['PrevClose']
+						document.getElementById('ABTpricejs').innerHTML=symbolquote['Last']
+						document.getElementById('ABTchange').innerHTML=symbolquote['ChangePercent']
+					
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="http://feeds.financialcontent.com/JSQuote?Ticker=ABT"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('ABTpricejs').innerHTML > document.getElementById('ABTclose').innerHTML){
+					document.getElementById('ABTpricejs').style.color ='#00e673'
+					document.getElementById('ABTchange').style.color ='#00e673'
+					}
+					
+					
+					else if (document.getElementById('ABTpricejs').innerHTML < document.getElementById('ABTclose').innerHTML){
+					
+					document.getElementById('ABTpricejs').style.color ='#ff1a1a'
+					document.getElementById('ABTchange').style.color ='#ff1a1a'
+					
+					}
+					
+					
+									
+					
+					
+					</script>
+
+                                        
+                    
+
+             <tr class='item1'>
+                    <td style="background-color:#0a0d0d;"><p style='margin:0px;' id='ABBVsymbol'></p></td>
+                    <td><a class='link'href='ABBV.html'><p  style='margin:0px;'id='ABBVname'></p></a></td>
+		    <td>-30<meter min="-100" low="0" optimum="100" high="40" max="100" value='-30'></meter></td>
+                    <td>80<meter min="-100" low="0" optimum="100" high="40" max="100" value='80'></meter></td>
+                    <td><p style='margin:0px;' id='ABBVclose'></p></td>
+		    <td><p style='margin:0px;' id='ABBVpricejs'></p></td>
+                    <td><p style='margin:0px;' id='ABBVchange'></p></td>
+                    <td id='ABBVrecc'>Buy</td>
+
+					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						document.getElementById('ABBVsymbol').innerHTML=symbolquote['Ticker']
+						document.getElementById('ABBVname').innerHTML=symbolquote['Name']
+						document.getElementById('ABBVclose').innerHTML=symbolquote['PrevClose']
+						document.getElementById('ABBVpricejs').innerHTML=symbolquote['Last']
+						document.getElementById('ABBVchange').innerHTML=symbolquote['ChangePercent']
+					
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="http://feeds.financialcontent.com/JSQuote?Ticker=ABBV"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('ABBVpricejs').innerHTML > document.getElementById('ABBVclose').innerHTML){
+					document.getElementById('ABBVpricejs').style.color ='#00e673'
+					document.getElementById('ABBVchange').style.color ='#00e673'
+					}
+					
+					
+					else if (document.getElementById('ABBVpricejs').innerHTML < document.getElementById('ABBVclose').innerHTML){
+					
+					document.getElementById('ABBVpricejs').style.color ='#ff1a1a'
+					document.getElementById('ABBVchange').style.color ='#ff1a1a'
+					
+					}
+					
+					
+									
+					
+					
+					</script>
+
+                                        
+                    
+
+             <tr class='item1'>
+                    <td style="background-color:#0a0d0d;"><p style='margin:0px;' id='ABMDsymbol'></p></td>
+                    <td><a class='link'href='ABMD.html'><p  style='margin:0px;'id='ABMDname'></p></a></td>
+		    <td>-45<meter min="-100" low="0" optimum="100" high="40" max="100" value='-45'></meter></td>
+                    <td>20<meter min="-100" low="0" optimum="100" high="40" max="100" value='20'></meter></td>
+                    <td><p style='margin:0px;' id='ABMDclose'></p></td>
+		    <td><p style='margin:0px;' id='ABMDpricejs'></p></td>
+                    <td><p style='margin:0px;' id='ABMDchange'></p></td>
+                    <td id='ABMDrecc'>Hold</td>
+
+					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						document.getElementById('ABMDsymbol').innerHTML=symbolquote['Ticker']
+						document.getElementById('ABMDname').innerHTML=symbolquote['Name']
+						document.getElementById('ABMDclose').innerHTML=symbolquote['PrevClose']
+						document.getElementById('ABMDpricejs').innerHTML=symbolquote['Last']
+						document.getElementById('ABMDchange').innerHTML=symbolquote['ChangePercent']
+					
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="http://feeds.financialcontent.com/JSQuote?Ticker=ABMD"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('ABMDpricejs').innerHTML > document.getElementById('ABMDclose').innerHTML){
+					document.getElementById('ABMDpricejs').style.color ='#00e673'
+					document.getElementById('ABMDchange').style.color ='#00e673'
+					}
+					
+					
+					else if (document.getElementById('ABMDpricejs').innerHTML < document.getElementById('ABMDclose').innerHTML){
+					
+					document.getElementById('ABMDpricejs').style.color ='#ff1a1a'
+					document.getElementById('ABMDchange').style.color ='#ff1a1a'
+					
+					}
+					
+					
+									
+					
+					
+					</script>
+
+                                        
+                    
+
+             <tr class='item1'>
+                    <td style="background-color:#0a0d0d;"><p style='margin:0px;' id='ACNsymbol'></p></td>
+                    <td><a class='link'href='ACN.html'><p  style='margin:0px;'id='ACNname'></p></a></td>
+		    <td>15<meter min="-100" low="0" optimum="100" high="40" max="100" value='15'></meter></td>
+                    <td>80<meter min="-100" low="0" optimum="100" high="40" max="100" value='80'></meter></td>
+                    <td><p style='margin:0px;' id='ACNclose'></p></td>
+		    <td><p style='margin:0px;' id='ACNpricejs'></p></td>
+                    <td><p style='margin:0px;' id='ACNchange'></p></td>
+                    <td id='ACNrecc'>Buy</td>
+
+					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						document.getElementById('ACNsymbol').innerHTML=symbolquote['Ticker']
+						document.getElementById('ACNname').innerHTML=symbolquote['Name']
+						document.getElementById('ACNclose').innerHTML=symbolquote['PrevClose']
+						document.getElementById('ACNpricejs').innerHTML=symbolquote['Last']
+						document.getElementById('ACNchange').innerHTML=symbolquote['ChangePercent']
+					
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="http://feeds.financialcontent.com/JSQuote?Ticker=ACN"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('ACNpricejs').innerHTML > document.getElementById('ACNclose').innerHTML){
+					document.getElementById('ACNpricejs').style.color ='#00e673'
+					document.getElementById('ACNchange').style.color ='#00e673'
+					}
+					
+					
+					else if (document.getElementById('ACNpricejs').innerHTML < document.getElementById('ACNclose').innerHTML){
+					
+					document.getElementById('ACNpricejs').style.color ='#ff1a1a'
+					document.getElementById('ACNchange').style.color ='#ff1a1a'
+					
+					}
+					
+					
+									
+					
+					
+					</script>
+
+                                        
+                    
+
+             <tr class='item1'>
+                    <td style="background-color:#0a0d0d;"><p style='margin:0px;' id='ATVIsymbol'></p></td>
+                    <td><a class='link'href='ATVI.html'><p  style='margin:0px;'id='ATVIname'></p></a></td>
+		    <td>15<meter min="-100" low="0" optimum="100" high="40" max="100" value='15'></meter></td>
+                    <td>0<meter min="-100" low="0" optimum="100" high="40" max="100" value='0'></meter></td>
+                    <td><p style='margin:0px;' id='ATVIclose'></p></td>
+		    <td><p style='margin:0px;' id='ATVIpricejs'></p></td>
+                    <td><p style='margin:0px;' id='ATVIchange'></p></td>
+                    <td id='ATVIrecc'>Buy</td>
+
+					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						document.getElementById('ATVIsymbol').innerHTML=symbolquote['Ticker']
+						document.getElementById('ATVIname').innerHTML=symbolquote['Name']
+						document.getElementById('ATVIclose').innerHTML=symbolquote['PrevClose']
+						document.getElementById('ATVIpricejs').innerHTML=symbolquote['Last']
+						document.getElementById('ATVIchange').innerHTML=symbolquote['ChangePercent']
+					
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="http://feeds.financialcontent.com/JSQuote?Ticker=ATVI"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('ATVIpricejs').innerHTML > document.getElementById('ATVIclose').innerHTML){
+					document.getElementById('ATVIpricejs').style.color ='#00e673'
+					document.getElementById('ATVIchange').style.color ='#00e673'
+					}
+					
+					
+					else if (document.getElementById('ATVIpricejs').innerHTML < document.getElementById('ATVIclose').innerHTML){
+					
+					document.getElementById('ATVIpricejs').style.color ='#ff1a1a'
+					document.getElementById('ATVIchange').style.color ='#ff1a1a'
+					
+					}
+					
+					
+									
+					
+					
+					</script>
+
+                                        
+                    
+                 
+
+				</tbody>
+				
+				
+				
+				</table>
+				<script>
+						$(document).ready(function() {
+						$("#gfg").on("keyup", function() {
+							var value = $(this).val().toLowerCase();
+							$("#geeks tr").filter(function() {
+								$(this).toggle($(this).text()
+								.toLowerCase().indexOf(value) > -1)
+							});
+						});
+					});
+				</script>
+	
+                    
+
+        </html>
+
+        
