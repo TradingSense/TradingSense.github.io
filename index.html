@@ -34,10 +34,55 @@
                   
         </div>   
         </header>
+        <div style='height:70px;'></div>
+        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+  {
+  "symbols": [
+    {
+      "description": "",
+      "proName": "NASDAQ:TSLA"
+    },
+    {
+      "description": "",
+      "proName": "NASDAQ:AAPL"
+    },
+    {
+      "description": "",
+      "proName": "NASDAQ:NVDA"
+    },
+    {
+      "description": "",
+      "proName": "NASDAQ:AMZN"
+    },
+    {
+      "description": "",
+      "proName": "NASDAQ:MSFT"
+    },
+    {
+      "description": "",
+      "proName": "NASDAQ:AMD"
+    },
+    {
+      "description": "",
+      "proName": "NASDAQ:META"
+    }
+  ],
+  "colorTheme": "dark",
+  "isTransparent": true,
+  "showSymbolLogo": false,
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
         
         
         <body>
-		<div style='height:150px;'>
+		<div style='height:90px;'>
 		
 		</div>
 		<h1 class='searchhead'>Stock ratings, data, and alerts</h1>
@@ -4806,6 +4851,81 @@
                                         
                     
 
+             <tr onclick="showHideRow('hidden_rowEL');"class='item1'>
+                    <td><p class='companyname'id='ELname'></p><p class='symboltable'id='ELsymbol'></p></td>
+		    <td><div style='text-align:left;' id='ELpricearrow'></div><p style='text-align:left;margin:0px;' id='ELpricejs'></p></td>
+                    <td><div style='text-align:left;'id='ELchangearrow'></div><p style='text-align:left;margin:0px;' id='ELchange'></p></td>
+                    <td><p style='margin:0px;' id='ELclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:0.1876784985720031%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>161.9</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>284.45</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +122</p>
+                    <p style='text-align:left;'>Valuation: +16</p>
+                    <p style='text-align:left;'>TargetPrice: +59</p>
+                    </span>
+                    <p class='rankval'>196</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='196'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.0882<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >$EL ($162.13) is approaching, and within 75.45% of it's 1 year high of $284.45</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('ELsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('ELname').innerHTML=symbolquote['Name']
+						document.getElementById('ELpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('ELchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('ELclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('ELshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('ELoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('ELpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=EL"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('ELpricejs').innerHTML > document.getElementById('ELclose').innerHTML){
+					document.getElementById('ELpricejs').style.color ='#33ff77'
+					document.getElementById('ELchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('ELpricearrow').className = "up-arrow";
+                                        document.getElementById('ELchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('ELpricejs').innerHTML < document.getElementById('ELclose').innerHTML){
+					
+					document.getElementById('ELpricejs').style.color ='#ff4d4d'
+					document.getElementById('ELchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('ELpricearrow').className = "down-arrow";
+                                        document.getElementById('ELchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
              <tr onclick="showHideRow('hidden_rowADP');"class='item1'>
                     <td><p class='companyname'id='ADPname'></p><p class='symboltable'id='ADPsymbol'></p></td>
 		    <td><div style='text-align:left;' id='ADPpricearrow'></div><p style='text-align:left;margin:0px;' id='ADPpricejs'></p></td>
@@ -6836,7 +6956,7 @@
 		    <td><div style='text-align:left;' id='TJXpricearrow'></div><p style='text-align:left;margin:0px;' id='TJXpricejs'></p></td>
                     <td><div style='text-align:left;'id='TJXchangearrow'></div><p style='text-align:left;margin:0px;' id='TJXchange'></p></td>
                     <td><p style='margin:0px;' id='TJXclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:97.10621506083527%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>59.78</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>90.19</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:97.13815789473682%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>59.78</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>90.18</p></div></div></td>
                     <td class='has-details'>
                     <span class="details">
                     <p style='text-align:left;'>Opportunity Rating Breakdown</p>
@@ -6846,7 +6966,7 @@
                     </span>
                     <p class='rankval'>20</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='20'></meter></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.0416<p class='outstandingshares'>Overvalued</p></td></td>
-                    <td style='color:#7D827D;' >$TJX ($89.31) is approaching, and within 0.99% of it's 1 year low of $59.78</td>
+                    <td style='color:#7D827D;' >$TJX ($89.31) is approaching, and within 0.97% of it's 1 year low of $59.78</td>
          					
 
 					
@@ -16361,7 +16481,7 @@
 		    <td><div style='text-align:left;' id='Kpricearrow'></div><p style='text-align:left;margin:0px;' id='Kpricejs'></p></td>
                     <td><div style='text-align:left;'id='Kchangearrow'></div><p style='text-align:left;margin:0px;' id='Kchange'></p></td>
                     <td><p style='margin:0px;' id='Kclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:0.5921052631579171%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>61.97</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>77.17</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:0.5914512595477608%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>61.9701</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>77.17</p></div></div></td>
                     <td class='has-details'>
                     <span class="details">
                     <p style='text-align:left;'>Opportunity Rating Breakdown</p>
