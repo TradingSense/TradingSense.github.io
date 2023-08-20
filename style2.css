@@ -699,7 +699,7 @@ font-style: normal;
 .sortable tr, td{
 color:#cccccc;
 border-bottom:1px solid #333333 ;
-padding: 15px 10px;	
+padding: 0px 10px;	
 
 }
 .sortable th{
