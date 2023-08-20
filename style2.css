@@ -811,14 +811,13 @@ width:auto;
 	background-color: #0d0d0d;
 	width:100%;
 	border-radius:8px;
-	#box-shadow:0px 10px 30px 5px rgba(0,0,0,0.1);
-	margin: 10px auto;
+	margin:0px auto;
 	font-weight:500;
 	font-family: "Arial";
 	text-align: left;
 	overflow:auto;
 	position:relative;
-	  max-width  : 100%;
+	max-width: 100%;
 }
 
 
