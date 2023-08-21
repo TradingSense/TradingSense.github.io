@@ -1038,7 +1038,7 @@ meter {
       }
 meter::-webkit-meter-bar {
         background: none;
-        background-color: white;
+        background-color: #1a1f20;
   
       }
 meter::-webkit-meter-optimum-value {
