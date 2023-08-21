@@ -1058,12 +1058,12 @@ meter::-moz-meter-bar {
         background-color: #1a1f20;
   
       }
-meter:-moz-meter-optimum::-moz-meter-bar{
+meter::-moz-meter-optimum::-moz-meter-bar{
       
         background-color:#2feb6e;
         background-size: 100% 100%;
       }
-meter:-moz-meter-sub-optimum::-moz-meter-bar {
+meter::-moz-meter-sub-optimum::-moz-meter-bar {
       
         background-color:#ff4d4d;
         background-size: 100% 100%;
