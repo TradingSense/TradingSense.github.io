@@ -10,7 +10,7 @@
         <link rel="icon" href="./logo.png" type="image/icon type">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8927651371422323"
          crossorigin="anonymous"></script>
-        <title>TradingSense | Stock Market Simplified</title>
+        <title>TradingSense | Stock Market Alerts and Data</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style2.css" >
@@ -3460,7 +3460,7 @@
                     		    <td><div style='text-align:left;' id='NEEpricearrow'></div><p style='text-align:left;margin:0px;' id='NEEpricejs'></p></td>
                     <td><div style='text-align:left;'id='NEEchangearrow'></div><p style='text-align:left;margin:0px;' id='NEEchange'></p></td>
                     <td><p style='margin:0px;' id='NEEclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:1.6406890894175208%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>66.68</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>91.06</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:1.6612603598099016%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>66.6749</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>91.06</p></div></div></td>
                     <td class='has-details'>
                     <span class="details">
                     <p style='text-align:left;'>Opportunity Rating Breakdown</p>
@@ -3470,7 +3470,7 @@
                     </span>
                     <p class='rankval'>89</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='89'></meter></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.7725<p class='outstandingshares'>Overvalued</p></td></td>
-                    <td style='color:#7D827D;' >$NEE is approaching, and within 0.6% of its 1-year low of $66.68</td>
+                    <td style='color:#7D827D;' >$NEE is approaching, and within 0.6% of its 1-year low of $66.6749</td>
          					
 
 					
@@ -5468,6 +5468,1431 @@
                                        
                                         document.getElementById('ADPpricearrow').className = "down-arrow";
                                         document.getElementById('ADPchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowPYPL');"class='item1'>
+                    <td><p class='companyname'id='PYPLname'></p><p class='symboltable'id='PYPLsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='PYPLpricearrow'></div><p style='text-align:left;margin:0px;' id='PYPLpricejs'></p></td>
+                    <td><div style='text-align:left;'id='PYPLchangearrow'></div><p style='text-align:left;margin:0px;' id='PYPLchange'></p></td>
+                    <td><p style='margin:0px;' id='PYPLclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:5.284456081885263%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>57.29</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>99.3</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +39</p>
+                    <p style='text-align:left;'>Valuation: +19</p>
+                    <p style='text-align:left;'>TargetPrice: +20</p>
+                    </span>
+                    <p class='rankval'>83</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='83'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.5368<p class='outstandingshares'>Undervalued</p></td></td>
+                    <td style='color:#7D827D;' >$PYPL is approaching, and within 3.73% of its 1-year low of $57.29</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('PYPLsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('PYPLname').innerHTML=symbolquote['Name']
+						document.getElementById('PYPLpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('PYPLchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('PYPLclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('PYPLshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('PYPLoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('PYPLpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=PYPL"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('PYPLpricejs').innerHTML > document.getElementById('PYPLclose').innerHTML){
+					document.getElementById('PYPLpricejs').style.color ='#33ff77'
+					document.getElementById('PYPLchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('PYPLpricearrow').className = "up-arrow";
+                                        document.getElementById('PYPLchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('PYPLpricejs').innerHTML < document.getElementById('PYPLclose').innerHTML){
+					
+					document.getElementById('PYPLpricejs').style.color ='#ff4d4d'
+					document.getElementById('PYPLchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('PYPLpricearrow').className = "down-arrow";
+                                        document.getElementById('PYPLchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowPLD');"class='item1'>
+                    <td><p class='companyname'id='PLDname'></p><p class='symboltable'id='PLDsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='PLDpricearrow'></div><p style='text-align:left;margin:0px;' id='PLDpricejs'></p></td>
+                    <td><div style='text-align:left;'id='PLDchangearrow'></div><p style='text-align:left;margin:0px;' id='PLDchange'></p></td>
+                    <td><p style='margin:0px;' id='PLDclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:57.220496894409955%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>98.03</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>136.67</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +16</p>
+                    <p style='text-align:left;'>Valuation: +19</p>
+                    <p style='text-align:left;'>TargetPrice: +23</p>
+                    </span>
+                    <p class='rankval'>34</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='34'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.6322<p class='outstandingshares'>Undervalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('PLDsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('PLDname').innerHTML=symbolquote['Name']
+						document.getElementById('PLDpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('PLDchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('PLDclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('PLDshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('PLDoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('PLDpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=PLD"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('PLDpricejs').innerHTML > document.getElementById('PLDclose').innerHTML){
+					document.getElementById('PLDpricejs').style.color ='#33ff77'
+					document.getElementById('PLDchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('PLDpricearrow').className = "up-arrow";
+                                        document.getElementById('PLDchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('PLDpricejs').innerHTML < document.getElementById('PLDclose').innerHTML){
+					
+					document.getElementById('PLDpricejs').style.color ='#ff4d4d'
+					document.getElementById('PLDchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('PLDpricearrow').className = "down-arrow";
+                                        document.getElementById('PLDchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowSBUX');"class='item1'>
+                    <td><p class='companyname'id='SBUXname'></p><p class='symboltable'id='SBUXsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='SBUXpricearrow'></div><p style='text-align:left;margin:0px;' id='SBUXpricejs'></p></td>
+                    <td><div style='text-align:left;'id='SBUXchangearrow'></div><p style='text-align:left;margin:0px;' id='SBUXchange'></p></td>
+                    <td><p style='margin:0px;' id='SBUXclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:43.744454303460486%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>81.67</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>115.48</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +19</p>
+                    <p style='text-align:left;'>Valuation: +18</p>
+                    <p style='text-align:left;'>TargetPrice: +8</p>
+                    </span>
+                    <p class='rankval'>32</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='32'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.3419<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('SBUXsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('SBUXname').innerHTML=symbolquote['Name']
+						document.getElementById('SBUXpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('SBUXchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('SBUXclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('SBUXshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('SBUXoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('SBUXpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=SBUX"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('SBUXpricejs').innerHTML > document.getElementById('SBUXclose').innerHTML){
+					document.getElementById('SBUXpricejs').style.color ='#33ff77'
+					document.getElementById('SBUXchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('SBUXpricearrow').className = "up-arrow";
+                                        document.getElementById('SBUXchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('SBUXpricejs').innerHTML < document.getElementById('SBUXclose').innerHTML){
+					
+					document.getElementById('SBUXpricejs').style.color ='#ff4d4d'
+					document.getElementById('SBUXchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('SBUXpricearrow').className = "down-arrow";
+                                        document.getElementById('SBUXchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowMDLZ');"class='item1'>
+                    <td><p class='companyname'id='MDLZname'></p><p class='symboltable'id='MDLZsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='MDLZpricearrow'></div><p style='text-align:left;margin:0px;' id='MDLZpricejs'></p></td>
+                    <td><div style='text-align:left;'id='MDLZchangearrow'></div><p style='text-align:left;margin:0px;' id='MDLZchange'></p></td>
+                    <td><p style='margin:0px;' id='MDLZclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:67.07163803937998%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>54.72</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>78.59</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +7</p>
+                    <p style='text-align:left;'>Valuation: +17</p>
+                    <p style='text-align:left;'>TargetPrice: +6</p>
+                    </span>
+                    <p class='rankval'>5</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='5'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.2446<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('MDLZsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('MDLZname').innerHTML=symbolquote['Name']
+						document.getElementById('MDLZpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('MDLZchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('MDLZclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('MDLZshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('MDLZoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('MDLZpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=MDLZ"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('MDLZpricejs').innerHTML > document.getElementById('MDLZclose').innerHTML){
+					document.getElementById('MDLZpricejs').style.color ='#33ff77'
+					document.getElementById('MDLZchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('MDLZpricearrow').className = "up-arrow";
+                                        document.getElementById('MDLZchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('MDLZpricejs').innerHTML < document.getElementById('MDLZclose').innerHTML){
+					
+					document.getElementById('MDLZpricejs').style.color ='#ff4d4d'
+					document.getElementById('MDLZchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('MDLZpricearrow').className = "down-arrow";
+                                        document.getElementById('MDLZchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowAMAT');"class='item1'>
+                    <td><p class='companyname'id='AMATname'></p><p class='symboltable'id='AMATsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='AMATpricearrow'></div><p style='text-align:left;margin:0px;' id='AMATpricejs'></p></td>
+                    <td><div style='text-align:left;'id='AMATchangearrow'></div><p style='text-align:left;margin:0px;' id='AMATchange'></p></td>
+                    <td><p style='margin:0px;' id='AMATclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:94.51071080817918%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>71.12</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>153.28</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +4</p>
+                    <p style='text-align:left;'>Valuation: +15</p>
+                    <p style='text-align:left;'>TargetPrice: +6</p>
+                    </span>
+                    <p class='rankval'>-30</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='-30'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>4.446<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >$AMAT is approaching, and within 3.03% of its 1-year high of $153.28</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('AMATsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('AMATname').innerHTML=symbolquote['Name']
+						document.getElementById('AMATpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('AMATchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('AMATclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('AMATshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('AMAToutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('AMATpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=AMAT"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('AMATpricejs').innerHTML > document.getElementById('AMATclose').innerHTML){
+					document.getElementById('AMATpricejs').style.color ='#33ff77'
+					document.getElementById('AMATchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('AMATpricearrow').className = "up-arrow";
+                                        document.getElementById('AMATchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('AMATpricejs').innerHTML < document.getElementById('AMATclose').innerHTML){
+					
+					document.getElementById('AMATpricejs').style.color ='#ff4d4d'
+					document.getElementById('AMATchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('AMATpricearrow').className = "down-arrow";
+                                        document.getElementById('AMATchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowMO');"class='item1'>
+                    <td><p class='companyname'id='MOname'></p><p class='symboltable'id='MOsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='MOpricearrow'></div><p style='text-align:left;margin:0px;' id='MOpricejs'></p></td>
+                    <td><div style='text-align:left;'id='MOchangearrow'></div><p style='text-align:left;margin:0px;' id='MOchange'></p></td>
+                    <td><p style='margin:0px;' id='MOclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:30.670103092783453%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>40.35</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>48.11</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +5</p>
+                    <p style='text-align:left;'>Valuation: +20</p>
+                    <p style='text-align:left;'>TargetPrice: +3</p>
+                    </span>
+                    <p class='rankval'>41</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='41'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('MOsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('MOname').innerHTML=symbolquote['Name']
+						document.getElementById('MOpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('MOchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('MOclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('MOshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('MOoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('MOpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=MO"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('MOpricejs').innerHTML > document.getElementById('MOclose').innerHTML){
+					document.getElementById('MOpricejs').style.color ='#33ff77'
+					document.getElementById('MOchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('MOpricearrow').className = "up-arrow";
+                                        document.getElementById('MOchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('MOpricejs').innerHTML < document.getElementById('MOclose').innerHTML){
+					
+					document.getElementById('MOpricejs').style.color ='#ff4d4d'
+					document.getElementById('MOchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('MOpricearrow').className = "down-arrow";
+                                        document.getElementById('MOchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowCB');"class='item1'>
+                    <td><p class='companyname'id='CBname'></p><p class='symboltable'id='CBsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='CBpricearrow'></div><p style='text-align:left;margin:0px;' id='CBpricejs'></p></td>
+                    <td><div style='text-align:left;'id='CBchangearrow'></div><p style='text-align:left;margin:0px;' id='CBchange'></p></td>
+                    <td><p style='margin:0px;' id='CBclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:45.61555825664179%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>173.78</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>231.37</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +31</p>
+                    <p style='text-align:left;'>Valuation: +19</p>
+                    <p style='text-align:left;'>TargetPrice: +40</p>
+                    </span>
+                    <p class='rankval'>62</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='62'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.7548<p class='outstandingshares'>Undervalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('CBsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('CBname').innerHTML=symbolquote['Name']
+						document.getElementById('CBpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('CBchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('CBclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('CBshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('CBoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('CBpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=CB"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('CBpricejs').innerHTML > document.getElementById('CBclose').innerHTML){
+					document.getElementById('CBpricejs').style.color ='#33ff77'
+					document.getElementById('CBchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('CBpricearrow').className = "up-arrow";
+                                        document.getElementById('CBchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('CBpricejs').innerHTML < document.getElementById('CBclose').innerHTML){
+					
+					document.getElementById('CBpricejs').style.color ='#ff4d4d'
+					document.getElementById('CBchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('CBpricearrow').className = "down-arrow";
+                                        document.getElementById('CBchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowCI');"class='item1'>
+                    <td><p class='companyname'id='CIname'></p><p class='symboltable'id='CIsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='CIpricearrow'></div><p style='text-align:left;margin:0px;' id='CIpricejs'></p></td>
+                    <td><div style='text-align:left;'id='CIchangearrow'></div><p style='text-align:left;margin:0px;' id='CIchange'></p></td>
+                    <td><p style='margin:0px;' id='CIclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:40.91958638690893%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>240.5</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>340.11</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +58</p>
+                    <p style='text-align:left;'>Valuation: +18</p>
+                    <p style='text-align:left;'>TargetPrice: +52</p>
+                    </span>
+                    <p class='rankval'>79</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='79'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.0047<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('CIsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('CIname').innerHTML=symbolquote['Name']
+						document.getElementById('CIpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('CIchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('CIclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('CIshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('CIoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('CIpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=CI"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('CIpricejs').innerHTML > document.getElementById('CIclose').innerHTML){
+					document.getElementById('CIpricejs').style.color ='#33ff77'
+					document.getElementById('CIchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('CIpricearrow').className = "up-arrow";
+                                        document.getElementById('CIchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('CIpricejs').innerHTML < document.getElementById('CIclose').innerHTML){
+					
+					document.getElementById('CIpricejs').style.color ='#ff4d4d'
+					document.getElementById('CIchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('CIpricearrow').className = "down-arrow";
+                                        document.getElementById('CIchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowBKNG');"class='item1'>
+                    <td><p class='companyname'id='BKNGname'></p><p class='symboltable'id='BKNGsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='BKNGpricearrow'></div><p style='text-align:left;margin:0px;' id='BKNGpricejs'></p></td>
+                    <td><div style='text-align:left;'id='BKNGchangearrow'></div><p style='text-align:left;margin:0px;' id='BKNGchange'></p></td>
+                    <td><p style='margin:0px;' id='BKNGclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:87.78427510612529%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>1616.85</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>3251.71</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +199</p>
+                    <p style='text-align:left;'>Valuation: +19</p>
+                    <p style='text-align:left;'>TargetPrice: +274</p>
+                    </span>
+                    <p class='rankval'>254</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='254'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.8513<p class='outstandingshares'>Undervalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('BKNGsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('BKNGname').innerHTML=symbolquote['Name']
+						document.getElementById('BKNGpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('BKNGchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('BKNGclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('BKNGshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('BKNGoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('BKNGpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=BKNG"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('BKNGpricejs').innerHTML > document.getElementById('BKNGclose').innerHTML){
+					document.getElementById('BKNGpricejs').style.color ='#33ff77'
+					document.getElementById('BKNGchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('BKNGpricearrow').className = "up-arrow";
+                                        document.getElementById('BKNGchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('BKNGpricejs').innerHTML < document.getElementById('BKNGclose').innerHTML){
+					
+					document.getElementById('BKNGpricejs').style.color ='#ff4d4d'
+					document.getElementById('BKNGchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('BKNGpricearrow').className = "down-arrow";
+                                        document.getElementById('BKNGchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowADI');"class='item1'>
+                    <td><p class='companyname'id='ADIname'></p><p class='symboltable'id='ADIsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='ADIpricearrow'></div><p style='text-align:left;margin:0px;' id='ADIpricejs'></p></td>
+                    <td><div style='text-align:left;'id='ADIchangearrow'></div><p style='text-align:left;margin:0px;' id='ADIchange'></p></td>
+                    <td><p style='margin:0px;' id='ADIclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:65.65595917142001%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>133.48</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>200.1</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +22</p>
+                    <p style='text-align:left;'>Valuation: +18</p>
+                    <p style='text-align:left;'>TargetPrice: +30</p>
+                    </span>
+                    <p class='rankval'>32</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='32'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.8284<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('ADIsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('ADIname').innerHTML=symbolquote['Name']
+						document.getElementById('ADIpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('ADIchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('ADIclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('ADIshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('ADIoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('ADIpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=ADI"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('ADIpricejs').innerHTML > document.getElementById('ADIclose').innerHTML){
+					document.getElementById('ADIpricejs').style.color ='#33ff77'
+					document.getElementById('ADIchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('ADIpricearrow').className = "up-arrow";
+                                        document.getElementById('ADIchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('ADIpricejs').innerHTML < document.getElementById('ADIclose').innerHTML){
+					
+					document.getElementById('ADIpricejs').style.color ='#ff4d4d'
+					document.getElementById('ADIchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('ADIpricearrow').className = "down-arrow";
+                                        document.getElementById('ADIchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowDUK');"class='item1'>
+                    <td><p class='companyname'id='DUKname'></p><p class='symboltable'id='DUKsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='DUKpricearrow'></div><p style='text-align:left;margin:0px;' id='DUKpricejs'></p></td>
+                    <td><div style='text-align:left;'id='DUKchangearrow'></div><p style='text-align:left;margin:0px;' id='DUKchange'></p></td>
+                    <td><p style='margin:0px;' id='DUKclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:19.884823848238455%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>83.76</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>113.28</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +23</p>
+                    <p style='text-align:left;'>Valuation: +17</p>
+                    <p style='text-align:left;'>TargetPrice: +13</p>
+                    </span>
+                    <p class='rankval'>59</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='59'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.7046<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('DUKsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('DUKname').innerHTML=symbolquote['Name']
+						document.getElementById('DUKpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('DUKchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('DUKclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('DUKshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('DUKoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('DUKpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=DUK"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('DUKpricejs').innerHTML > document.getElementById('DUKclose').innerHTML){
+					document.getElementById('DUKpricejs').style.color ='#33ff77'
+					document.getElementById('DUKchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('DUKpricearrow').className = "up-arrow";
+                                        document.getElementById('DUKchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('DUKpricejs').innerHTML < document.getElementById('DUKclose').innerHTML){
+					
+					document.getElementById('DUKpricejs').style.color ='#ff4d4d'
+					document.getElementById('DUKchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('DUKpricearrow').className = "down-arrow";
+                                        document.getElementById('DUKchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowNFLX');"class='item1'>
+                    <td><p class='companyname'id='NFLXname'></p><p class='symboltable'id='NFLXsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='NFLXpricearrow'></div><p style='text-align:left;margin:0px;' id='NFLXpricejs'></p></td>
+                    <td><div style='text-align:left;'id='NFLXchangearrow'></div><p style='text-align:left;margin:0px;' id='NFLXchange'></p></td>
+                    <td><p style='margin:0px;' id='NFLXclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:71.92886156548471%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>211.73</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>485.0</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +76</p>
+                    <p style='text-align:left;'>Valuation: +18</p>
+                    <p style='text-align:left;'>TargetPrice: +12</p>
+                    </span>
+                    <p class='rankval'>7</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='7'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.9299<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('NFLXsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('NFLXname').innerHTML=symbolquote['Name']
+						document.getElementById('NFLXpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('NFLXchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('NFLXclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('NFLXshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('NFLXoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('NFLXpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=NFLX"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('NFLXpricejs').innerHTML > document.getElementById('NFLXclose').innerHTML){
+					document.getElementById('NFLXpricejs').style.color ='#33ff77'
+					document.getElementById('NFLXchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('NFLXpricearrow').className = "up-arrow";
+                                        document.getElementById('NFLXchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('NFLXpricejs').innerHTML < document.getElementById('NFLXclose').innerHTML){
+					
+					document.getElementById('NFLXpricejs').style.color ='#ff4d4d'
+					document.getElementById('NFLXchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('NFLXpricearrow').className = "down-arrow";
+                                        document.getElementById('NFLXchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowZTS');"class='item1'>
+                    <td><p class='companyname'id='ZTSname'></p><p class='symboltable'id='ZTSsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='ZTSpricearrow'></div><p style='text-align:left;margin:0px;' id='ZTSpricejs'></p></td>
+                    <td><div style='text-align:left;'id='ZTSchangearrow'></div><p style='text-align:left;margin:0px;' id='ZTSchange'></p></td>
+                    <td><p style='margin:0px;' id='ZTSclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:79.98306041784302%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>124.15</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>194.99</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +14</p>
+                    <p style='text-align:left;'>Valuation: +16</p>
+                    <p style='text-align:left;'>TargetPrice: +38</p>
+                    </span>
+                    <p class='rankval'>24</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='24'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.5666<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('ZTSsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('ZTSname').innerHTML=symbolquote['Name']
+						document.getElementById('ZTSpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('ZTSchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('ZTSclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('ZTSshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('ZTSoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('ZTSpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=ZTS"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('ZTSpricejs').innerHTML > document.getElementById('ZTSclose').innerHTML){
+					document.getElementById('ZTSpricejs').style.color ='#33ff77'
+					document.getElementById('ZTSchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('ZTSpricearrow').className = "up-arrow";
+                                        document.getElementById('ZTSchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('ZTSpricejs').innerHTML < document.getElementById('ZTSclose').innerHTML){
+					
+					document.getElementById('ZTSpricejs').style.color ='#ff4d4d'
+					document.getElementById('ZTSchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('ZTSpricearrow').className = "down-arrow";
+                                        document.getElementById('ZTSchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowGILD');"class='item1'>
+                    <td><p class='companyname'id='GILDname'></p><p class='symboltable'id='GILDsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='GILDpricearrow'></div><p style='text-align:left;margin:0px;' id='GILDpricejs'></p></td>
+                    <td><div style='text-align:left;'id='GILDchangearrow'></div><p style='text-align:left;margin:0px;' id='GILDchange'></p></td>
+                    <td><p style='margin:0px;' id='GILDclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:51.21951219512195%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>61.45</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>89.74</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +13</p>
+                    <p style='text-align:left;'>Valuation: +19</p>
+                    <p style='text-align:left;'>TargetPrice: +8</p>
+                    </span>
+                    <p class='rankval'>25</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='25'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.55<p class='outstandingshares'>Undervalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('GILDsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('GILDname').innerHTML=symbolquote['Name']
+						document.getElementById('GILDpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('GILDchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('GILDclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('GILDshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('GILDoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('GILDpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=GILD"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('GILDpricejs').innerHTML > document.getElementById('GILDclose').innerHTML){
+					document.getElementById('GILDpricejs').style.color ='#33ff77'
+					document.getElementById('GILDchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('GILDpricearrow').className = "up-arrow";
+                                        document.getElementById('GILDchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('GILDpricejs').innerHTML < document.getElementById('GILDclose').innerHTML){
+					
+					document.getElementById('GILDpricejs').style.color ='#ff4d4d'
+					document.getElementById('GILDchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('GILDpricearrow').className = "down-arrow";
+                                        document.getElementById('GILDchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowMMC');"class='item1'>
+                    <td><p class='companyname'id='MMCname'></p><p class='symboltable'id='MMCsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='MMCpricearrow'></div><p style='text-align:left;margin:0px;' id='MMCpricejs'></p></td>
+                    <td><div style='text-align:left;'id='MMCchangearrow'></div><p style='text-align:left;margin:0px;' id='MMCchange'></p></td>
+                    <td><p style='margin:0px;' id='MMCclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:89.2073832790445%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>148.11</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>194.16</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +4</p>
+                    <p style='text-align:left;'>Valuation: +17</p>
+                    <p style='text-align:left;'>TargetPrice: +13</p>
+                    </span>
+                    <p class='rankval'>-10</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='-10'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.3622<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('MMCsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('MMCname').innerHTML=symbolquote['Name']
+						document.getElementById('MMCpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('MMCchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('MMCclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('MMCshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('MMCoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('MMCpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=MMC"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('MMCpricejs').innerHTML > document.getElementById('MMCclose').innerHTML){
+					document.getElementById('MMCpricejs').style.color ='#33ff77'
+					document.getElementById('MMCchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('MMCpricearrow').className = "up-arrow";
+                                        document.getElementById('MMCchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('MMCpricejs').innerHTML < document.getElementById('MMCclose').innerHTML){
+					
+					document.getElementById('MMCpricejs').style.color ='#ff4d4d'
+					document.getElementById('MMCchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('MMCpricearrow').className = "down-arrow";
+                                        document.getElementById('MMCchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowCME');"class='item1'>
+                    <td><p class='companyname'id='CMEname'></p><p class='symboltable'id='CMEsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='CMEpricearrow'></div><p style='text-align:left;margin:0px;' id='CMEpricejs'></p></td>
+                    <td><div style='text-align:left;'id='CMEchangearrow'></div><p style='text-align:left;margin:0px;' id='CMEchange'></p></td>
+                    <td><p style='margin:0px;' id='CMEclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:84.30776426566882%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>166.55</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>209.31</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +6</p>
+                    <p style='text-align:left;'>Valuation: +15</p>
+                    <p style='text-align:left;'>TargetPrice: +12</p>
+                    </span>
+                    <p class='rankval'>-7</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='-7'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>4.7113<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('CMEsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('CMEname').innerHTML=symbolquote['Name']
+						document.getElementById('CMEpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('CMEchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('CMEclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('CMEshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('CMEoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('CMEpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=CME"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('CMEpricejs').innerHTML > document.getElementById('CMEclose').innerHTML){
+					document.getElementById('CMEpricejs').style.color ='#33ff77'
+					document.getElementById('CMEchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('CMEpricearrow').className = "up-arrow";
+                                        document.getElementById('CMEchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('CMEpricejs').innerHTML < document.getElementById('CMEclose').innerHTML){
+					
+					document.getElementById('CMEpricejs').style.color ='#ff4d4d'
+					document.getElementById('CMEchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('CMEpricearrow').className = "down-arrow";
+                                        document.getElementById('CMEchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowSYK');"class='item1'>
+                    <td><p class='companyname'id='SYKname'></p><p class='symboltable'id='SYKsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='SYKpricearrow'></div><p style='text-align:left;margin:0px;' id='SYKpricejs'></p></td>
+                    <td><div style='text-align:left;'id='SYKchangearrow'></div><p style='text-align:left;margin:0px;' id='SYKchange'></p></td>
+                    <td><p style='margin:0px;' id='SYKclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:71.08263450485254%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>200.8</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>306.93</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +30</p>
+                    <p style='text-align:left;'>Valuation: +16</p>
+                    <p style='text-align:left;'>TargetPrice: +44</p>
+                    </span>
+                    <p class='rankval'>39</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='39'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.0912<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('SYKsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('SYKname').innerHTML=symbolquote['Name']
+						document.getElementById('SYKpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('SYKchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('SYKclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('SYKshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('SYKoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('SYKpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=SYK"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('SYKpricejs').innerHTML > document.getElementById('SYKclose').innerHTML){
+					document.getElementById('SYKpricejs').style.color ='#33ff77'
+					document.getElementById('SYKchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('SYKpricearrow').className = "up-arrow";
+                                        document.getElementById('SYKchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('SYKpricejs').innerHTML < document.getElementById('SYKclose').innerHTML){
+					
+					document.getElementById('SYKpricejs').style.color ='#ff4d4d'
+					document.getElementById('SYKchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('SYKpricearrow').className = "down-arrow";
+                                        document.getElementById('SYKchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowCHTR');"class='item1'>
+                    <td><p class='companyname'id='CHTRname'></p><p class='symboltable'id='CHTRsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='CHTRpricearrow'></div><p style='text-align:left;margin:0px;' id='CHTRpricejs'></p></td>
+                    <td><div style='text-align:left;'id='CHTRchangearrow'></div><p style='text-align:left;margin:0px;' id='CHTRchange'></p></td>
+                    <td><p style='margin:0px;' id='CHTRclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:76.6802380206702%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>297.66</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>457.31</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +37</p>
+                    <p style='text-align:left;'>Valuation: +19</p>
+                    <p style='text-align:left;'>TargetPrice: +59</p>
+                    </span>
+                    <p class='rankval'>51</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='51'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.4347<p class='outstandingshares'>Undervalued</p></td></td>
+                    <td style='color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('CHTRsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('CHTRname').innerHTML=symbolquote['Name']
+						document.getElementById('CHTRpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('CHTRchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('CHTRclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('CHTRshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('CHTRoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('CHTRpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=CHTR"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('CHTRpricejs').innerHTML > document.getElementById('CHTRclose').innerHTML){
+					document.getElementById('CHTRpricejs').style.color ='#33ff77'
+					document.getElementById('CHTRchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('CHTRpricearrow').className = "up-arrow";
+                                        document.getElementById('CHTRchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('CHTRpricejs').innerHTML < document.getElementById('CHTRclose').innerHTML){
+					
+					document.getElementById('CHTRpricejs').style.color ='#ff4d4d'
+					document.getElementById('CHTRchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('CHTRpricearrow').className = "down-arrow";
+                                        document.getElementById('CHTRchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowGE');"class='item1'>
+                    <td><p class='companyname'id='GEname'></p><p class='symboltable'id='GEsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='GEpricearrow'></div><p style='text-align:left;margin:0px;' id='GEpricejs'></p></td>
+                    <td><div style='text-align:left;'id='GEchangearrow'></div><p style='text-align:left;margin:0px;' id='GEchange'></p></td>
+                    <td><p style='margin:0px;' id='GEclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:91.47213246506051%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>48.30601</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>117.96</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: +5</p>
+                    <p style='text-align:left;'>Valuation: +16</p>
+                    <p style='text-align:left;'>TargetPrice: +12</p>
+                    </span>
+                    <p class='rankval'>-13</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='-13'></meter></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.184<p class='outstandingshares'>Overvalued</p></td></td>
+                    <td style='color:#7D827D;' >$GE is approaching, and within 5.3% of its 1-year high of $117.96</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('GEsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('GEname').innerHTML=symbolquote['Name']
+						document.getElementById('GEpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('GEchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('GEclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('GEshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('GEoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('GEpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=GE"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('GEpricejs').innerHTML > document.getElementById('GEclose').innerHTML){
+					document.getElementById('GEpricejs').style.color ='#33ff77'
+					document.getElementById('GEchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('GEpricearrow').className = "up-arrow";
+                                        document.getElementById('GEchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('GEpricejs').innerHTML < document.getElementById('GEclose').innerHTML){
+					
+					document.getElementById('GEpricejs').style.color ='#ff4d4d'
+					document.getElementById('GEchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('GEpricearrow').className = "down-arrow";
+                                        document.getElementById('GEchangearrow').className = "down-arrow";
 					}
 					
 					
