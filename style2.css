@@ -13,7 +13,7 @@ button{
   background-color: #ff4d4d;
   margin:10px;vertical-align:middle;float:right;color:#cccccc;font-size:25px;font-family: Dongle, sans-serif;border:none;border-radius:12px;'
 }
-.head2{z-index:30;font-weight:Bold ;font-size:16px;float:left;font-family: "Arial";color:#cccccc;}
+.head2{z-index:30;font-weight:Bold ;font-size:13px;float:left;font-family: "Arial";color:#cccccc;}
 
 body{
 	background-color:#1a1a1a;
@@ -341,18 +341,14 @@ tr:hover{background-color:#1a1a1a;}
 }
 
 .next{color:#7D827D; font-size:14px; float:left; margin-top:0px; display:inline-block}
-.head2{z-index:30;font-weight:Bold ;font-size:16px;float:left;font-family: "Arial";color:#cccccc;}
+
 .searchhead{font-weight:Bold ;
 	font-size:40px;
 	text-align:center;
 	font-family: "Arial";
 	color:#f5fafa;}
 @media (max-width:828px){
-	.searchhead{font-weight:Bold ;
-	font-size:27px;
-	text-align:center;
-	font-family: "Arial";
-	color:#f5fafa;}
+	.searchhead{font-weight:Bold ;font-size:27px;text-align:center;font-family: "Arial";color:#f5fafa;}
 	.wrapper{ position: relative;overflow: auto;border: 1px solid black;white-space: nowrap;}
 	.searchbutton{margin:10px;display:inline-block;float:right; height:24px;}
 	.search{width:90%;
