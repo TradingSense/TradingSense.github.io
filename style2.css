@@ -149,11 +149,7 @@ body{
 	height:300px;
 	background-color:#1a1a1a;
 }
-.searchhead{font-weight:Bold ;
-	font-size:40px;
-	text-align:center;
-	font-family: "Arial";
-	color:#f5fafa;}
+
 .footerlogo{
 height:70px;
 width:70px;
@@ -346,6 +342,11 @@ tr:hover{background-color:#1a1a1a;}
 
 .next{color:#7D827D; font-size:14px; float:left; margin-top:0px; display:inline-block}
 .head2{z-index:30;font-weight:Bold ;font-size:16px;float:left;font-family: "Arial";color:#cccccc;}
+.searchhead{font-weight:Bold ;
+	font-size:40px;
+	text-align:center;
+	font-family: "Arial";
+	color:#f5fafa;}
 @media (max-width:828px){
 	.searchhead{font-weight:Bold ;
 	font-size:27px;
