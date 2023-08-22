@@ -344,6 +344,7 @@ tr:hover{background-color:#1a1a1a;}
 }
 
 .next{color:#7D827D; font-size:14px; float:left; margin-top:0px; display:inline-block}
+.head2{font-weight:Bold ;font-size:16px;float:left;font-family: "Arial";color:#cccccc;}
 @media (max-width:828px){
 	.searchhead{font-weight:Bold ;
 	font-size:27px;
