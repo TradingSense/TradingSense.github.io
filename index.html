@@ -26106,7 +26106,91 @@
 					</tr>
            
                                         
-                    le='position:absolute;width:18.47150147960713%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>262.115</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>378.7</p></div></div></td>
+                    
+
+             <tr onclick="showHideRow('hidden_rowPFG');"class='item1'>
+                    <td><p class='companyname'id='PFGname'></p><p class='symboltable'id='PFGsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='PFGpricearrow'></div><p style='text-align:left;margin:0px;' id='PFGpricejs'></p></td>
+                    <td><div style='text-align:left;'id='PFGchangearrow'></div><p style='text-align:left;margin:0px;' id='PFGchange'></p></td>
+                    <td><p style='margin:0px;' id='PFGclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:34.61290322580647%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>65.17</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>96.17</p></div></div></td>
+                    <td class='has-details'>
+                    <span class="details">
+                    <p style='text-align:left;'>Opportunity Rating Breakdown</p>
+                    <p style='text-align:left;'>Price Position: -35</p>
+                    <p style='text-align:left;'>Valuation: +20</p>
+                    <p style='text-align:left;'>TargetPrice: +2</p>
+                    </span>
+                    <p class='rankval'>86</p><meter min="-100" low="0" optimum="100" high="40" max="100"  value='86'></meter>
+                    </td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>549010<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-52.95%</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+         					
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('PFGsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('PFGname').innerHTML=symbolquote['Name']
+						document.getElementById('PFGpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('PFGchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('PFGclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('PFGshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('PFGoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('PFGpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=PFG"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('PFGpricejs').innerHTML > document.getElementById('PFGclose').innerHTML){
+					document.getElementById('PFGpricejs').style.color ='#33ff77'
+					document.getElementById('PFGchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('PFGpricearrow').className = "up-arrow";
+                                        document.getElementById('PFGchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('PFGpricejs').innerHTML < document.getElementById('PFGclose').innerHTML){
+					
+					document.getElementById('PFGpricejs').style.color ='#ff4d4d'
+					document.getElementById('PFGchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('PFGpricearrow').className = "down-arrow";
+                                        document.getElementById('PFGchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowPAYC');"class='item1'>
+                    <td><p class='companyname'id='PAYCname'></p><p class='symboltable'id='PAYCsymbol'></p></td>
+                    		    <td><div style='text-align:left;' id='PAYCpricearrow'></div><p style='text-align:left;margin:0px;' id='PAYCpricejs'></p></td>
+                    <td><div style='text-align:left;'id='PAYCchangearrow'></div><p style='text-align:left;margin:0px;' id='PAYCchange'></p></td>
+                    <td><p style='margin:0px;' id='PAYCclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:18.47150147960713%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>262.115</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>378.7</p></div></div></td>
                     <td class='has-details'>
                     <span class="details">
                     <p style='text-align:left;'>Opportunity Rating Breakdown</p>
@@ -26118,7 +26202,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.6886<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>467114<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-19.78%</p></td>
-                    <td style='color:#7D827D;' >$PAYC is targeted to increase by 36% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$PAYC is targeted to increase by 36% by next year</td>
          					
 
 					
@@ -26195,7 +26279,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>7.1295<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>15407261<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-18.15%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -26272,7 +26356,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.0143<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>7210631<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-46.55%</p></td>
-                    <td style='color:#7D827D;' >$PARA is approaching, and within 5.74% of its 1-year low of $13.8</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$PARA is approaching, and within 5.74% of its 1-year low of $13.8</td>
          					
 
 					
@@ -26349,7 +26433,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>553557<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-49.02%</p></td>
-                    <td style='color:#7D827D;' >$EXPD is targeted to decrease by 6% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$EXPD is targeted to decrease by 6% by next year</td>
          					
 
 					
@@ -26426,7 +26510,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.5696<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1295828<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-30.88%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -26503,7 +26587,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.4623<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>990521<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-34.96%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -26580,7 +26664,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.5694<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>879469<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>60.18%</p></td>
-                    <td style='color:#7D827D;' >$BR is targeted to decrease by 2% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$BR is targeted to decrease by 2% by next year</td>
          					
 
 					
@@ -26657,7 +26741,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.688<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1432811<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-37.44%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -26734,7 +26818,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.6817<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1695968<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-37.39%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -26811,7 +26895,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.7135<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>888986<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-37.35%</p></td>
-                    <td style='color:#7D827D;' >$SEDG is approaching, and within 3.06% of its 1-year low of $158.01</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$SEDG is approaching, and within 3.06% of its 1-year low of $158.01</td>
          					
 
 					
@@ -26888,7 +26972,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.2538<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>735057<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>16.23%</p></td>
-                    <td style='color:#7D827D;' >$J is approaching, and within 1.06% of its 1-year high of $137.61</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$J is approaching, and within 1.06% of its 1-year high of $137.61</td>
          					
 
 					
@@ -26965,7 +27049,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.53<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1100271<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-52.92%</p></td>
-                    <td style='color:#7D827D;' >$STX is targeted to decrease by 3% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$STX is targeted to decrease by 3% by next year</td>
          					
 
 					
@@ -27042,7 +27126,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>7.37<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>359551<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-18.48%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -27119,7 +27203,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.3086<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2101732<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-38.25%</p></td>
-                    <td style='color:#7D827D;' >$IP is targeted to decrease by 2% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$IP is targeted to decrease by 2% by next year</td>
          					
 
 					
@@ -27196,7 +27280,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1552574<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-2.3%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -27273,7 +27357,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>375501<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-62.05%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -27350,7 +27434,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.5237<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1381400<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>17.83%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -27427,7 +27511,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>554809<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-51.45%</p></td>
-                    <td style='color:#7D827D;' >$BRO is approaching, and within 1.88% of its 1-year high of $72.99</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$BRO is approaching, and within 1.88% of its 1-year high of $72.99</td>
          					
 
 					
@@ -27504,7 +27588,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.2299<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>814554<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-6.23%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -27581,7 +27665,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>240597<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-51.93%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -27658,7 +27742,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.6275<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>146546<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-51.77%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -27735,7 +27819,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.1992<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1712511<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>5.07%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -27812,7 +27896,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.0145<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>890091<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-24.52%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -27889,7 +27973,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2517770<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-47.15%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -27966,7 +28050,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.9823<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1247825<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-30.18%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -28043,7 +28127,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.4802<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>477682<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-43.69%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -28120,7 +28204,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1409425<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-59.46%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -28197,7 +28281,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.169<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1075801<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-29.35%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -28274,7 +28358,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.0482<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1747199<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>16.81%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -28351,7 +28435,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2346111<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>0.68%</p></td>
-                    <td style='color:#7D827D;' >$NTAP is targeted to decrease by 1% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$NTAP is targeted to decrease by 1% by next year</td>
          					
 
 					
@@ -28428,7 +28512,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.2855<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1552005<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-7.66%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -28505,7 +28589,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>88377<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-59.68%</p></td>
-                    <td style='color:#7D827D;' >$BIO is targeted to increase by 40% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$BIO is targeted to increase by 40% by next year</td>
          					
 
 					
@@ -28582,7 +28666,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>941990<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-45.11%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -28659,7 +28743,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.8221<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1338708<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>8.51%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -28736,7 +28820,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.6439<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2916045<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>21.3%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -28813,7 +28897,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.6427<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2433716<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-9.3%</p></td>
-                    <td style='color:#7D827D;' >$CPB is approaching, and within 0.63% of its 1-year low of $41.795</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$CPB is approaching, and within 0.63% of its 1-year low of $41.795</td>
          					
 
 					
@@ -28890,7 +28974,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.9489<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1006328<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-16.2%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -28967,7 +29051,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2566239<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-48.46%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29044,7 +29128,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.5453<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>360553<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-44.4%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29121,7 +29205,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.7619<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1044436<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-27.25%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29198,7 +29282,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1716660<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-20.53%</p></td>
-                    <td style='color:#7D827D;' >$UDR is approaching, and within 2.39% of its 1-year low of $37.18</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$UDR is approaching, and within 2.39% of its 1-year low of $37.18</td>
          					
 
 					
@@ -29275,7 +29359,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.89<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>917321<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-30.0%</p></td>
-                    <td style='color:#7D827D;' >$FMC is approaching, and within 1.75% of its 1-year low of $86.61</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$FMC is approaching, and within 1.75% of its 1-year low of $86.61</td>
          					
 
 					
@@ -29352,7 +29436,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>515216<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-33.67%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29429,7 +29513,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>5.6553<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>971846<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-31.66%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29506,7 +29590,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>6.9823<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>806739<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-33.72%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29583,7 +29667,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.635<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>183069<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-42.29%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29660,7 +29744,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>4.3286<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>858949<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-0.57%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29737,7 +29821,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>775818<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-47.97%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29814,7 +29898,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>253670<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-43.87%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29891,7 +29975,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.3817<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>465138<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-19.19%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -29968,7 +30052,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.8103<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>754235<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-64.81%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30045,7 +30129,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1639053<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-39.11%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30122,7 +30206,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>600213<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-34.63%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30199,7 +30283,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.139<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>787701<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-56.36%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30276,7 +30360,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>329468<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-50.91%</p></td>
-                    <td style='color:#7D827D;' >$PKG is targeted to decrease by 2% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$PKG is targeted to decrease by 2% by next year</td>
          					
 
 					
@@ -30353,7 +30437,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.4426<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>134936<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-42.37%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30430,7 +30514,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>509765<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-42.46%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30507,7 +30591,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>5692272<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-37.93%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30584,7 +30668,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>744667<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-37.2%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30661,7 +30745,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>8.8335<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>805469<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-23.32%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30738,7 +30822,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.2664<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>206032<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-64.99%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30815,7 +30899,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.0479<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>615939<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>6.86%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30892,7 +30976,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>16880<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-23.39%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -30969,7 +31053,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.0734<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>587488<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-31.26%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -31046,7 +31130,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2432782<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-22.24%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -31123,7 +31207,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.1256<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3506520<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-44.64%</p></td>
-                    <td style='color:#7D827D;' >$UAL is targeted to increase by 44% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$UAL is targeted to increase by 44% by next year</td>
          					
 
 					
@@ -31200,7 +31284,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>4932348<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>8.48%</p></td>
-                    <td style='color:#7D827D;' >$MGM is targeted to increase by 35% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$MGM is targeted to increase by 35% by next year</td>
          					
 
 					
@@ -31277,7 +31361,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>607387<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-3.62%</p></td>
-                    <td style='color:#7D827D;' >$CBOE is approaching, and within 0.41% of its 1-year high of $151.21</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$CBOE is approaching, and within 0.41% of its 1-year high of $151.21</td>
          					
 
 					
@@ -31354,7 +31438,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>5.5046<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2277643<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-43.49%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -31431,7 +31515,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.5122<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>189432<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-33.64%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -31508,7 +31592,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.4353<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>623860<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-31.01%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -31585,7 +31669,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.3106<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>5876092<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-12.08%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -31662,7 +31746,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.4333<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>887145<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-40.95%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -31739,7 +31823,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.1443<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>345195<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>56.26%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -31816,7 +31900,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.622<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>961110<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-55.8%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -31893,7 +31977,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.5065<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>987970<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-45.31%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -31970,7 +32054,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.3261<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2108441<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-47.25%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32047,7 +32131,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>18130162<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-55.97%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32124,7 +32208,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.4629<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2066542<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-59.99%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32201,7 +32285,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>406916<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>1.49%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32278,7 +32362,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.8864<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>306895<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-35.78%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32355,7 +32439,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.0683<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>144896<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-45.54%</p></td>
-                    <td style='color:#7D827D;' >$SNA is targeted to decrease by 1% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$SNA is targeted to decrease by 1% by next year</td>
          					
 
 					
@@ -32432,7 +32516,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.7086<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>504671<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-42.32%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32509,7 +32593,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.6436<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2459811<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-14.63%</p></td>
-                    <td style='color:#7D827D;' >$AAP is approaching, and within 6.8% of its 1-year low of $63.56</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$AAP is approaching, and within 6.8% of its 1-year low of $63.56</td>
          					
 
 					
@@ -32586,7 +32670,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>544.2373<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1558777<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-40.98%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32663,7 +32747,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.5341<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>842501<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-29.12%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32740,7 +32824,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.4363<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>369100<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-3.5%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32817,7 +32901,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>5.1086<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3803843<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>280.35%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32894,7 +32978,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1204931<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-58.07%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -32971,7 +33055,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.8336<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1391637<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-4.4%</p></td>
-                    <td style='color:#7D827D;' >$LW is targeted to increase by 32% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$LW is targeted to increase by 32% by next year</td>
          					
 
 					
@@ -33048,7 +33132,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1767079<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-49.98%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -33125,7 +33209,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>404571<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>4.73%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -33202,7 +33286,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>379136<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-18.63%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -33279,7 +33363,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.947<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>297949<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-49.09%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -33356,7 +33440,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2470830<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-41.38%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -33433,7 +33517,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.6995<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2718320<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-18.91%</p></td>
-                    <td style='color:#7D827D;' >$ETSY is approaching, and within 1.03% of its 1-year low of $72.565</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$ETSY is approaching, and within 1.03% of its 1-year low of $72.565</td>
          					
 
 					
@@ -33510,7 +33594,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.1154<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2003896<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-13.61%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -33587,7 +33671,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.4698<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2176365<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-18.1%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -33664,7 +33748,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>12.8417<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>10936496<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-18.98%</p></td>
-                    <td style='color:#7D827D;' >$DISH is approaching, and within 8.91% of its 1-year low of $5.83</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$DISH is approaching, and within 8.91% of its 1-year low of $5.83</td>
          					
 
 					
@@ -33741,7 +33825,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.9634<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2021120<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-57.83%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -33818,7 +33902,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>5.563<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>618706<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-41.73%</p></td>
-                    <td style='color:#7D827D;' >$RHI is targeted to decrease by 5% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$RHI is targeted to decrease by 5% by next year</td>
          					
 
 					
@@ -33895,7 +33979,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3827399<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>42.44%</p></td>
-                    <td style='color:#7D827D;' >$CZR is targeted to increase by 43% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$CZR is targeted to increase by 43% by next year</td>
          					
 
 					
@@ -33972,7 +34056,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.1501<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>484081<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-31.46%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -34049,7 +34133,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.5322<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1265122<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-55.16%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -34126,7 +34210,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.0728<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>23546339<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-0.84%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -34203,7 +34287,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.6279<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1977357<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>17.51%</p></td>
-                    <td style='color:#7D827D;' >$SEE is approaching, and within 0.6% of its 1-year low of $33.945</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$SEE is approaching, and within 0.6% of its 1-year low of $33.945</td>
          					
 
 					
@@ -34280,7 +34364,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1749990<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-30.62%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -34357,7 +34441,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1090740<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-51.05%</p></td>
-                    <td style='color:#7D827D;' >$OGN is targeted to increase by 38% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$OGN is targeted to increase by 38% by next year</td>
          					
 
 					
@@ -34434,7 +34518,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.5515<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>759000<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-6.05%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -34511,7 +34595,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>222594<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-23.65%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -34588,7 +34672,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.9833<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>598980<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-39.45%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -34665,7 +34749,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.7649<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3580762<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>1.13%</p></td>
-                    <td style='color:#7D827D;' >$TPR is targeted to increase by 46% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$TPR is targeted to increase by 46% by next year</td>
          					
 
 					
@@ -34742,7 +34826,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2105610<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-49.84%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -34819,7 +34903,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>446463<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-36.83%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -34896,7 +34980,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.536<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1103660<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-33.7%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -34973,7 +35057,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>5920650<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-9.73%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35050,7 +35134,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3.5069<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>940221<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>16.85%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35127,7 +35211,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>7.505<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>750907<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>29.06%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35204,7 +35288,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2.1501<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2417639<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-44.89%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35281,7 +35365,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.8975<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>396953<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-36.78%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35358,7 +35442,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.8622<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1029710<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-17.94%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35435,7 +35519,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1567605<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-33.08%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35512,7 +35596,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.0806<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>3494868<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-5.0%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35589,7 +35673,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>960388<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-29.71%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35666,7 +35750,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>473433<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-34.33%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35743,7 +35827,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.1816<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>675799<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-33.81%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -35820,7 +35904,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2024101<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-4.95%</p></td>
-                    <td style='color:#7D827D;' >$WYNN is targeted to increase by 35% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$WYNN is targeted to increase by 35% by next year</td>
          					
 
 					
@@ -35897,7 +35981,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>2063576<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-42.16%</p></td>
-                    <td style='color:#7D827D;' >$VNO is targeted to decrease by 14% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$VNO is targeted to decrease by 14% by next year</td>
          					
 
 					
@@ -35974,7 +36058,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1969163<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>18.46%</p></td>
-                    <td style='color:#7D827D;' >$ALK is targeted to increase by 50% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$ALK is targeted to increase by 50% by next year</td>
          					
 
 					
@@ -36051,7 +36135,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>8123441<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-44.06%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -36128,7 +36212,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0<p class='outstandingshares'>-</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>194022<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-27.97%</p></td>
-                    <td style='color:#7D827D;' >$IPGP is targeted to increase by 38% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$IPGP is targeted to increase by 38% by next year</td>
          					
 
 					
@@ -36205,7 +36289,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>0.4873<p class='outstandingshares'>Undervalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>608325<p style='color:#ff4d4d; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>-35.52%</p></td>
-                    <td style='color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
          					
 
 					
@@ -36282,7 +36366,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.5177<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>10967144<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>64.83%</p></td>
-                    <td style='color:#7D827D;' >$UAA is targeted to increase by 38% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$UAA is targeted to increase by 38% by next year</td>
          					
 
 					
@@ -36359,7 +36443,7 @@
                     </td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>1.3684<p class='outstandingshares'>Overvalued</p></td></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'</p>4268416<p style='color:#33ff77; display:inline-block;margin-bottom:-3px;font-size:13px; text-align:center;'>35.19%</p></td>
-                    <td style='color:#7D827D;' >$UA is targeted to increase by 93% by next year</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$UA is targeted to increase by 93% by next year</td>
          					
 
 					
