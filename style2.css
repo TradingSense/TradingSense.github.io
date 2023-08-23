@@ -254,7 +254,7 @@ width:70px;
 
 		.container{
 	background-color:;
-	height:70px;
+	height:30px;
 
 	display:inline-block;
 	text-align:center;
@@ -329,9 +329,9 @@ tr:hover{background-color:#1a1a1a;}
 .search{
 	width:500px;
 	height:30px;
-	float:center;
-	margin:20px;
-	border-radius:8px;
+	float:left;
+	margin-bottom:10px;
+	border-radius:5px;
 	border-width: 0px; 
 	background-color:#f5fafa;
 }
@@ -379,7 +379,7 @@ tr:hover{background-color:#1a1a1a;}
 	.searchcont{width:100%; display:inline-block; text-align:center;  margin-top:20px;}
 	.container{
 	background-color:;
-	height:70px;
+	height:30px;
 	
 	display:inline-block;
 	text-align:center;
