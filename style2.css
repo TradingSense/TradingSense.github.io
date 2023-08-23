@@ -347,7 +347,7 @@ tr:hover{background-color:#1a1a1a;}
 	.searchhead{font-weight:Bold ;font-size:27px;text-align:center;font-family: "Arial";color:#f5fafa;}
 	.wrapper{ position: relative;overflow: auto;border: 1px solid black;white-space: nowrap;}
 	.searchbutton{margin:10px;display:inline-block;float:right; height:24px;}
-	.search{width:90%;
+	.search{width:100%;
 	height:30px;
 	float:center;
 	
