@@ -42,7 +42,8 @@ body{
   z-index: 20;
   min-width: 100%;
   padding: 1rem;
-
+border-radius:8px;
+	
 }
 
 .has-details:hover span {
