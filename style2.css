@@ -16,7 +16,7 @@ button{
 
 
 body{
-	background-color:#1a1a1a;
+	background-color:#000;
 	#background-image:linear-gradient(to bottom,#1a1f20,#000);
 	text-align: center;
 	font-family:  "monaco", monospace;
@@ -180,7 +180,7 @@ width:70px;
 	left:0;
 	right:0;
 	align-items: center;
-	background-color:#1a1a1a;
+	background-color:#000;
 	#background-image:linear-gradient(to bottom,#000,#1a1f20);
 	z-index: 9;
 	height:60px;
@@ -798,7 +798,7 @@ width:auto;
 	whitespace:nowrap;
 	color:#cccccc;
 	border-collapse: collapse;
-	background-color: #1a1a1a;
+	background-color: #000;
 	width:100%;
 	border-radius:8px;
 	margin:5px auto;
