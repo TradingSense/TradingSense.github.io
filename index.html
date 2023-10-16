@@ -448,123 +448,6 @@
                                         
                     
 
-             <tr onclick="showHideRow('hidden_rowUNH');"class='item1'>
-                    <td><p class='companyname'id='UNHname'></p><p class='symboltable'id='UNHsymbol'></p></td>
-                    <td><div style='text-align:left;' id='UNHpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='UNHpricejs'></p></td>
-                    <td><div style='text-align:left;'id='UNHchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='UNHchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='UNHclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:82.14730475004443%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>445.68</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>558.1</p></div></div></td>
-                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.5306</p><p class='outstandingshares'>Overvalued</p></td></td>
-                    <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>12.34</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
-                    <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>16.9</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >-</td>
-                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='UNHChart' style=" height:40px;width:100px;"></canvas></div></td>
-         	    <script>
-                            const UNHValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
-                            2023-10-10,2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-16];
-
-                            new Chart('UNHChart', {
-                              type: "line",
-                              data: {
-                                labels: UNHValues,
-                                datasets: [{ 
-                                  data: [511.0159973144531,515.1399963378906,515.1399963378906,515.1399963378906,517.5279968261718,
-                                520.4819946289062,523.1839965820312,525.04599609375,527.9640014648437,527.9640014648437,527.9640014648437,],
-                                  borderColor: "#ff4d4d",
-                                  fill: false
-                                }, { 
-                                  data: [497.04600219726564,499.24800262451174,499.24800262451174,499.24800262451174,499.24800262451174,
-                                501.60450286865233,503.8215026855469,506.03600311279297,508.13300170898435,510.76800231933595,510.76800231933595,
-                                510.76800231933595,],
-                                  borderColor: "#33ff77",
-                                  fill: false    
-                                }]
-                              },
-                              options: {
-                                events: [],
-                                legend: {display: false},
-								scales: {
-								   xAxes: [{
-									 ticks: {
-									   display: false
-									 },
-									gridLines: {
-									  display: false
-									},
-								  }],
-								  yAxes: [{
-									ticks: {
-									  display: false
-									},
-									gridLines: {
-									 display: false
-									}
-								  }],
-								}
-								}
-                                                          
-                            });
-                    </script>			
-
-					
-					
-					<script>
-					function updateQuotes(data) {
-					   for (ticker in quote) {
-						var symbolquote = quote[ticker];
-						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
-						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
-						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
-						var outstandingsharesvalue = "$"+outstandingsharesvalue
-						document.getElementById('UNHsymbol').innerHTML=symbolquote['Ticker'] 
-						document.getElementById('UNHname').innerHTML=symbolquote['ShortName']
-						document.getElementById('UNHpricejs').innerHTML=symbolquote['Last'].toFixed(2);
-                                                            
-						document.getElementById('UNHchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
-                                                document.getElementById('UNHclose').innerHTML=symbolquote['PrevClose']
-                                                document.getElementById('UNHshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
-                                                document.getElementById('UNHoutstandingsharesvalue').innerHTML= outstandingsharesvalue
-                                                document.getElementById('UNHpricerange').value=symbolquote['Last'].toFixed(2);
-					   }
-					  }
-					  
-					 </script>
-                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=UNH"></script>
-
-
-
-
-                                        <script>
-					if (document.getElementById('UNHpricejs').innerHTML > document.getElementById('UNHclose').innerHTML){
-					document.getElementById('UNHpricejs').style.color ='#33ff77'
-					document.getElementById('UNHchange').style.color ='#33ff77'
-                                     
-                                        document.getElementById('UNHpricearrow').className = "up-arrow";
-                                        document.getElementById('UNHchangearrow').className = "up-arrow";
-					}
-					
-					
-					else if (document.getElementById('UNHpricejs').innerHTML < document.getElementById('UNHclose').innerHTML){
-					
-					document.getElementById('UNHpricejs').style.color ='#ff4d4d'
-					document.getElementById('UNHchange').style.color ='#ff4d4d'
-                                       
-                                        document.getElementById('UNHpricearrow').className = "down-arrow";
-                                        document.getElementById('UNHchangearrow').className = "down-arrow";
-					}
-					
-					
-									
-			    
-                                  
-					</script>
-					
-
-					
-					</tr>
-           
-                                        
-                    
-
              <tr onclick="showHideRow('hidden_rowMETA');"class='item1'>
                     <td><p class='companyname'id='METAname'></p><p class='symboltable'id='METAsymbol'></p></td>
                     <td><div style='text-align:left;' id='METApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='METApricejs'></p></td>
@@ -4177,6 +4060,123 @@
                                        
                                         document.getElementById('NKEpricearrow').className = "down-arrow";
                                         document.getElementById('NKEchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowDIS');"class='item1'>
+                    <td><p class='companyname'id='DISname'></p><p class='symboltable'id='DISsymbol'></p></td>
+                    <td><div style='text-align:left;' id='DISpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='DISpricejs'></p></td>
+                    <td><div style='text-align:left;'id='DISchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='DISchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='DISclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:17.693282636248387%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>78.73</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>118.18</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.9545</p><p class='outstandingshares'>Undervalued</p></td></td>
+                    <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>9.12</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.66</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='DISChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const DISValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
+                            2023-10-10,2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-16];
+
+                            new Chart('DISChart', {
+                              type: "line",
+                              data: {
+                                labels: DISValues,
+                                datasets: [{ 
+                                  data: [80.47799987792969,80.85599975585937,80.85599975585937,80.85599975585937,81.46199951171874,
+                                82.55199890136718,83.65799865722656,84.36599884033203,84.647998046875,84.647998046875,84.647998046875,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [81.91500053405761,81.98300056457519,81.98300056457519,81.98300056457519,81.98300056457519,
+                                82.09200057983398,82.15750045776367,82.22600021362305,82.21949996948243,82.15799980163574,82.15799980163574,
+                                82.15799980163574,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('DISsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('DISname').innerHTML=symbolquote['ShortName']
+						document.getElementById('DISpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('DISchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('DISclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('DISshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('DISoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('DISpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=DIS"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('DISpricejs').innerHTML > document.getElementById('DISclose').innerHTML){
+					document.getElementById('DISpricejs').style.color ='#33ff77'
+					document.getElementById('DISchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('DISpricearrow').className = "up-arrow";
+                                        document.getElementById('DISchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('DISpricejs').innerHTML < document.getElementById('DISclose').innerHTML){
+					
+					document.getElementById('DISpricejs').style.color ='#ff4d4d'
+					document.getElementById('DISchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('DISpricearrow').className = "down-arrow";
+                                        document.getElementById('DISchangearrow').className = "down-arrow";
 					}
 					
 					
@@ -12499,6 +12499,123 @@
                                         
                     
 
+             <tr onclick="showHideRow('hidden_rowFDX');"class='item1'>
+                    <td><p class='companyname'id='FDXname'></p><p class='symboltable'id='FDXsymbol'></p></td>
+                    <td><div style='text-align:left;' id='FDXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='FDXpricejs'></p></td>
+                    <td><div style='text-align:left;'id='FDXchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='FDXchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='FDXclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:80.71881955321079%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>149.64</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>270.95</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.0093</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>28.86</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.97</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='FDXChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const FDXValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
+                            2023-10-10,2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-16];
+
+                            new Chart('FDXChart', {
+                              type: "line",
+                              data: {
+                                labels: FDXValues,
+                                datasets: [{ 
+                                  data: [261.88599853515626,260.48199462890625,260.48199462890625,260.48199462890625,258.6039978027344,
+                                257.9239990234375,257.00600280761716,255.58200073242188,252.57000122070312,252.57000122070312,252.57000122070312,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [258.09500045776366,258.3245002746582,258.3245002746582,258.3245002746582,258.3245002746582,
+                                258.37550048828126,258.64150085449216,258.8065010070801,258.5570007324219,257.9950004577637,257.9950004577637,
+                                257.9950004577637,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('FDXsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('FDXname').innerHTML=symbolquote['ShortName']
+						document.getElementById('FDXpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('FDXchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('FDXclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('FDXshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('FDXoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('FDXpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=FDX"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('FDXpricejs').innerHTML > document.getElementById('FDXclose').innerHTML){
+					document.getElementById('FDXpricejs').style.color ='#33ff77'
+					document.getElementById('FDXchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('FDXpricearrow').className = "up-arrow";
+                                        document.getElementById('FDXchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('FDXpricejs').innerHTML < document.getElementById('FDXclose').innerHTML){
+					
+					document.getElementById('FDXpricejs').style.color ='#ff4d4d'
+					document.getElementById('FDXchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('FDXpricearrow').className = "down-arrow";
+                                        document.getElementById('FDXchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
              <tr onclick="showHideRow('hidden_rowWM');"class='item1'>
                     <td><p class='companyname'id='WMname'></p><p class='symboltable'id='WMsymbol'></p></td>
                     <td><div style='text-align:left;' id='WMpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='WMpricejs'></p></td>
@@ -17764,6 +17881,123 @@
                                         
                     
 
+             <tr onclick="showHideRow('hidden_rowPAYX');"class='item1'>
+                    <td><p class='companyname'id='PAYXname'></p><p class='symboltable'id='PAYXsymbol'></p></td>
+                    <td><div style='text-align:left;' id='PAYXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='PAYXpricejs'></p></td>
+                    <td><div style='text-align:left;'id='PAYXchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='PAYXchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='PAYXclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:57.16516985552522%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>104.09</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>129.7</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.096</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.67</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.41</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='PAYXChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const PAYXValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
+                            2023-10-10,2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-16];
+
+                            new Chart('PAYXChart', {
+                              type: "line",
+                              data: {
+                                labels: PAYXValues,
+                                datasets: [{ 
+                                  data: [114.7,115.11399993896484,115.11399993896484,115.11399993896484,116.19000091552735,
+                                117.02800140380859,117.7040023803711,118.44200134277344,118.55800170898438,118.55800170898438,118.55800170898438,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [116.14850044250488,115.99150047302246,115.99150047302246,115.99150047302246,115.99150047302246,
+                                115.9550006866455,115.88850059509278,115.85650062561035,115.83750038146972,115.93800048828125,115.93800048828125,
+                                115.93800048828125,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('PAYXsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('PAYXname').innerHTML=symbolquote['ShortName']
+						document.getElementById('PAYXpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('PAYXchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('PAYXclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('PAYXshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('PAYXoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('PAYXpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=PAYX"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('PAYXpricejs').innerHTML > document.getElementById('PAYXclose').innerHTML){
+					document.getElementById('PAYXpricejs').style.color ='#33ff77'
+					document.getElementById('PAYXchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('PAYXpricearrow').className = "up-arrow";
+                                        document.getElementById('PAYXchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('PAYXpricejs').innerHTML < document.getElementById('PAYXclose').innerHTML){
+					
+					document.getElementById('PAYXpricejs').style.color ='#ff4d4d'
+					document.getElementById('PAYXchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('PAYXpricearrow').className = "down-arrow";
+                                        document.getElementById('PAYXchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
              <tr onclick="showHideRow('hidden_rowAIG');"class='item1'>
                     <td><p class='companyname'id='AIGname'></p><p class='symboltable'id='AIGsymbol'></p></td>
                     <td><div style='text-align:left;' id='AIGpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AIGpricejs'></p></td>
@@ -20927,11 +21161,11 @@
                     <td><p class='companyname'id='AFLname'></p><p class='symboltable'id='AFLsymbol'></p></td>
                     <td><div style='text-align:left;' id='AFLpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AFLpricejs'></p></td>
                     <td><div style='text-align:left;'id='AFLchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='AFLchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='AFLclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:97.53629564452264%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>58.92</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>81.65</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:97.1090670170828%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>58.92</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>81.75</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.37</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.38</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$AFL is within 0.69% of 1-year high, $81.65</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$AFL is within 0.81% of 1-year high, $81.75</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='AFLChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const AFLValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
@@ -23365,6 +23599,123 @@
                                        
                                         document.getElementById('HALpricearrow').className = "down-arrow";
                                         document.getElementById('HALchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowNUE');"class='item1'>
+                    <td><p class='companyname'id='NUEname'></p><p class='symboltable'id='NUEsymbol'></p></td>
+                    <td><div style='text-align:left;' id='NUEpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='NUEpricejs'></p></td>
+                    <td><div style='text-align:left;'id='NUEchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='NUEchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='NUEclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:49.429429429429426%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>116.08</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>182.68</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.98</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.27</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='NUEChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const NUEValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
+                            2023-10-10,2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-16];
+
+                            new Chart('NUEChart', {
+                              type: "line",
+                              data: {
+                                labels: NUEValues,
+                                datasets: [{ 
+                                  data: [156.0919982910156,156.26799621582032,156.26799621582032,156.26799621582032,156.44399719238282,
+                                156.42999572753905,156.01599731445313,154.23999938964843,152.20599975585938,152.20599975585938,152.20599975585938,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [156.9907669067383,156.6322784423828,156.6322784423828,156.6322784423828,156.6322784423828,
+                                156.28350067138672,155.9541976928711,155.66708526611328,154.79519348144532,154.40264587402345,154.40264587402345,
+                                154.40264587402345,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('NUEsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('NUEname').innerHTML=symbolquote['ShortName']
+						document.getElementById('NUEpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('NUEchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('NUEclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('NUEshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('NUEoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('NUEpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=NUE"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('NUEpricejs').innerHTML > document.getElementById('NUEclose').innerHTML){
+					document.getElementById('NUEpricejs').style.color ='#33ff77'
+					document.getElementById('NUEchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('NUEpricearrow').className = "up-arrow";
+                                        document.getElementById('NUEchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('NUEpricejs').innerHTML < document.getElementById('NUEclose').innerHTML){
+					
+					document.getElementById('NUEpricejs').style.color ='#ff4d4d'
+					document.getElementById('NUEchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('NUEpricearrow').className = "down-arrow";
+                                        document.getElementById('NUEchangearrow').className = "down-arrow";
 					}
 					
 					
@@ -31336,6 +31687,123 @@
                                         
                     
 
+             <tr onclick="showHideRow('hidden_rowVTR');"class='item1'>
+                    <td><p class='companyname'id='VTRname'></p><p class='symboltable'id='VTRsymbol'></p></td>
+                    <td><div style='text-align:left;' id='VTRpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='VTRpricejs'></p></td>
+                    <td><div style='text-align:left;'id='VTRchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='VTRchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='VTRclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:44.553881807647734%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>35.89</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>53.15</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
+                    <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.67</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.11</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='VTRChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const VTRValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
+                            2023-10-10,2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-16];
+
+                            new Chart('VTRChart', {
+                              type: "line",
+                              data: {
+                                labels: VTRValues,
+                                datasets: [{ 
+                                  data: [40.99000015258789,40.49400024414062,40.49400024414062,40.49400024414062,40.36800003051758,
+                                40.73399963378906,41.23399963378906,41.636000061035155,42.39199981689453,42.39199981689453,42.39199981689453,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [42.14717121124268,42.033267211914065,42.033267211914065,42.033267211914065,42.033267211914065,
+                                41.940704345703125,41.896285438537596,41.933121299743654,41.87677841186523,41.84106884002686,41.84106884002686,
+                                41.84106884002686,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('VTRsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('VTRname').innerHTML=symbolquote['ShortName']
+						document.getElementById('VTRpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('VTRchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('VTRclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('VTRshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('VTRoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('VTRpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=VTR"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('VTRpricejs').innerHTML > document.getElementById('VTRclose').innerHTML){
+					document.getElementById('VTRpricejs').style.color ='#33ff77'
+					document.getElementById('VTRchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('VTRpricearrow').className = "up-arrow";
+                                        document.getElementById('VTRchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('VTRpricejs').innerHTML < document.getElementById('VTRclose').innerHTML){
+					
+					document.getElementById('VTRpricejs').style.color ='#ff4d4d'
+					document.getElementById('VTRchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('VTRpricearrow').className = "down-arrow";
+                                        document.getElementById('VTRchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
              <tr onclick="showHideRow('hidden_rowMTCH');"class='item1'>
                     <td><p class='companyname'id='MTCHname'></p><p class='symboltable'id='MTCHsymbol'></p></td>
                     <td><div style='text-align:left;' id='MTCHpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='MTCHpricejs'></p></td>
@@ -31906,6 +32374,123 @@
                                        
                                         document.getElementById('RJFpricearrow').className = "down-arrow";
                                         document.getElementById('RJFchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowFTV');"class='item1'>
+                    <td><p class='companyname'id='FTVname'></p><p class='symboltable'id='FTVsymbol'></p></td>
+                    <td><div style='text-align:left;' id='FTVpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='FTVpricejs'></p></td>
+                    <td><div style='text-align:left;'id='FTVchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='FTVchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='FTVclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:74.56310679611647%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>59.3</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>79.9</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.8135</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.35</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.98</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='FTVChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const FTVValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
+                            2023-10-10,2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-16];
+
+                            new Chart('FTVChart', {
+                              type: "line",
+                              data: {
+                                labels: FTVValues,
+                                datasets: [{ 
+                                  data: [73.95200042724609,74.21199951171874,74.21199951171874,74.21199951171874,74.56199951171875,
+                                75.18399963378906,75.82799987792968,76.10599975585937,75.83800048828125,75.83800048828125,75.83800048828125,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [75.0875,74.98250007629395,74.98250007629395,74.98250007629395,74.98250007629395,
+                                74.82949981689453,74.82949981689453,74.8965000152588,74.8849998474121,74.79150009155273,74.79150009155273,
+                                74.79150009155273,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('FTVsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('FTVname').innerHTML=symbolquote['ShortName']
+						document.getElementById('FTVpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('FTVchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('FTVclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('FTVshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('FTVoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('FTVpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=FTV"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('FTVpricejs').innerHTML > document.getElementById('FTVclose').innerHTML){
+					document.getElementById('FTVpricejs').style.color ='#33ff77'
+					document.getElementById('FTVchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('FTVpricearrow').className = "up-arrow";
+                                        document.getElementById('FTVchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('FTVpricejs').innerHTML < document.getElementById('FTVclose').innerHTML){
+					
+					document.getElementById('FTVpricejs').style.color ='#ff4d4d'
+					document.getElementById('FTVchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('FTVpricearrow').className = "down-arrow";
+                                        document.getElementById('FTVchangearrow').className = "down-arrow";
 					}
 					
 					
@@ -34831,6 +35416,123 @@
                                        
                                         document.getElementById('EPAMpricearrow').className = "down-arrow";
                                         document.getElementById('EPAMchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowCNP');"class='item1'>
+                    <td><p class='companyname'id='CNPname'></p><p class='symboltable'id='CNPsymbol'></p></td>
+                    <td><div style='text-align:left;' id='CNPpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='CNPpricejs'></p></td>
+                    <td><div style='text-align:left;'id='CNPchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='CNPchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='CNPclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:38.68852459016394%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>25.42</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>31.52</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.0741</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.89</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.21</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='CNPChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const CNPValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
+                            2023-10-10,2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-16];
+
+                            new Chart('CNPChart', {
+                              type: "line",
+                              data: {
+                                labels: CNPValues,
+                                datasets: [{ 
+                                  data: [26.42200050354004,26.426000595092773,26.426000595092773,26.426000595092773,26.734000778198244,
+                                26.958000564575194,27.200000381469728,27.382000350952147,27.522000122070313,27.522000122070313,27.522000122070313,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [27.839000034332276,27.768000030517577,27.768000030517577,27.768000030517577,27.768000030517577,
+                                27.717000102996828,27.675500106811523,27.631000137329103,27.55850019454956,27.483000183105467,27.483000183105467,
+                                27.483000183105467,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('CNPsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('CNPname').innerHTML=symbolquote['ShortName']
+						document.getElementById('CNPpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('CNPchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('CNPclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('CNPshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('CNPoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('CNPpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=CNP"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('CNPpricejs').innerHTML > document.getElementById('CNPclose').innerHTML){
+					document.getElementById('CNPpricejs').style.color ='#33ff77'
+					document.getElementById('CNPchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('CNPpricearrow').className = "up-arrow";
+                                        document.getElementById('CNPchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('CNPpricejs').innerHTML < document.getElementById('CNPclose').innerHTML){
+					
+					document.getElementById('CNPpricejs').style.color ='#ff4d4d'
+					document.getElementById('CNPchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('CNPpricearrow').className = "down-arrow";
+                                        document.getElementById('CNPchangearrow').className = "down-arrow";
 					}
 					
 					
@@ -40111,6 +40813,123 @@
                                         
                     
 
+             <tr onclick="showHideRow('hidden_rowEVRG');"class='item1'>
+                    <td><p class='companyname'id='EVRGname'></p><p class='symboltable'id='EVRGsymbol'></p></td>
+                    <td><div style='text-align:left;' id='EVRGpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='EVRGpricejs'></p></td>
+                    <td><div style='text-align:left;'id='EVRGchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='EVRGchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='EVRGclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:19.003789929615582%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>46.92</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>65.39</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.438</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.25</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.82</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='EVRGChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const EVRGValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
+                            2023-10-10,2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-16];
+
+                            new Chart('EVRGChart', {
+                              type: "line",
+                              data: {
+                                labels: EVRGValues,
+                                datasets: [{ 
+                                  data: [48.965999603271484,48.58399963378906,48.58399963378906,48.58399963378906,48.83399963378906,
+                                48.97399978637695,49.295999908447264,49.476000213623045,49.70800018310547,49.70800018310547,49.70800018310547,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [52.157999420166014,51.900499534606936,51.900499534606936,51.900499534606936,51.900499534606936,
+                                51.732499504089354,51.56699962615967,51.39599952697754,51.13599967956543,50.92649974822998,50.92649974822998,
+                                50.92649974822998,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('EVRGsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('EVRGname').innerHTML=symbolquote['ShortName']
+						document.getElementById('EVRGpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('EVRGchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('EVRGclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('EVRGshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('EVRGoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('EVRGpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=EVRG"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('EVRGpricejs').innerHTML > document.getElementById('EVRGclose').innerHTML){
+					document.getElementById('EVRGpricejs').style.color ='#33ff77'
+					document.getElementById('EVRGchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('EVRGpricearrow').className = "up-arrow";
+                                        document.getElementById('EVRGchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('EVRGpricejs').innerHTML < document.getElementById('EVRGclose').innerHTML){
+					
+					document.getElementById('EVRGpricejs').style.color ='#ff4d4d'
+					document.getElementById('EVRGchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('EVRGpricearrow').className = "down-arrow";
+                                        document.getElementById('EVRGchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
              <tr onclick="showHideRow('hidden_rowAPA');"class='item1'>
                     <td><p class='companyname'id='APAname'></p><p class='symboltable'id='APAsymbol'></p></td>
                     <td><div style='text-align:left;' id='APApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='APApricejs'></p></td>
@@ -43723,6 +44542,123 @@
                                        
                                         document.getElementById('CBOEpricearrow').className = "down-arrow";
                                         document.getElementById('CBOEchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowKIM');"class='item1'>
+                    <td><p class='companyname'id='KIMname'></p><p class='symboltable'id='KIMsymbol'></p></td>
+                    <td><div style='text-align:left;' id='KIMpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='KIMpricejs'></p></td>
+                    <td><div style='text-align:left;'id='KIMchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='KIMchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='KIMclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:12.445730824891454%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>16.36</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>23.27</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.7823</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.77</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.17</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='KIMChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const KIMValues = [2023-10-05,2023-10-06,2023-10-06,2023-10-06,2023-10-09,
+                            2023-10-10,2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-16];
+
+                            new Chart('KIMChart', {
+                              type: "line",
+                              data: {
+                                labels: KIMValues,
+                                datasets: [{ 
+                                  data: [17.03400001525879,16.820000076293944,16.820000076293944,16.820000076293944,16.743999862670897,
+                                16.813999938964844,16.91800003051758,16.981999969482423,17.095999908447265,17.095999908447265,17.095999908447265,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [17.95249996185303,17.84949998855591,17.84949998855591,17.84949998855591,17.84949998855591,
+                                17.756999969482422,17.671000003814697,17.6125,17.5210000038147,17.431500053405763,17.431500053405763,
+                                17.431500053405763,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('KIMsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('KIMname').innerHTML=symbolquote['ShortName']
+						document.getElementById('KIMpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('KIMchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('KIMclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('KIMshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('KIMoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('KIMpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=KIM"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('KIMpricejs').innerHTML > document.getElementById('KIMclose').innerHTML){
+					document.getElementById('KIMpricejs').style.color ='#33ff77'
+					document.getElementById('KIMchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('KIMpricearrow').className = "up-arrow";
+                                        document.getElementById('KIMchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('KIMpricejs').innerHTML < document.getElementById('KIMclose').innerHTML){
+					
+					document.getElementById('KIMpricejs').style.color ='#ff4d4d'
+					document.getElementById('KIMchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('KIMpricearrow').className = "down-arrow";
+                                        document.getElementById('KIMchangearrow').className = "down-arrow";
 					}
 					
 					
