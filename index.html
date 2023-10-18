@@ -4309,6 +4309,123 @@
                                         
                     
 
+             <tr onclick="showHideRow('hidden_rowCRM');"class='item1'>
+                    <td><p class='companyname'id='CRMname'></p><p class='symboltable'id='CRMsymbol'></p></td>
+                    <td><div style='text-align:left;' id='CRMpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='CRMpricejs'></p></td>
+                    <td><div style='text-align:left;'id='CRMchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='CRMchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='CRMclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:74.63353593135503%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>126.34</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>238.22</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.1068</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>13.71</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.6</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='CRMChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const CRMValues = [2023-10-06,2023-10-06,2023-10-06,2023-10-09,2023-10-10,
+                            2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-17];
+
+                            new Chart('CRMChart', {
+                              type: "line",
+                              data: {
+                                labels: CRMValues,
+                                datasets: [{ 
+                                  data: [202.95599975585938,202.95599975585938,202.95599975585938,203.65799865722656,205.06799926757813,
+                                206.06400146484376,206.79800109863282,206.24400024414064,206.24400024414064,206.24400024414064,206.50599975585936,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [209.51249923706055,209.51249923706055,209.51249923706055,208.607999420166,208.607999420166,
+                                207.86899948120117,207.27149963378906,206.6164993286133,206.11549911499023,206.11549911499023,206.11549911499023,
+                                205.79199905395507,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('CRMsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('CRMname').innerHTML=symbolquote['ShortName']
+						document.getElementById('CRMpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('CRMchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('CRMclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('CRMshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('CRMoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('CRMpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=CRM"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('CRMpricejs').innerHTML > document.getElementById('CRMclose').innerHTML){
+					document.getElementById('CRMpricejs').style.color ='#33ff77'
+					document.getElementById('CRMchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('CRMpricearrow').className = "up-arrow";
+                                        document.getElementById('CRMchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('CRMpricejs').innerHTML < document.getElementById('CRMclose').innerHTML){
+					
+					document.getElementById('CRMpricejs').style.color ='#ff4d4d'
+					document.getElementById('CRMchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('CRMpricearrow').className = "down-arrow";
+                                        document.getElementById('CRMchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
              <tr onclick="showHideRow('hidden_rowTMUS');"class='item1'>
                     <td><p class='companyname'id='TMUSname'></p><p class='symboltable'id='TMUSsymbol'></p></td>
                     <td><div style='text-align:left;' id='TMUSpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='TMUSpricejs'></p></td>
@@ -5698,6 +5815,123 @@
                                        
                                         document.getElementById('RTXpricearrow').className = "down-arrow";
                                         document.getElementById('RTXchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowAMD');"class='item1'>
+                    <td><p class='companyname'id='AMDname'></p><p class='symboltable'id='AMDsymbol'></p></td>
+                    <td><div style='text-align:left;' id='AMDpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AMDpricejs'></p></td>
+                    <td><div style='text-align:left;'id='AMDchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='AMDchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='AMDclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:64.09491701244814%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>55.71</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>132.83</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.2189</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.87</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.91</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='AMDChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const AMDValues = [2023-10-06,2023-10-06,2023-10-06,2023-10-09,2023-10-10,
+                            2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-17];
+
+                            new Chart('AMDChart', {
+                              type: "line",
+                              data: {
+                                labels: AMDValues,
+                                datasets: [{ 
+                                  data: [103.51399993896484,103.51399993896484,103.51399993896484,104.25400085449219,106.04000091552734,
+                                106.88800048828125,108.06399993896484,107.63399963378906,107.63399963378906,107.63399963378906,107.53199920654296,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [101.88249931335449,101.88249931335449,101.88249931335449,101.96499938964844,101.96499938964844,
+                                102.14999961853027,102.17999954223633,102.28799972534179,102.46799964904785,102.46799964904785,102.46799964904785,
+                                102.67249946594238,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('AMDsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('AMDname').innerHTML=symbolquote['ShortName']
+						document.getElementById('AMDpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('AMDchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('AMDclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('AMDshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('AMDoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('AMDpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=AMD"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('AMDpricejs').innerHTML > document.getElementById('AMDclose').innerHTML){
+					document.getElementById('AMDpricejs').style.color ='#33ff77'
+					document.getElementById('AMDchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('AMDpricearrow').className = "up-arrow";
+                                        document.getElementById('AMDchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('AMDpricejs').innerHTML < document.getElementById('AMDclose').innerHTML){
+					
+					document.getElementById('AMDpricejs').style.color ='#ff4d4d'
+					document.getElementById('AMDchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('AMDpricearrow').className = "down-arrow";
+                                        document.getElementById('AMDchangearrow').className = "down-arrow";
 					}
 					
 					
