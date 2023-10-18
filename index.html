@@ -3607,6 +3607,123 @@
                                         
                     
 
+             <tr onclick="showHideRow('hidden_rowMCD');"class='item1'>
+                    <td><p class='companyname'id='MCDname'></p><p class='symboltable'id='MCDsymbol'></p></td>
+                    <td><div style='text-align:left;' id='MCDpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='MCDpricejs'></p></td>
+                    <td><div style='text-align:left;'id='MCDchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='MCDchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='MCDclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:19.209250279746318%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>245.73</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>299.35</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.6699</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.31</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.98</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='MCDChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const MCDValues = [2023-10-06,2023-10-06,2023-10-09,2023-10-10,2023-10-11,
+                            2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,2023-10-18];
+
+                            new Chart('MCDChart', {
+                              type: "line",
+                              data: {
+                                labels: MCDValues,
+                                datasets: [{ 
+                                  data: [253.7,253.7,252.13399963378907,251.53999938964844,250.56199951171874,
+                                249.3540008544922,249.37200012207032,249.37200012207032,249.37200012207032,249.3760009765625,249.3,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [269.0195022583008,269.0195022583008,267.5275016784668,266.06800231933596,266.06800231933596,
+                                264.52550277709963,262.59700241088865,261.10100173950195,261.10100173950195,261.10100173950195,259.7120018005371,
+                                258.3625015258789,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('MCDsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('MCDname').innerHTML=symbolquote['ShortName']
+						document.getElementById('MCDpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('MCDchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('MCDclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('MCDshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('MCDoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('MCDpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=MCD"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('MCDpricejs').innerHTML > document.getElementById('MCDclose').innerHTML){
+					document.getElementById('MCDpricejs').style.color ='#33ff77'
+					document.getElementById('MCDchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('MCDpricearrow').className = "up-arrow";
+                                        document.getElementById('MCDchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('MCDpricejs').innerHTML < document.getElementById('MCDclose').innerHTML){
+					
+					document.getElementById('MCDpricejs').style.color ='#ff4d4d'
+					document.getElementById('MCDchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('MCDpricearrow').className = "down-arrow";
+                                        document.getElementById('MCDchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
              <tr onclick="showHideRow('hidden_rowCMCSA');"class='item1'>
                     <td><p class='companyname'id='CMCSAname'></p><p class='symboltable'id='CMCSAsymbol'></p></td>
                     <td><div style='text-align:left;' id='CMCSApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='CMCSApricejs'></p></td>
