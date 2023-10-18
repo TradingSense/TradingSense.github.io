@@ -12850,6 +12850,123 @@
                                         
                     
 
+             <tr onclick="showHideRow('hidden_rowATVI');"class='item1'>
+                    <td><p class='companyname'id='ATVIname'></p><p class='symboltable'id='ATVIsymbol'></p></td>
+                    <td><div style='text-align:left;' id='ATVIpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ATVIpricejs'></p></td>
+                    <td><div style='text-align:left;'id='ATVIchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ATVIchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ATVIclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:99.36521371138387%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>70.94</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>94.57</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.1904</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>9.23</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.52</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >$ATVI is within 0.16% of 1-year high, $94.57</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='ATVIChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const ATVIValues = [2023-10-06,2023-10-06,2023-10-06,2023-10-09,2023-10-10,
+                            2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-17];
+
+                            new Chart('ATVIChart', {
+                              type: "line",
+                              data: {
+                                labels: ATVIValues,
+                                datasets: [{ 
+                                  data: [93.8979995727539,93.8979995727539,93.8979995727539,93.97799835205078,94.06799774169922,
+                                94.21199798583984,94.36199798583985,94.397998046875,94.397998046875,94.397998046875,94.41399841308593,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [93.10299949645996,93.10299949645996,93.10299949645996,93.2109992980957,93.2109992980957,
+                                93.32149925231934,93.43149948120117,93.54149932861328,93.67149925231934,93.67149925231934,93.67149925231934,
+                                93.79699897766113,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('ATVIsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('ATVIname').innerHTML=symbolquote['ShortName']
+						document.getElementById('ATVIpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('ATVIchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('ATVIclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('ATVIshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('ATVIoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('ATVIpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=ATVI"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('ATVIpricejs').innerHTML > document.getElementById('ATVIclose').innerHTML){
+					document.getElementById('ATVIpricejs').style.color ='#33ff77'
+					document.getElementById('ATVIchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('ATVIpricearrow').className = "up-arrow";
+                                        document.getElementById('ATVIchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('ATVIpricejs').innerHTML < document.getElementById('ATVIclose').innerHTML){
+					
+					document.getElementById('ATVIpricejs').style.color ='#ff4d4d'
+					document.getElementById('ATVIchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('ATVIpricearrow').className = "down-arrow";
+                                        document.getElementById('ATVIchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
              <tr onclick="showHideRow('hidden_rowEQIX');"class='item1'>
                     <td><p class='companyname'id='EQIXname'></p><p class='symboltable'id='EQIXsymbol'></p></td>
                     <td><div style='text-align:left;' id='EQIXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='EQIXpricejs'></p></td>
@@ -23716,6 +23833,123 @@
                                        
                                         document.getElementById('NUEpricearrow').className = "down-arrow";
                                         document.getElementById('NUEchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowABC');"class='item1'>
+                    <td><p class='companyname'id='ABCname'></p><p class='symboltable'id='ABCsymbol'></p></td>
+                    <td><div style='text-align:left;' id='ABCpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ABCpricejs'></p></td>
+                    <td><div style='text-align:left;'id='ABCchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ABCchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ABCclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:74.77861035422343%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>136.07</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>194.79</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.9036</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>9.59</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.85</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='ABCChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const ABCValues = [2023-10-06,2023-10-06,2023-10-06,2023-10-09,2023-10-10,
+                            2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-17];
+
+                            new Chart('ABCChart', {
+                              type: "line",
+                              data: {
+                                labels: ABCValues,
+                                datasets: [{ 
+                                  data: [182.18000183105468,182.18000183105468,182.18000183105468,183.602001953125,185.14200134277343,
+                                186.21600036621095,186.7220031738281,187.7480010986328,187.7480010986328,187.7480010986328,187.8820007324219,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [181.6245002746582,181.6245002746582,181.6245002746582,182.04750061035156,182.04750061035156,
+                                182.52200088500976,183.0890007019043,183.61800079345704,184.15250091552736,184.15250091552736,184.15250091552736,
+                                184.54400100708008,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('ABCsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('ABCname').innerHTML=symbolquote['ShortName']
+						document.getElementById('ABCpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('ABCchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('ABCclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('ABCshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('ABCoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('ABCpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=ABC"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('ABCpricejs').innerHTML > document.getElementById('ABCclose').innerHTML){
+					document.getElementById('ABCpricejs').style.color ='#33ff77'
+					document.getElementById('ABCchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('ABCpricearrow').className = "up-arrow";
+                                        document.getElementById('ABCchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('ABCpricejs').innerHTML < document.getElementById('ABCclose').innerHTML){
+					
+					document.getElementById('ABCpricejs').style.color ='#ff4d4d'
+					document.getElementById('ABCchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('ABCpricearrow').className = "down-arrow";
+                                        document.getElementById('ABCchangearrow').className = "down-arrow";
 					}
 					
 					
@@ -49339,6 +49573,123 @@
                                        
                                         document.getElementById('XRAYpricearrow').className = "down-arrow";
                                         document.getElementById('XRAYchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowNWL');"class='item1'>
+                    <td><p class='companyname'id='NWLname'></p><p class='symboltable'id='NWLsymbol'></p></td>
+                    <td><div style='text-align:left;' id='NWLpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='NWLpricejs'></p></td>
+                    <td><div style='text-align:left;'id='NWLchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='NWLchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='NWLclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:4.96031746031746%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>6.68</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>16.76</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
+                    <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.65</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.06</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >$NWL is within 6.96% of 1-year low, $6.68</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='NWLChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const NWLValues = [2023-10-06,2023-10-06,2023-10-06,2023-10-09,2023-10-10,
+                            2023-10-11,2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-17];
+
+                            new Chart('NWLChart', {
+                              type: "line",
+                              data: {
+                                labels: NWLValues,
+                                datasets: [{ 
+                                  data: [7.919999885559082,7.919999885559082,7.919999885559082,7.613999938964843,7.446000003814698,
+                                7.276000022888184,7.115999984741211,6.996000003814697,6.996000003814697,6.996000003814697,6.946000003814698,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [8.885499954223633,8.885499954223633,8.885499954223633,8.774999952316284,8.774999952316284,
+                                8.651499962806701,8.534499955177306,8.387999939918519,8.252999949455262,8.252999949455262,8.252999949455262,
+                                8.1224999666214,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('NWLsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('NWLname').innerHTML=symbolquote['ShortName']
+						document.getElementById('NWLpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('NWLchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('NWLclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('NWLshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('NWLoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('NWLpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=NWL"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('NWLpricejs').innerHTML > document.getElementById('NWLclose').innerHTML){
+					document.getElementById('NWLpricejs').style.color ='#33ff77'
+					document.getElementById('NWLchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('NWLpricearrow').className = "up-arrow";
+                                        document.getElementById('NWLchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('NWLpricejs').innerHTML < document.getElementById('NWLclose').innerHTML){
+					
+					document.getElementById('NWLpricejs').style.color ='#ff4d4d'
+					document.getElementById('NWLchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('NWLpricearrow').className = "down-arrow";
+                                        document.getElementById('NWLchangearrow').className = "down-arrow";
 					}
 					
 					
