@@ -565,128 +565,11 @@
                                         
                     
 
-             <tr onclick="showHideRow('hidden_rowMETA');"class='item1'>
-                    <td><p class='companyname'id='METAname'></p><p class='symboltable'id='METAsymbol'></p></td>
-                    <td><div style='text-align:left;' id='METApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='METApricejs'></p></td>
-                    <td><div style='text-align:left;'id='METAchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='METAchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='METAclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:93.18209940193854%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>88.09</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>330.54</p></div></div></td>
-                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.7444</p><p class='outstandingshares'>Undervalued</p></td></td>
-                    <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>55.59</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
-                    <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.34</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$META is within 5.26% of 1-year high, $330.54</td>
-                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='METAChart' style=" height:40px;width:100px;"></canvas></div></td>
-         	    <script>
-                            const METAValues = [2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,
-                            2023-10-17,2023-10-18,2023-10-19,2023-10-20,2023-10-20,2023-10-23];
-
-                            new Chart('METAChart', {
-                              type: "line",
-                              data: {
-                                labels: METAValues,
-                                datasets: [{ 
-                                  data: [321.5219970703125,321.3739990234375,321.3739990234375,321.3739990234375,321.9320007324219,
-                                322.36400146484374,320.1940002441406,317.9239990234375,316.71599731445315,316.71599731445315,316.71599731445315,],
-                                  borderColor: "#ff4d4d",
-                                  fill: false
-                                }, { 
-                                  data: [306.492497253418,307.2114974975586,307.2114974975586,307.2114974975586,307.2114974975586,
-                                308.14149780273436,309.08799743652344,309.9529968261719,310.80699615478517,311.2854965209961,311.2854965209961,
-                                311.2854965209961,],
-                                  borderColor: "#33ff77",
-                                  fill: false    
-                                }]
-                              },
-                              options: {
-                                events: [],
-                                legend: {display: false},
-								scales: {
-								   xAxes: [{
-									 ticks: {
-									   display: false
-									 },
-									gridLines: {
-									  display: false
-									},
-								  }],
-								  yAxes: [{
-									ticks: {
-									  display: false
-									},
-									gridLines: {
-									 display: false
-									}
-								  }],
-								}
-								}
-                                                          
-                            });
-                    </script>			
-
-					
-					
-					<script>
-					function updateQuotes(data) {
-					   for (ticker in quote) {
-						var symbolquote = quote[ticker];
-						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
-						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
-						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
-						var outstandingsharesvalue = "$"+outstandingsharesvalue
-						document.getElementById('METAsymbol').innerHTML=symbolquote['Ticker'] 
-						document.getElementById('METAname').innerHTML=symbolquote['ShortName']
-						document.getElementById('METApricejs').innerHTML=symbolquote['Last'].toFixed(2);
-                                                            
-						document.getElementById('METAchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
-                                                document.getElementById('METAclose').innerHTML=symbolquote['PrevClose']
-                                                document.getElementById('METAshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
-                                                document.getElementById('METAoutstandingsharesvalue').innerHTML= outstandingsharesvalue
-                                                document.getElementById('METApricerange').value=symbolquote['Last'].toFixed(2);
-					   }
-					  }
-					  
-					 </script>
-                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=META"></script>
-
-
-
-
-                                        <script>
-					if (document.getElementById('METApricejs').innerHTML > document.getElementById('METAclose').innerHTML){
-					document.getElementById('METApricejs').style.color ='#33ff77'
-					document.getElementById('METAchange').style.color ='#33ff77'
-                                     
-                                        document.getElementById('METApricearrow').className = "up-arrow";
-                                        document.getElementById('METAchangearrow').className = "up-arrow";
-					}
-					
-					
-					else if (document.getElementById('METApricejs').innerHTML < document.getElementById('METAclose').innerHTML){
-					
-					document.getElementById('METApricejs').style.color ='#ff4d4d'
-					document.getElementById('METAchange').style.color ='#ff4d4d'
-                                       
-                                        document.getElementById('METApricearrow').className = "down-arrow";
-                                        document.getElementById('METAchangearrow').className = "down-arrow";
-					}
-					
-					
-									
-			    
-                                  
-					</script>
-					
-
-					
-					</tr>
-           
-                                        
-                    
-
              <tr onclick="showHideRow('hidden_rowNVDA');"class='item1'>
                     <td><p class='companyname'id='NVDAname'></p><p class='symboltable'id='NVDAsymbol'></p></td>
                     <td><div style='text-align:left;' id='NVDApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='NVDApricejs'></p></td>
                     <td><div style='text-align:left;'id='NVDAchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='NVDAchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='NVDAclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:80.91461180042928%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>120.64</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>502.66</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:80.61007393223764%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>126.64</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>502.66</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.8414</p><p class='outstandingshares'>Undervalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>104.12</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>16.17</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
@@ -803,7 +686,7 @@
                     <td><p class='companyname'id='Vname'></p><p class='symboltable'id='Vsymbol'></p></td>
                     <td><div style='text-align:left;' id='Vpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='Vpricejs'></p></td>
                     <td><div style='text-align:left;'id='Vchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='Vchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='Vclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:69.60301837270342%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>189.1</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>250.06</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:68.773171553758%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>190.72</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>250.06</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.496</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>8.38</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.51</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -1271,7 +1154,7 @@
                     <td><p class='companyname'id='PGname'></p><p class='symboltable'id='PGsymbol'></p></td>
                     <td><div style='text-align:left;' id='PGpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='PGpricejs'></p></td>
                     <td><div style='text-align:left;'id='PGchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='PGchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='PGclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:65.93406593406597%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>128.35</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>158.38</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:65.79739217652961%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>128.47</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>158.38</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.431</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.77</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.58</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -1388,7 +1271,7 @@
                     <td><p class='companyname'id='MAname'></p><p class='symboltable'id='MAsymbol'></p></td>
                     <td><div style='text-align:left;' id='MApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='MApricejs'></p></td>
                     <td><div style='text-align:left;'id='MAchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='MAchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='MAclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:70.4233700254022%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>300.5</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>418.6</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:69.01720773461061%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>305.86</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>418.6</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.3092</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>21.1</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.81</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -1856,7 +1739,7 @@
                     <td><p class='companyname'id='HDname'></p><p class='symboltable'id='HDsymbol'></p></td>
                     <td><div style='text-align:left;' id='HDpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='HDpricejs'></p></td>
                     <td><div style='text-align:left;'id='HDchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='HDchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='HDclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:11.525327262379012%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>276.97</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>347.25</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:11.374002280501733%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>277.09</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>347.25</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.7086</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>8.41</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.02</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -2207,7 +2090,7 @@
                     <td><p class='companyname'id='MRKname'></p><p class='symboltable'id='MRKsymbol'></p></td>
                     <td><div style='text-align:left;' id='MRKpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='MRKpricejs'></p></td>
                     <td><div style='text-align:left;'id='MRKchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='MRKchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='MRKclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:30.282292557741638%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>96.27</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>119.65</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:30.04291845493561%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>96.35</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>119.65</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.8584</p><p class='outstandingshares'>Undervalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.9</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.8</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -2792,11 +2675,11 @@
                     <td><p class='companyname'id='TMOname'></p><p class='symboltable'id='TMOsymbol'></p></td>
                     <td><div style='text-align:left;' id='TMOpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='TMOpricejs'></p></td>
                     <td><div style='text-align:left;'id='TMOchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='TMOchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='TMOclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:1.207874541207876%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>460.0</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>609.85</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:1.221058250483742%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>459.98</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>609.85</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.7718</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>27.0</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>19.94</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$TMO is within 0.39% of 1-year low, $460.0</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$TMO is within 0.4% of 1-year low, $459.98</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='TMOChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const TMOValues = [2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,
@@ -3026,7 +2909,7 @@
                     <td><p class='companyname'id='CSCOname'></p><p class='symboltable'id='CSCOsymbol'></p></td>
                     <td><div style='text-align:left;' id='CSCOpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='CSCOpricejs'></p></td>
                     <td><div style='text-align:left;'id='CSCOchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='CSCOchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='CSCOclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:60.82406801831266%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>42.9</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>58.19</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:60.04002668445632%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>43.2</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>58.19</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.7871</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.25</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.22</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -3143,7 +3026,7 @@
                     <td><p class='companyname'id='ORCLname'></p><p class='symboltable'id='ORCLsymbol'></p></td>
                     <td><div style='text-align:left;' id='ORCLpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ORCLpricejs'></p></td>
                     <td><div style='text-align:left;'id='ORCLchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ORCLchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ORCLclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:57.17360114777617%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>71.78</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>127.54</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:56.573922531369334%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>72.55</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>127.54</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.1743</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>10.18</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.81</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -3728,7 +3611,7 @@
                     <td><p class='companyname'id='NKEname'></p><p class='symboltable'id='NKEsymbol'></p></td>
                     <td><div style='text-align:left;' id='NKEpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='NKEpricejs'></p></td>
                     <td><div style='text-align:left;'id='NKEchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='NKEchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='NKEclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:36.765032172176625%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>86.24</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>131.31</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:34.362045140488256%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>87.89</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>131.31</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.88</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>13.88</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.41</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -4430,7 +4313,7 @@
                     <td><p class='companyname'id='PMname'></p><p class='symboltable'id='PMsymbol'></p></td>
                     <td><div style='text-align:left;' id='PMpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='PMpricejs'></p></td>
                     <td><div style='text-align:left;'id='PMchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='PMchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='PMclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:24.65402357765249%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>86.11</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>105.62</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:20.75471698113211%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>87.07</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>105.62</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.7685</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.32</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.07</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
@@ -4664,7 +4547,7 @@
                     <td><p class='companyname'id='LINname'></p><p class='symboltable'id='LINsymbol'></p></td>
                     <td><div style='text-align:left;' id='LINpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='LINpricejs'></p></td>
                     <td><div style='text-align:left;'id='LINchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='LINchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='LINclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:75.86943518755874%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>276.64</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>393.67</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:75.56459288742752%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>278.1</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>393.67</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.9683</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>18.32</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.85</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -6419,7 +6302,7 @@
                     <td><p class='companyname'id='SPGIname'></p><p class='symboltable'id='SPGIsymbol'></p></td>
                     <td><div style='text-align:left;' id='SPGIpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='SPGIpricejs'></p></td>
                     <td><div style='text-align:left;'id='SPGIchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='SPGIchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='SPGIclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:41.125703564727964%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>295.4</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>428.65</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:41.07263576954857%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>295.52</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>428.65</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.0321</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>8.61</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.09</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -7004,7 +6887,7 @@
                     <td><p class='companyname'id='CATname'></p><p class='symboltable'id='CATsymbol'></p></td>
                     <td><div style='text-align:left;' id='CATpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='CATpricejs'></p></td>
                     <td><div style='text-align:left;'id='CATchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='CATchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='CATclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:55.83799677511144%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>188.45</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>293.88</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:55.64024390243903%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>188.92</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>293.88</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.2791</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>27.4</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>9.86</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -7355,11 +7238,11 @@
                     <td><p class='companyname'id='BLKname'></p><p class='symboltable'id='BLKsymbol'></p></td>
                     <td><div style='text-align:left;' id='BLKpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='BLKpricejs'></p></td>
                     <td><div style='text-align:left;'id='BLKchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='BLKchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='BLKclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:6.550027337342821%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>602.75</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>785.65</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:2.6928551095929514%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>610.0</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>785.65</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.5469</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>14.93</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>14.42</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$BLK is within 1.95% of 1-year low, $602.75</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$BLK is within 0.77% of 1-year low, $610.0</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='BLKChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const BLKValues = [2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,
@@ -7940,7 +7823,7 @@
                     <td><p class='companyname'id='SBUXname'></p><p class='symboltable'id='SBUXsymbol'></p></td>
                     <td><div style='text-align:left;' id='SBUXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='SBUXpricejs'></p></td>
                     <td><div style='text-align:left;'id='SBUXchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='SBUXchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='SBUXclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:35.6127080181543%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>82.43</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>115.48</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:34.54321747154722%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>82.97</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>115.48</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.3044</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.68</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.77</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -8174,7 +8057,7 @@
                     <td><p class='companyname'id='AMATname'></p><p class='symboltable'id='AMATsymbol'></p></td>
                     <td><div style='text-align:left;' id='AMATpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AMATpricejs'></p></td>
                     <td><div style='text-align:left;'id='AMATchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='AMATchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='AMATclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:71.33315158124317%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>81.9</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>155.26</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:70.19557823129252%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>84.7</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>155.26</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.3492</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>13.23</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.55</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -9110,7 +8993,7 @@
                     <td><p class='companyname'id='GILDname'></p><p class='symboltable'id='GILDsymbol'></p></td>
                     <td><div style='text-align:left;' id='GILDpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='GILDpricejs'></p></td>
                     <td><div style='text-align:left;'id='GILDchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='GILDchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='GILDclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:43.74133949191687%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>68.09</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>89.74</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:42.7093132643462%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>68.48</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>89.74</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.5218</p><p class='outstandingshares'>Undervalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.09</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.36</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -10631,7 +10514,7 @@
                     <td><p class='companyname'id='TJXname'></p><p class='symboltable'id='TJXsymbol'></p></td>
                     <td><div style='text-align:left;' id='TJXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='TJXpricejs'></p></td>
                     <td><div style='text-align:left;'id='TJXchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='TJXchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='TJXclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:79.1107704101188%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>67.69</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>93.78</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:77.65477654776547%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>69.39</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>93.78</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.8169</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>7.68</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.79</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -11333,7 +11216,7 @@
                     <td><p class='companyname'id='LRCXname'></p><p class='symboltable'id='LRCXsymbol'></p></td>
                     <td><div style='text-align:left;' id='LRCXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='LRCXpricejs'></p></td>
                     <td><div style='text-align:left;'id='LRCXchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='LRCXchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='LRCXclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:64.93093922651936%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>364.53</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>726.53</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:64.01133947554928%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>373.78</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>726.53</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.2827</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>70.42</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>9.09</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -11801,7 +11684,7 @@
                     <td><p class='companyname'id='EQIXname'></p><p class='symboltable'id='EQIXsymbol'></p></td>
                     <td><div style='text-align:left;' id='EQIXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='EQIXpricejs'></p></td>
                     <td><div style='text-align:left;'id='EQIXchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='EQIXchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='EQIXclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:58.6866842496788%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>525.89</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>821.63</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:57.418185620186115%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>534.7</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>821.63</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.1389</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>15.82</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>7.38</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -12386,7 +12269,7 @@
                     <td><p class='companyname'id='ITWname'></p><p class='symboltable'id='ITWsymbol'></p></td>
                     <td><div style='text-align:left;' id='ITWpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ITWpricejs'></p></td>
                     <td><div style='text-align:left;'id='ITWchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ITWchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ITWclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:38.09876909387513%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>196.76</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>264.19</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:37.960760998810926%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>196.91</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>264.19</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.4501</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.42</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.63</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -13205,7 +13088,7 @@
                     <td><p class='companyname'id='APDname'></p><p class='symboltable'id='APDsymbol'></p></td>
                     <td><div style='text-align:left;' id='APDpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='APDpricejs'></p></td>
                     <td><div style='text-align:left;'id='APDchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='APDchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='APDclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:37.82879556991234%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>241.88</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>328.56</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:36.704251820530914%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>243.42</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>328.56</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.6206</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.99</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.04</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -13556,7 +13439,7 @@
                     <td><p class='companyname'id='HCAname'></p><p class='symboltable'id='HCAsymbol'></p></td>
                     <td><div style='text-align:left;' id='HCApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='HCApricejs'></p></td>
                     <td><div style='text-align:left;'id='HCAchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='HCAchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='HCAclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:40.172220142268806%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>198.02</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>304.86</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:34.52161442327391%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>207.24</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>304.86</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.0678</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>7.56</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.89</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -13790,7 +13673,7 @@
                     <td><p class='companyname'id='ETNname'></p><p class='symboltable'id='ETNsymbol'></p></td>
                     <td><div style='text-align:left;' id='ETNpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ETNpricejs'></p></td>
                     <td><div style='text-align:left;'id='ETNchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ETNchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ETNclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:55.382478420478215%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>139.65</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>240.44</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:54.85846215619354%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>140.82</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>240.44</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.9916</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>29.87</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>8.28</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -14258,7 +14141,7 @@
                     <td><p class='companyname'id='KLACname'></p><p class='symboltable'id='KLACsymbol'></p></td>
                     <td><div style='text-align:left;' id='KLACpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='KLACpricejs'></p></td>
                     <td><div style='text-align:left;'id='KLACchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='KLACchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='KLACclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:75.03898128898128%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>289.31</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>520.19</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:74.14419668894969%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>297.3</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>520.19</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.5955</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>43.22</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.73</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -16130,7 +16013,7 @@
                     <td><p class='companyname'id='NXPIname'></p><p class='symboltable'id='NXPIsymbol'></p></td>
                     <td><div style='text-align:left;' id='NXPIpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='NXPIpricejs'></p></td>
                     <td><div style='text-align:left;'id='NXPIchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='NXPIchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='NXPIclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:49.22462406015038%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>140.45</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>225.57</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:47.80823572032364%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>142.76</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>225.57</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.4966</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>11.27</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.96</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -16247,7 +16130,7 @@
                     <td><p class='companyname'id='KMBname'></p><p class='symboltable'id='KMBsymbol'></p></td>
                     <td><div style='text-align:left;' id='KMBpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='KMBpricejs'></p></td>
                     <td><div style='text-align:left;'id='KMBchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='KMBchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='KMBclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:23.058754059639803%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>114.0</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>147.87</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:22.18572708271127%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>114.38</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>147.87</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.2179</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.75</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.69</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -17183,7 +17066,7 @@
                     <td><p class='companyname'id='ROPname'></p><p class='symboltable'id='ROPsymbol'></p></td>
                     <td><div style='text-align:left;' id='ROPpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ROPpricejs'></p></td>
                     <td><div style='text-align:left;'id='ROPchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ROPchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ROPclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:77.53361283793554%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>370.56</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>508.9</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:77.11003093239063%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>373.12</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>508.9</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.0126</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>32.48</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.66</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -18236,7 +18119,7 @@
                     <td><p class='companyname'id='APHname'></p><p class='symboltable'id='APHsymbol'></p></td>
                     <td><div style='text-align:left;' id='APHpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='APHpricejs'></p></td>
                     <td><div style='text-align:left;'id='APHchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='APHchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='APHclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:43.39622641509436%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>70.67</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>90.28</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:41.793392763502936%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>71.21</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>90.28</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.7867</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.92</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.57</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -18470,7 +18353,7 @@
                     <td><p class='companyname'id='IQVname'></p><p class='symboltable'id='IQVsymbol'></p></td>
                     <td><div style='text-align:left;' id='IQVpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='IQVpricejs'></p></td>
                     <td><div style='text-align:left;'id='IQVchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='IQVchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='IQVclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:10.662160086034717%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>176.77</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>241.86</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:10.345359235275989%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>177.0</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>241.86</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.3495</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.06</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>7.42</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -18587,7 +18470,7 @@
                     <td><p class='companyname'id='CTASname'></p><p class='symboltable'id='CTASsymbol'></p></td>
                     <td><div style='text-align:left;' id='CTASpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='CTASpricejs'></p></td>
                     <td><div style='text-align:left;'id='CTASchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='CTASchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='CTASclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:79.41971383147855%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>399.57</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>525.37</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:78.50738834467874%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>404.91</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>525.37</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.3435</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>28.14</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>7.68</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -19055,7 +18938,7 @@
                     <td><p class='companyname'id='WELLname'></p><p class='symboltable'id='WELLsymbol'></p></td>
                     <td><div style='text-align:left;' id='WELLpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='WELLpricejs'></p></td>
                     <td><div style='text-align:left;'id='WELLchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='WELLchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='WELLclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:86.86902012537116%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>56.66</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>86.97</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:86.67559424171408%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>57.1</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>86.97</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.7084</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.63</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.55</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -19874,7 +19757,7 @@
                     <td><p class='companyname'id='MSIname'></p><p class='symboltable'id='MSIsymbol'></p></td>
                     <td><div style='text-align:left;' id='MSIpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='MSIpricejs'></p></td>
                     <td><div style='text-align:left;'id='MSIchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='MSIchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='MSIclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:71.73544375353308%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>228.67</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>299.43</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:69.00666356733302%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>234.9</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>299.43</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.9983</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.88</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.62</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -20810,7 +20693,7 @@
                     <td><p class='companyname'id='MSCIname'></p><p class='symboltable'id='MSCIsymbol'></p></td>
                     <td><div style='text-align:left;' id='MSCIpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='MSCIpricejs'></p></td>
                     <td><div style='text-align:left;'id='MSCIchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='MSCIchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='MSCIclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:51.540919986302924%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>397.28</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>572.5</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:45.63324369317453%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>416.32</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>572.5</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.3544</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>10.73</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>9.73</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -21278,7 +21161,7 @@
                     <td><p class='companyname'id='YUMname'></p><p class='symboltable'id='YUMsymbol'></p></td>
                     <td><div style='text-align:left;' id='YUMpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='YUMpricejs'></p></td>
                     <td><div style='text-align:left;'id='YUMchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='YUMchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='YUMclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:31.11111111111112%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>107.7</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>143.25</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:30.505107832009084%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>108.01</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>143.25</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.6985</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.73</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.9</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
@@ -21512,7 +21395,7 @@
                     <td><p class='companyname'id='SPGname'></p><p class='symboltable'id='SPGsymbol'></p></td>
                     <td><div style='text-align:left;' id='SPGpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='SPGpricejs'></p></td>
                     <td><div style='text-align:left;'id='SPGchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='SPGchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='SPGclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:15.673222390317674%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>100.03</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>133.08</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:15.314494074749287%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>100.17</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>133.08</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>11.0535</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.97</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.57</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -21863,7 +21746,7 @@
                     <td><p class='companyname'id='PHname'></p><p class='symboltable'id='PHsymbol'></p></td>
                     <td><div style='text-align:left;' id='PHpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='PHpricejs'></p></td>
                     <td><div style='text-align:left;'id='PHchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='PHchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='PHclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:61.001527106133864%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>271.0</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>428.16</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:59.85458832776576%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>275.49</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>428.16</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.8761</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>37.85</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>9.56</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -22916,7 +22799,7 @@
                     <td><p class='companyname'id='CARRname'></p><p class='symboltable'id='CARRsymbol'></p></td>
                     <td><div style='text-align:left;' id='CARRpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='CARRpricejs'></p></td>
                     <td><div style='text-align:left;'id='CARRchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='CARRchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='CARRclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:53.52396294804672%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>35.21</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>60.04</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:52.43198680956307%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>35.78</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>60.04</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.6969</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.19</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.48</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -23267,7 +23150,7 @@
                     <td><p class='companyname'id='DDname'></p><p class='symboltable'id='DDsymbol'></p></td>
                     <td><div style='text-align:left;' id='DDpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='DDpricejs'></p></td>
                     <td><div style='text-align:left;'id='DDchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='DDchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='DDclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:72.7426160337553%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>55.04</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>78.74</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:71.93744569939186%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>55.72</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>78.74</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.03</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.59</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
@@ -23501,7 +23384,7 @@
                     <td><p class='companyname'id='TTname'></p><p class='symboltable'id='TTsymbol'></p></td>
                     <td><div style='text-align:left;' id='TTpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='TTpricejs'></p></td>
                     <td><div style='text-align:left;'id='TTchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='TTchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='TTclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:63.940633045585336%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>145.68</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>211.71</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:63.222119246215634%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>146.97</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>211.71</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.8222</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>15.14</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.66</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -24203,7 +24086,7 @@
                     <td><p class='companyname'id='AMPname'></p><p class='symboltable'id='AMPsymbol'></p></td>
                     <td><div style='text-align:left;' id='AMPpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AMPpricejs'></p></td>
                     <td><div style='text-align:left;'id='AMPchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='AMPchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='AMPclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:47.95360767257725%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>268.35</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>358.02</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:47.437774524158144%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>269.23</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>358.02</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.1461</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>9.48</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.7</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -24671,7 +24554,7 @@
                     <td><p class='companyname'id='ROSTname'></p><p class='symboltable'id='ROSTsymbol'></p></td>
                     <td><div style='text-align:left;' id='ROSTpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ROSTpricejs'></p></td>
                     <td><div style='text-align:left;'id='ROSTchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ROSTchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ROSTclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:78.28706128863278%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>84.52</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>122.7</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:75.64629847238541%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>88.66</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>122.7</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.6933</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.5</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.88</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -25139,7 +25022,7 @@
                     <td><p class='companyname'id='AMEname'></p><p class='symboltable'id='AMEsymbol'></p></td>
                     <td><div style='text-align:left;' id='AMEpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AMEpricejs'></p></td>
                     <td><div style='text-align:left;'id='AMEchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='AMEchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='AMEclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:47.355663287792005%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>119.37</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>164.75</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:46.554809843400484%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>120.05</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>164.75</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.716</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.33</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.23</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -25607,11 +25490,11 @@
                     <td><p class='companyname'id='APTVname'></p><p class='symboltable'id='APTVsymbol'></p></td>
                     <td><div style='text-align:left;' id='APTVpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='APTVpricejs'></p></td>
                     <td><div style='text-align:left;'id='APTVchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='APTVchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='APTVclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:8.635892116182605%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>86.32</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>124.88</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:7.799005495943482%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>86.67</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>124.88</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.6823</p><p class='outstandingshares'>Undervalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.53</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.52</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$APTV is within 3.71% of 1-year low, $86.32</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$APTV is within 3.32% of 1-year low, $86.67</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='APTVChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const APTVValues = [2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,
@@ -25841,7 +25724,7 @@
                     <td><p class='companyname'id='LVSname'></p><p class='symboltable'id='LVSsymbol'></p></td>
                     <td><div style='text-align:left;' id='LVSpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='LVSpricejs'></p></td>
                     <td><div style='text-align:left;'id='LVSchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='LVSchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='LVSclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:40.590062111801245%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>33.38</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>65.58</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:38.94031279923397%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>34.25</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>65.58</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.0952</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.44</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.05</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -25958,11 +25841,11 @@
                     <td><p class='companyname'id='AWKname'></p><p class='symboltable'id='AWKsymbol'></p></td>
                     <td><div style='text-align:left;' id='AWKpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AWKpricejs'></p></td>
                     <td><div style='text-align:left;'id='AWKchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='AWKchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='AWKclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:2.5656941858059072%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>114.26</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>162.59</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:2.5858502275548196%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>114.25</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>162.59</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.9644</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>10.9</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.9</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$AWK is within 1.07% of 1-year low, $114.26</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$AWK is within 1.08% of 1-year low, $114.25</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='AWKChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const AWKValues = [2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,
@@ -26075,7 +25958,7 @@
                     <td><p class='companyname'id='EBAYname'></p><p class='symboltable'id='EBAYsymbol'></p></td>
                     <td><div style='text-align:left;' id='EBAYpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='EBAYpricejs'></p></td>
                     <td><div style='text-align:left;'id='EBAYchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='EBAYchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='EBAYclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:17.56664388243336%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>37.6</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>52.23</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:15.189873417721547%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>38.01</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>52.23</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.405</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.14</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.3</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -26660,7 +26543,7 @@
                     <td><p class='companyname'id='EIXname'></p><p class='symboltable'id='EIXsymbol'></p></td>
                     <td><div style='text-align:left;' id='EIXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='EIXpricejs'></p></td>
                     <td><div style='text-align:left;'id='EIXchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='EIXchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='EIXclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:33.33333333333336%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>55.3</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>74.92</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:32.47289623128552%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>55.55</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>74.92</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.964</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.82</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.57</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
@@ -26777,7 +26660,7 @@
                     <td><p class='companyname'id='GWWname'></p><p class='symboltable'id='GWWsymbol'></p></td>
                     <td><div style='text-align:left;' id='GWWpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='GWWpricejs'></p></td>
                     <td><div style='text-align:left;'id='GWWchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='GWWchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='GWWclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:56.84018327763806%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>521.33</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>811.6</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:56.798510293458406%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>521.61</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>811.6</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.8773</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>17.77</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.67</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -27011,7 +26894,7 @@
                     <td><p class='companyname'id='ROKname'></p><p class='symboltable'id='ROKsymbol'></p></td>
                     <td><div style='text-align:left;' id='ROKpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ROKpricejs'></p></td>
                     <td><div style='text-align:left;'id='ROKchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ROKchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ROKclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:30.576334580074832%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>230.88</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>348.52</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:30.56452984186365%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>230.9</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>348.52</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.0816</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.64</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>11.01</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -27596,7 +27479,7 @@
                     <td><p class='companyname'id='DHIname'></p><p class='symboltable'id='DHIsymbol'></p></td>
                     <td><div style='text-align:left;' id='DHIpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='DHIpricejs'></p></td>
                     <td><div style='text-align:left;'id='DHIchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='DHIchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='DHIclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:52.08002540489044%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>69.32</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>132.3</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:50.19801980198019%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>71.7</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>132.3</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.5985</p><p class='outstandingshares'>Undervalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.77</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.53</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -27713,7 +27596,7 @@
                     <td><p class='companyname'id='EFXname'></p><p class='symboltable'id='EFXsymbol'></p></td>
                     <td><div style='text-align:left;' id='EFXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='EFXpricejs'></p></td>
                     <td><div style='text-align:left;'id='EFXchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='EFXchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='EFXclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:29.827171798100032%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>152.98</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>240.35</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:27.12468798288362%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>156.22</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>240.35</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.3538</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>14.65</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.77</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -28064,11 +27947,11 @@
                     <td><p class='companyname'id='AREname'></p><p class='symboltable'id='AREsymbol'></p></td>
                     <td><div style='text-align:left;' id='AREpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AREpricejs'></p></td>
                     <td><div style='text-align:left;'id='AREchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='AREchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='AREclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:0.936471779296392%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>93.63</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>172.65</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:1.0866818296689404%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>93.51</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>172.65</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>15.26</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.79</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$ARE is within 0.78% of 1-year low, $93.63</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$ARE is within 0.91% of 1-year low, $93.51</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='AREChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const AREValues = [2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,
@@ -29702,11 +29585,11 @@
                     <td><p class='companyname'id='NTRSname'></p><p class='symboltable'id='NTRSsymbol'></p></td>
                     <td><div style='text-align:left;' id='NTRSpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='NTRSpricejs'></p></td>
                     <td><div style='text-align:left;'id='NTRSchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='NTRSchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='NTRSclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:1.5798521105623828%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>63.601</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>100.25</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:1.5825375170532208%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>63.6</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>100.25</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.3434</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>7.61</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.32</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$NTRS is within 0.9% of 1-year low, $63.601</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$NTRS is within 0.9% of 1-year low, $63.6</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='NTRSChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const NTRSValues = [2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,
@@ -30287,7 +30170,7 @@
                     <td><p class='companyname'id='LENname'></p><p class='symboltable'id='LENsymbol'></p></td>
                     <td><div style='text-align:left;' id='LENpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='LENpricejs'></p></td>
                     <td><div style='text-align:left;'id='LENchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='LENchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='LENclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:53.749379241847365%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>72.83</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>133.24</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:52.22298221614225%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>74.76</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>133.24</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.2291</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.27</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.39</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -30404,7 +30287,7 @@
                     <td><p class='companyname'id='VMCname'></p><p class='symboltable'id='VMCsymbol'></p></td>
                     <td><div style='text-align:left;' id='VMCpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='VMCpricejs'></p></td>
                     <td><div style='text-align:left;'id='VMCchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='VMCchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='VMCclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:63.72470713525026%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>154.63</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>229.75</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:63.510980182110345%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>155.07</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>229.75</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.3907</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>14.93</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.52</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -30638,7 +30521,7 @@
                     <td><p class='companyname'id='ITname'></p><p class='symboltable'id='ITsymbol'></p></td>
                     <td><div style='text-align:left;' id='ITpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ITpricejs'></p></td>
                     <td><div style='text-align:left;'id='ITchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ITchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ITclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:60.5160281469898%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>288.35</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>377.88</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:59.17070917070914%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>291.3</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>377.88</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>11.63</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.7</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
@@ -30872,7 +30755,7 @@
                     <td><p class='companyname'id='MLMname'></p><p class='symboltable'id='MLMsymbol'></p></td>
                     <td><div style='text-align:left;' id='MLMpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='MLMpricejs'></p></td>
                     <td><div style='text-align:left;'id='MLMchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='MLMchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='MLMclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:66.15723438334221%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>313.57</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>463.41</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:65.70404436629242%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>315.55</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>463.41</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.4119</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>31.09</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.48</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -31340,7 +31223,7 @@
                     <td><p class='companyname'id='GRMNname'></p><p class='symboltable'id='GRMNsymbol'></p></td>
                     <td><div style='text-align:left;' id='GRMNpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='GRMNpricejs'></p></td>
                     <td><div style='text-align:left;'id='GRMNchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='GRMNchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='GRMNclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:72.5870111230714%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>81.75</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>109.62</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:71.81851715234231%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>82.51</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>109.62</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.9642</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.56</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.02</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -31925,7 +31808,7 @@
                     <td><p class='companyname'id='HPEname'></p><p class='symboltable'id='HPEsymbol'></p></td>
                     <td><div style='text-align:left;' id='HPEpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='HPEpricejs'></p></td>
                     <td><div style='text-align:left;'id='HPEchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='HPEchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='HPEclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:37.84355179704015%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>13.41</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>18.14</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:36.36363636363635%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>13.52</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>18.14</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.1817</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.01</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.71</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -32744,7 +32627,7 @@
                     <td><p class='companyname'id='URIname'></p><p class='symboltable'id='URIsymbol'></p></td>
                     <td><div style='text-align:left;' id='URIpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='URIpricejs'></p></td>
                     <td><div style='text-align:left;'id='URIchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='URIchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='URIclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:60.305379822099596%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>282.1</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>492.33</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:59.13120133209266%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>288.14</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>492.33</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.0641</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>32.36</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>12.53</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -32978,7 +32861,7 @@
                     <td><p class='companyname'id='IRname'></p><p class='symboltable'id='IRsymbol'></p></td>
                     <td><div style='text-align:left;' id='IRpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='IRpricejs'></p></td>
                     <td><div style='text-align:left;'id='IRchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='IRchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='IRclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:52.292806058056364%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>46.88</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>70.65</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:50.738488271068626%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>47.63</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>70.65</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.2671</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.87</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.65</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -33095,7 +32978,7 @@
                     <td><p class='companyname'id='PWRname'></p><p class='symboltable'id='PWRsymbol'></p></td>
                     <td><div style='text-align:left;' id='PWRpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='PWRpricejs'></p></td>
                     <td><div style='text-align:left;'id='PWRchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='PWRchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='PWRclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:39.98732572877061%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>133.92</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>212.82</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:39.45786983761666%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>134.61</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>212.82</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.8695</p><p class='outstandingshares'>Undervalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>15.35</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.85</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -33212,7 +33095,7 @@
                     <td><p class='companyname'id='TDYname'></p><p class='symboltable'id='TDYsymbol'></p></td>
                     <td><div style='text-align:left;' id='TDYpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='TDYpricejs'></p></td>
                     <td><div style='text-align:left;'id='TDYchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='TDYchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='TDYclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:35.58636041687749%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>349.88</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>448.71</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:31.67328539229366%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>355.54</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>448.71</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.66</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>8.46</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -33563,7 +33446,7 @@
                     <td><p class='companyname'id='FLTname'></p><p class='symboltable'id='FLTsymbol'></p></td>
                     <td><div style='text-align:left;' id='FLTpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='FLTpricejs'></p></td>
                     <td><div style='text-align:left;'id='FLTchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='FLTchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='FLTclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:62.92832005927021%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>170.37</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>278.35</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:62.5537885874649%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>171.45</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>278.35</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>29.29</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>8.37</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -34382,7 +34265,7 @@
                     <td><p class='companyname'id='BBYname'></p><p class='symboltable'id='BBYsymbol'></p></td>
                     <td><div style='text-align:left;' id='BBYpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='BBYpricejs'></p></td>
                     <td><div style='text-align:left;'id='BBYchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='BBYchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='BBYclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:16.683250414593708%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>63.17</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>93.32</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:14.090287277701796%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>64.08</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>93.32</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.5037</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.01</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.21</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -35201,7 +35084,7 @@
                     <td><p class='companyname'id='WABname'></p><p class='symboltable'id='WABsymbol'></p></td>
                     <td><div style='text-align:left;' id='WABpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='WABpricejs'></p></td>
                     <td><div style='text-align:left;'id='WABchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='WABchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='WABclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:36.42705489839245%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>86.73</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>119.7</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:33.481434465249116%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>88.19</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>119.7</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.42</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.69</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -35299,123 +35182,6 @@
                                        
                                         document.getElementById('WABpricearrow').className = "down-arrow";
                                         document.getElementById('WABchangearrow').className = "down-arrow";
-					}
-					
-					
-									
-			    
-                                  
-					</script>
-					
-
-					
-					</tr>
-           
-                                        
-                    
-
-             <tr onclick="showHideRow('hidden_rowCLX');"class='item1'>
-                    <td><p class='companyname'id='CLXname'></p><p class='symboltable'id='CLXsymbol'></p></td>
-                    <td><div style='text-align:left;' id='CLXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='CLXpricejs'></p></td>
-                    <td><div style='text-align:left;'id='CLXchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='CLXchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='CLXclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:4.224872231686524%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>119.51</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>178.21</p></div></div></td>
-                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.4787</p><p class='outstandingshares'>Overvalued</p></td></td>
-                    <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>10.47</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
-                    <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.3</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$CLX is within 2.03% of 1-year low, $119.51</td>
-                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='CLXChart' style=" height:40px;width:100px;"></canvas></div></td>
-         	    <script>
-                            const CLXValues = [2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,
-                            2023-10-17,2023-10-18,2023-10-19,2023-10-20,2023-10-20,2023-10-23];
-
-                            new Chart('CLXChart', {
-                              type: "line",
-                              data: {
-                                labels: CLXValues,
-                                datasets: [{ 
-                                  data: [122.90800018310547,122.3979995727539,122.3979995727539,122.3979995727539,122.76799926757812,
-                                122.77999877929688,123.23999938964843,124.01999969482422,124.09000091552734,124.09000091552734,124.09000091552734,],
-                                  borderColor: "#ff4d4d",
-                                  fill: false
-                                }, { 
-                                  data: [130.7134994506836,129.5259994506836,129.5259994506836,129.5259994506836,129.5259994506836,
-                                128.6389995574951,127.91899948120117,127.32899932861328,126.79749946594238,126.3044994354248,126.3044994354248,
-                                126.3044994354248,],
-                                  borderColor: "#33ff77",
-                                  fill: false    
-                                }]
-                              },
-                              options: {
-                                events: [],
-                                legend: {display: false},
-								scales: {
-								   xAxes: [{
-									 ticks: {
-									   display: false
-									 },
-									gridLines: {
-									  display: false
-									},
-								  }],
-								  yAxes: [{
-									ticks: {
-									  display: false
-									},
-									gridLines: {
-									 display: false
-									}
-								  }],
-								}
-								}
-                                                          
-                            });
-                    </script>			
-
-					
-					
-					<script>
-					function updateQuotes(data) {
-					   for (ticker in quote) {
-						var symbolquote = quote[ticker];
-						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
-						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
-						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
-						var outstandingsharesvalue = "$"+outstandingsharesvalue
-						document.getElementById('CLXsymbol').innerHTML=symbolquote['Ticker'] 
-						document.getElementById('CLXname').innerHTML=symbolquote['ShortName']
-						document.getElementById('CLXpricejs').innerHTML=symbolquote['Last'].toFixed(2);
-                                                            
-						document.getElementById('CLXchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
-                                                document.getElementById('CLXclose').innerHTML=symbolquote['PrevClose']
-                                                document.getElementById('CLXshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
-                                                document.getElementById('CLXoutstandingsharesvalue').innerHTML= outstandingsharesvalue
-                                                document.getElementById('CLXpricerange').value=symbolquote['Last'].toFixed(2);
-					   }
-					  }
-					  
-					 </script>
-                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=CLX"></script>
-
-
-
-
-                                        <script>
-					if (document.getElementById('CLXpricejs').innerHTML > document.getElementById('CLXclose').innerHTML){
-					document.getElementById('CLXpricejs').style.color ='#33ff77'
-					document.getElementById('CLXchange').style.color ='#33ff77'
-                                     
-                                        document.getElementById('CLXpricearrow').className = "up-arrow";
-                                        document.getElementById('CLXchangearrow').className = "up-arrow";
-					}
-					
-					
-					else if (document.getElementById('CLXpricejs').innerHTML < document.getElementById('CLXclose').innerHTML){
-					
-					document.getElementById('CLXpricejs').style.color ='#ff4d4d'
-					document.getElementById('CLXchange').style.color ='#ff4d4d'
-                                       
-                                        document.getElementById('CLXpricearrow').className = "down-arrow";
-                                        document.getElementById('CLXchangearrow').className = "down-arrow";
 					}
 					
 					
@@ -35903,7 +35669,7 @@
                     <td><p class='companyname'id='COOname'></p><p class='symboltable'id='COOsymbol'></p></td>
                     <td><div style='text-align:left;' id='COOpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='COOpricejs'></p></td>
                     <td><div style='text-align:left;'id='COOchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='COOchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='COOclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:45.848527349228604%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>257.02</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>399.62</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:45.74961360123647%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>257.28</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>399.62</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.2093</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>17.35</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.85</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -36254,7 +36020,7 @@
                     <td><p class='companyname'id='TERname'></p><p class='symboltable'id='TERsymbol'></p></td>
                     <td><div style='text-align:left;' id='TERpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='TERpricejs'></p></td>
                     <td><div style='text-align:left;'id='TERchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='TERchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='TERclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:33.56824054498474%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>76.63</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>119.2</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:32.538167938931295%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>77.28</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>119.2</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.89</p><p class='outstandingshares'>Undervalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.6</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.22</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -36371,7 +36137,7 @@
                     <td><p class='companyname'id='ATOname'></p><p class='symboltable'id='ATOsymbol'></p></td>
                     <td><div style='text-align:left;' id='ATOpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ATOpricejs'></p></td>
                     <td><div style='text-align:left;'id='ATOchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ATOchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ATOclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:28.6704730831974%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>100.76</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>125.28</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:28.113440197287314%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>100.95</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>125.28</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.3067</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.55</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.58</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -37775,7 +37541,7 @@
                     <td><p class='companyname'id='FMCname'></p><p class='symboltable'id='FMCsymbol'></p></td>
                     <td><div style='text-align:left;' id='FMCpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='FMCpricejs'></p></td>
                     <td><div style='text-align:left;'id='FMCchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='FMCchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='FMCclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:9.932679815755282%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>49.71</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>134.38</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:9.943316013226259%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>49.7</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>134.38</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.7746</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>28.88</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.48</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
@@ -42689,11 +42455,11 @@
                     <td><p class='companyname'id='CZRname'></p><p class='symboltable'id='CZRsymbol'></p></td>
                     <td><div style='text-align:left;' id='CZRpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='CZRpricejs'></p></td>
                     <td><div style='text-align:left;'id='CZRchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='CZRchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='CZRclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:9.909480705097657%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>39.28</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>60.27</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:8.070004861448695%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>39.7</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>60.27</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.28</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.2</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$CZR is targeted to increase by 71%</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$CZR is within 4.01% of 1-year low, $39.7</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='CZRChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const CZRValues = [2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,
@@ -42923,7 +42689,7 @@
                     <td><p class='companyname'id='BWAname'></p><p class='symboltable'id='BWAsymbol'></p></td>
                     <td><div style='text-align:left;' id='BWApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='BWApricejs'></p></td>
                     <td><div style='text-align:left;'id='BWAchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='BWAchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='BWAclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:47.26235096905429%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>30.325705</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>47.05</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:44.021275469526294%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>31.294014</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>47.05</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.5063</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.34</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.75</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -43274,11 +43040,11 @@
                     <td><p class='companyname'id='ALLEname'></p><p class='symboltable'id='ALLEsymbol'></p></td>
                     <td><div style='text-align:left;' id='ALLEpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ALLEpricejs'></p></td>
                     <td><div style='text-align:left;'id='ALLEchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ALLEchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ALLEclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:13.059083379348433%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>92.14</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>128.36</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:7.273262661955236%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>94.4</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>128.36</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.3831</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.05</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.23</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$ALLE is within 2.55% of 1-year low, $94.4</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='ALLEChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const ALLEValues = [2023-10-12,2023-10-13,2023-10-13,2023-10-13,2023-10-16,
@@ -43508,7 +43274,7 @@
                     <td><p class='companyname'id='AOSname'></p><p class='symboltable'id='AOSsymbol'></p></td>
                     <td><div style='text-align:left;' id='AOSpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AOSpricejs'></p></td>
                     <td><div style='text-align:left;'id='AOSchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='AOSchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='AOSclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:60.54599850411369%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>50.2</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>76.94</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:59.54754601226994%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>50.86</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>76.94</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.7542</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.74</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.27</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -43976,7 +43742,7 @@
                     <td><p class='companyname'id='PNWname'></p><p class='symboltable'id='PNWsymbol'></p></td>
                     <td><div style='text-align:left;' id='PNWpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='PNWpricejs'></p></td>
                     <td><div style='text-align:left;'id='PNWchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='PNWchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='PNWclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:40.76782449725772%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>64.15</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>86.03</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:40.276497695852505%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>64.33</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>86.03</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.3736</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.77</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.92</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
@@ -44561,7 +44327,7 @@
                     <td><p class='companyname'id='UHSname'></p><p class='symboltable'id='UHSsymbol'></p></td>
                     <td><div style='text-align:left;' id='UHSpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='UHSpricejs'></p></td>
                     <td><div style='text-align:left;'id='UHSchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='UHSchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='UHSclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:50.50103153551431%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>90.71</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>158.57</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:48.70189370800245%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>93.09</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>158.57</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>8.35</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.28</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
@@ -44678,7 +44444,7 @@
                     <td><p class='companyname'id='RLname'></p><p class='symboltable'id='RLsymbol'></p></td>
                     <td><div style='text-align:left;' id='RLpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='RLpricejs'></p></td>
                     <td><div style='text-align:left;'id='RLchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='RLchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='RLclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:58.31570038087178%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>88.5</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>135.76</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:58.15632965165676%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>88.68</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>135.76</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.2239</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.16</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.39</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
@@ -44795,7 +44561,7 @@
                     <td><p class='companyname'id='WYNNname'></p><p class='symboltable'id='WYNNsymbol'></p></td>
                     <td><div style='text-align:left;' id='WYNNpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='WYNNpricejs'></p></td>
                     <td><div style='text-align:left;'id='WYNNchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='WYNNchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='WYNNclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:56.25292740046839%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>53.81</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>117.86</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:55.26105700143702%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>55.23</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>117.86</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>9.01</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.38</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
@@ -45263,7 +45029,7 @@
                     <td><p class='companyname'id='PVHname'></p><p class='symboltable'id='PVHsymbol'></p></td>
                     <td><div style='text-align:left;' id='PVHpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='PVHpricejs'></p></td>
                     <td><div style='text-align:left;'id='PVHchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='PVHchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='PVHclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:54.899849235408126%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>48.08</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>94.51</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:54.57700650759217%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>48.41</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>94.51</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.1277</p><p class='outstandingshares'>Undervalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>4.88</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style='color:#ff4d4d;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.77</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Weakening</p></td>
