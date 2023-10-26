@@ -13084,123 +13084,6 @@
                                         
                     
 
-             <tr onclick="showHideRow('hidden_rowMRNA');"class='item1'>
-                    <td><p class='companyname'id='MRNAname'></p><p class='symboltable'id='MRNAsymbol'></p></td>
-                    <td><div style='text-align:left;' id='MRNApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='MRNApricejs'></p></td>
-                    <td><div style='text-align:left;'id='MRNAchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='MRNAchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='MRNAclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:0.6154499151103597%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>75.89</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>217.25</p></div></div></td>
-                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
-                    <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>29.03</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
-                    <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>14.98</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$MRNA is within 1.13% of 1-year low, $75.89</td>
-                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='MRNAChart' style=" height:40px;width:100px;"></canvas></div></td>
-         	    <script>
-                            const MRNAValues = [2023-10-13,2023-10-13,2023-10-16,2023-10-17,2023-10-18,
-                            2023-10-19,2023-10-20,2023-10-20,2023-10-20,2023-10-23,2023-10-25];
-
-                            new Chart('MRNAChart', {
-                              type: "line",
-                              data: {
-                                labels: MRNAValues,
-                                datasets: [{ 
-                                  data: [101.62200012207032,101.62200012207032,99.64200134277344,96.02200164794922,92.67200164794922,
-                                88.99000244140625,85.41000213623047,85.41000213623047,85.41000213623047,82.7500015258789,81.43600158691406,],
-                                  borderColor: "#ff4d4d",
-                                  fill: false
-                                }, { 
-                                  data: [101.97649993896485,101.97649993896485,101.36650009155274,100.34600028991699,100.34600028991699,
-                                99.47000045776367,98.57700042724609,97.59750061035156,97.59750061035156,97.59750061035156,96.62100067138672,
-                                95.70300064086913,],
-                                  borderColor: "#33ff77",
-                                  fill: false    
-                                }]
-                              },
-                              options: {
-                                events: [],
-                                legend: {display: false},
-								scales: {
-								   xAxes: [{
-									 ticks: {
-									   display: false
-									 },
-									gridLines: {
-									  display: false
-									},
-								  }],
-								  yAxes: [{
-									ticks: {
-									  display: false
-									},
-									gridLines: {
-									 display: false
-									}
-								  }],
-								}
-								}
-                                                          
-                            });
-                    </script>			
-
-					
-					
-					<script>
-					function updateQuotes(data) {
-					   for (ticker in quote) {
-						var symbolquote = quote[ticker];
-						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
-						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
-						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
-						var outstandingsharesvalue = "$"+outstandingsharesvalue
-						document.getElementById('MRNAsymbol').innerHTML=symbolquote['Ticker'] 
-						document.getElementById('MRNAname').innerHTML=symbolquote['ShortName']
-						document.getElementById('MRNApricejs').innerHTML=symbolquote['Last'].toFixed(2);
-                                                            
-						document.getElementById('MRNAchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
-                                                document.getElementById('MRNAclose').innerHTML=symbolquote['PrevClose']
-                                                document.getElementById('MRNAshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
-                                                document.getElementById('MRNAoutstandingsharesvalue').innerHTML= outstandingsharesvalue
-                                                document.getElementById('MRNApricerange').value=symbolquote['Last'].toFixed(2);
-					   }
-					  }
-					  
-					 </script>
-                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=MRNA"></script>
-
-
-
-
-                                        <script>
-					if (document.getElementById('MRNApricejs').innerHTML > document.getElementById('MRNAclose').innerHTML){
-					document.getElementById('MRNApricejs').style.color ='#33ff77'
-					document.getElementById('MRNAchange').style.color ='#33ff77'
-                                     
-                                        document.getElementById('MRNApricearrow').className = "up-arrow";
-                                        document.getElementById('MRNAchangearrow').className = "up-arrow";
-					}
-					
-					
-					else if (document.getElementById('MRNApricejs').innerHTML < document.getElementById('MRNAclose').innerHTML){
-					
-					document.getElementById('MRNApricejs').style.color ='#ff4d4d'
-					document.getElementById('MRNAchange').style.color ='#ff4d4d'
-                                       
-                                        document.getElementById('MRNApricearrow').className = "down-arrow";
-                                        document.getElementById('MRNAchangearrow').className = "down-arrow";
-					}
-					
-					
-									
-			    
-                                  
-					</script>
-					
-
-					
-					</tr>
-           
-                                        
-                    
-
              <tr onclick="showHideRow('hidden_rowPSA');"class='item1'>
                     <td><p class='companyname'id='PSAname'></p><p class='symboltable'id='PSAsymbol'></p></td>
                     <td><div style='text-align:left;' id='PSApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='PSApricejs'></p></td>
@@ -15428,11 +15311,11 @@
                     <td><p class='companyname'id='ADMname'></p><p class='symboltable'id='ADMsymbol'></p></td>
                     <td><div style='text-align:left;' id='ADMpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='ADMpricejs'></p></td>
                     <td><div style='text-align:left;'id='ADMchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='ADMchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='ADMclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:5.973432228702449%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>69.3201</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>98.28</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:6.0062133241283915%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>69.31</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>98.28</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.96</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.61</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$ADM is within 2.43% of 1-year low, $69.3201</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$ADM is within 2.45% of 1-year low, $69.31</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='ADMChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const ADMValues = [2023-10-13,2023-10-13,2023-10-16,2023-10-17,2023-10-18,
@@ -24433,6 +24316,123 @@
                                         
                     
 
+             <tr onclick="showHideRow('hidden_rowDFS');"class='item1'>
+                    <td><p class='companyname'id='DFSname'></p><p class='symboltable'id='DFSsymbol'></p></td>
+                    <td><div style='text-align:left;' id='DFSpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='DFSpricejs'></p></td>
+                    <td><div style='text-align:left;'id='DFSchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='DFSchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='DFSclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:2.0112254443405035%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>79.74</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>122.5</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>11.4167</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>12.57</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.48</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >$DFS is within 1.07% of 1-year low, $79.74</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='DFSChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const DFSValues = [2023-10-13,2023-10-13,2023-10-16,2023-10-17,2023-10-18,
+                            2023-10-19,2023-10-20,2023-10-20,2023-10-20,2023-10-23,2023-10-25];
+
+                            new Chart('DFSChart', {
+                              type: "line",
+                              data: {
+                                labels: DFSValues,
+                                datasets: [{ 
+                                  data: [90.44400024414062,90.44400024414062,90.61000061035156,90.94600067138671,91.16399993896485,
+                                89.93599853515624,88.49399871826172,88.49399871826172,88.49399871826172,86.80399932861329,84.41399993896485,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [88.34150085449218,88.34150085449218,88.45900077819825,88.66950073242188,88.66950073242188,
+                                88.82900047302246,88.68100013732911,88.43100013732911,88.43100013732911,88.43100013732911,88.17100028991699,
+                                87.88150024414062,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('DFSsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('DFSname').innerHTML=symbolquote['ShortName']
+						document.getElementById('DFSpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('DFSchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('DFSclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('DFSshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('DFSoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('DFSpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=DFS"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('DFSpricejs').innerHTML > document.getElementById('DFSclose').innerHTML){
+					document.getElementById('DFSpricejs').style.color ='#33ff77'
+					document.getElementById('DFSchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('DFSpricearrow').className = "up-arrow";
+                                        document.getElementById('DFSchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('DFSpricejs').innerHTML < document.getElementById('DFSclose').innerHTML){
+					
+					document.getElementById('DFSpricejs').style.color ='#ff4d4d'
+					document.getElementById('DFSchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('DFSpricearrow').className = "down-arrow";
+                                        document.getElementById('DFSchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
              <tr onclick="showHideRow('hidden_rowEQR');"class='item1'>
                     <td><p class='companyname'id='EQRname'></p><p class='symboltable'id='EQRsymbol'></p></td>
                     <td><div style='text-align:left;' id='EQRpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='EQRpricejs'></p></td>
@@ -32159,11 +32159,11 @@
                     <td><p class='companyname'id='RFname'></p><p class='symboltable'id='RFsymbol'></p></td>
                     <td><div style='text-align:left;' id='RFpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='RFpricejs'></p></td>
                     <td><div style='text-align:left;'id='RFchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='RFchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='RFclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:2.3764258555133084%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>13.81</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>24.33</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:3.250117757889785%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>13.715</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>24.33</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.8102</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.4</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.41</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$RF is within 1.78% of 1-year low, $13.81</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$RF is within 2.45% of 1-year low, $13.715</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='RFChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const RFValues = [2023-10-13,2023-10-13,2023-10-16,2023-10-17,2023-10-18,
@@ -36371,11 +36371,11 @@
                     <td><p class='companyname'id='GNRCname'></p><p class='symboltable'id='GNRCsymbol'></p></td>
                     <td><div style='text-align:left;' id='GNRCpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='GNRCpricejs'></p></td>
                     <td><div style='text-align:left;'id='GNRCchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='GNRCchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='GNRCclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:1.1423066336361114%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>84.29</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>156.95</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:2.0321876704855555%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>83.63</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>156.95</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.4248</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>8.61</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>11.12</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$GNRC is within 0.98% of 1-year low, $84.29</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$GNRC is within 1.75% of 1-year low, $83.63</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='GNRCChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const GNRCValues = [2023-10-13,2023-10-13,2023-10-16,2023-10-17,2023-10-18,
@@ -38243,11 +38243,11 @@
                     <td><p class='companyname'id='IEXname'></p><p class='symboltable'id='IEXsymbol'></p></td>
                     <td><div style='text-align:left;' id='IEXpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='IEXpricejs'></p></td>
                     <td><div style='text-align:left;'id='IEXchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='IEXchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='IEXclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:3.4870457878442025%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>184.86</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>246.23</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:3.5027696318018995%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>184.85</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>246.23</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.9254</p><p class='outstandingshares'>Overvalued</p></td></td>
                     <td><div style='text-align:left;' class=''></div><p style=' text-align:left;color:;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.85</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>9.79</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$IEX is within 1.14% of 1-year low, $184.86</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$IEX is within 1.15% of 1-year low, $184.85</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='IEXChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const IEXValues = [2023-10-13,2023-10-13,2023-10-16,2023-10-17,2023-10-18,
@@ -38945,11 +38945,11 @@
                     <td><p class='companyname'id='TECHname'></p><p class='symboltable'id='TECHsymbol'></p></td>
                     <td><div style='text-align:left;' id='TECHpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='TECHpricejs'></p></td>
                     <td><div style='text-align:left;'id='TECHchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='TECHchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='TECHclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:1.27817019845275%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>60.9</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>90.63</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:1.1118598382749272%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>60.95</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>90.63</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.84</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
                     <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>3.53</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$TECH is within 0.62% of 1-year low, $60.9</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$TECH is within 0.54% of 1-year low, $60.95</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='TECHChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const TECHValues = [2023-10-13,2023-10-13,2023-10-16,2023-10-17,2023-10-18,
@@ -39160,6 +39160,123 @@
                                        
                                         document.getElementById('TXTpricearrow').className = "down-arrow";
                                         document.getElementById('TXTchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowCHRW');"class='item1'>
+                    <td><p class='companyname'id='CHRWname'></p><p class='symboltable'id='CHRWsymbol'></p></td>
+                    <td><div style='text-align:left;' id='CHRWpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='CHRWpricejs'></p></td>
+                    <td><div style='text-align:left;'id='CHRWchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='CHRWchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='CHRWclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:3.034573612536576%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>81.9376</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>108.05</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
+                    <td><div style='text-align:left;' class='up-arrow'></div><p style=' text-align:left;color:#33ff77;font-size:14px;margin-top:0px;margin-bottom:-7px;'>6.55</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Strengthening</p></td>
+                    <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>1.24</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >$CHRW is within 0.96% of 1-year low, $81.9376</td>
+                    <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='CHRWChart' style=" height:40px;width:100px;"></canvas></div></td>
+         	    <script>
+                            const CHRWValues = [2023-10-13,2023-10-13,2023-10-16,2023-10-17,2023-10-18,
+                            2023-10-19,2023-10-20,2023-10-20,2023-10-20,2023-10-23,2023-10-25];
+
+                            new Chart('CHRWChart', {
+                              type: "line",
+                              data: {
+                                labels: CHRWValues,
+                                datasets: [{ 
+                                  data: [85.51599884033203,85.51599884033203,85.39599914550782,85.33799896240234,84.89599914550782,
+                                84.60999908447266,84.8759994506836,84.8759994506836,84.8759994506836,84.56399993896484,84.0720001220703,],
+                                  borderColor: "#ff4d4d",
+                                  fill: false
+                                }, { 
+                                  data: [86.01699943542481,86.01699943542481,85.91349945068359,85.79899940490722,85.79899940490722,
+                                85.60899925231934,85.43699913024902,85.40699920654296,85.40699920654296,85.40699920654296,85.33699951171874,
+                                85.27699966430664,],
+                                  borderColor: "#33ff77",
+                                  fill: false    
+                                }]
+                              },
+                              options: {
+                                events: [],
+                                legend: {display: false},
+								scales: {
+								   xAxes: [{
+									 ticks: {
+									   display: false
+									 },
+									gridLines: {
+									  display: false
+									},
+								  }],
+								  yAxes: [{
+									ticks: {
+									  display: false
+									},
+									gridLines: {
+									 display: false
+									}
+								  }],
+								}
+								}
+                                                          
+                            });
+                    </script>			
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('CHRWsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('CHRWname').innerHTML=symbolquote['ShortName']
+						document.getElementById('CHRWpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('CHRWchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('CHRWclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('CHRWshares').innerHTML=symbolquote['SharesOutstanding'].toLocaleString("en-US")
+                                                document.getElementById('CHRWoutstandingsharesvalue').innerHTML= outstandingsharesvalue
+                                                document.getElementById('CHRWpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src="https://feeds.financialcontent.com/JSQuote?Ticker=CHRW"></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('CHRWpricejs').innerHTML > document.getElementById('CHRWclose').innerHTML){
+					document.getElementById('CHRWpricejs').style.color ='#33ff77'
+					document.getElementById('CHRWchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('CHRWpricearrow').className = "up-arrow";
+                                        document.getElementById('CHRWchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('CHRWpricejs').innerHTML < document.getElementById('CHRWclose').innerHTML){
+					
+					document.getElementById('CHRWpricejs').style.color ='#ff4d4d'
+					document.getElementById('CHRWchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('CHRWpricearrow').className = "down-arrow";
+                                        document.getElementById('CHRWchangearrow').className = "down-arrow";
 					}
 					
 					
@@ -40817,11 +40934,11 @@
                     <td><p class='companyname'id='AAPname'></p><p class='symboltable'id='AAPsymbol'></p></td>
                     <td><div style='text-align:left;' id='AAPpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AAPpricejs'></p></td>
                     <td><div style='text-align:left;'id='AAPchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='AAPchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='AAPclose'></p></td>
-                    <td><div class='pricerangebar'><div style='position:absolute;width:1.4357330423217296%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>47.735</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>194.35</p></div></div></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:1.4390942572636791%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>47.73</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>194.35</p></div></div></td>
                     <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0</p><p class='outstandingshares'>-</p></td></td>
                     <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>37.29</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
                     <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>2.15</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
-                    <td style=' font-size:13px;color:#7D827D;' >$AAP is within 4.22% of 1-year low, $47.735</td>
+                    <td style=' font-size:13px;color:#7D827D;' >$AAP is within 4.23% of 1-year low, $47.73</td>
                     <td><div style='width:170px; height:50px; margin-top:4px;margin-bottom:4px;'><canvas id='AAPChart' style=" height:40px;width:100px;"></canvas></div></td>
          	    <script>
                             const AAPValues = [2023-10-13,2023-10-13,2023-10-16,2023-10-17,2023-10-18,
