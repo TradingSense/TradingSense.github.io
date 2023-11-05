@@ -111,53 +111,6 @@
 
 
 
-                   
-         	    <script>
-                            const AAPLValues = [2023-10-24,2023-10-25,2023-10-26,2023-10-27,2023-10-27,
-                            2023-10-27,2023-10-30,2023-10-31,2023-11-01,2023-11-02,2023-11-03];
-
-                            new Chart('AAPLChart', {
-                              type: "line",
-                              data: {
-                                labels: AAPLValues,
-                                datasets: [{ 
-                                  data: [174.1240020751953,173.1760040283203,171.46200256347657,170.53000183105468,170.53000183105468,
-                                170.53000183105468,169.98800048828124,169.4540008544922,170.0279998779297,172.16400146484375,173.85,],
-                                  borderColor: "#ff4d4d",
-                                  fill: false
-                                }, { 
-                                  data: [175.38850173950195,175.42200241088867,175.23200225830078,175.08250198364257,175.08250198364257,
-                                175.08250198364257,175.08250198364257,174.9095016479492,174.82800216674804,174.84350204467773,174.97650222778321,
-                                174.93450164794922,],
-                                  borderColor: "#33ff77",
-                                  fill: false    
-                                }]
-                              },
-                              options: {
-                                events: [],
-                                legend: {display: false},
-								scales: {
-								   xAxes: [{
-									 ticks: {
-									   display: false
-									 },
-									gridLines: {
-									  display: false
-									},
-								  }],
-								  yAxes: [{
-									ticks: {
-									  display: false
-									},
-									gridLines: {
-									 display: false
-									}
-								  }],
-								}
-								}
-                                                          
-                            });
-                    </script>			
 
 					
 					
@@ -230,53 +183,6 @@
 
 
 
-                   
-         	    <script>
-                            const MSFTValues = [2023-10-24,2023-10-25,2023-10-26,2023-10-27,2023-10-27,
-                            2023-10-27,2023-10-30,2023-10-31,2023-11-01,2023-11-02,2023-11-03];
-
-                            new Chart('MSFTChart', {
-                              type: "line",
-                              data: {
-                                labels: MSFTValues,
-                                datasets: [{ 
-                                  data: [329.5900024414062,331.70200805664064,331.01600952148436,331.6440063476563,331.6440063476563,
-                                331.6440063476563,333.24200439453125,334.75800170898435,335.83800048828124,339.9239990234375,344.5219970703125,],
-                                  borderColor: "#ff4d4d",
-                                  fill: false
-                                }, { 
-                                  data: [325.2560043334961,326.6500045776367,327.36250457763674,328.0655044555664,328.0655044555664,
-                                328.0655044555664,328.0655044555664,328.8410049438477,330.0770034790039,331.43250427246096,332.88050537109376,
-                                334.1575042724609,],
-                                  borderColor: "#33ff77",
-                                  fill: false    
-                                }]
-                              },
-                              options: {
-                                events: [],
-                                legend: {display: false},
-								scales: {
-								   xAxes: [{
-									 ticks: {
-									   display: false
-									 },
-									gridLines: {
-									  display: false
-									},
-								  }],
-								  yAxes: [{
-									ticks: {
-									  display: false
-									},
-									gridLines: {
-									 display: false
-									}
-								  }],
-								}
-								}
-                                                          
-                            });
-                    </script>			
 
 					
 					
@@ -349,53 +255,6 @@
 
 
 
-                   
-         	    <script>
-                            const GOOGLValues = [2023-10-24,2023-10-25,2023-10-26,2023-10-27,2023-10-27,
-                            2023-10-27,2023-10-30,2023-10-31,2023-11-01,2023-11-02,2023-11-03];
-
-                            new Chart('GOOGLChart', {
-                              type: "line",
-                              data: {
-                                labels: GOOGLValues,
-                                datasets: [{ 
-                                  data: [137.32400207519532,134.8540008544922,131.76000061035157,129.0739990234375,129.0739990234375,
-                                129.0739990234375,126.66599884033204,123.71999969482422,123.88799896240235,124.92999877929688,126.31600036621094,],
-                                  borderColor: "#ff4d4d",
-                                  fill: false
-                                }, { 
-                                  data: [136.35000076293946,136.1035011291504,135.60200119018555,135.16750106811523,135.16750106811523,
-                                135.16750106811523,135.16750106811523,134.6820011138916,134.26450157165527,133.82500114440919,133.4460006713867,
-                                133.02200088500976,],
-                                  borderColor: "#33ff77",
-                                  fill: false    
-                                }]
-                              },
-                              options: {
-                                events: [],
-                                legend: {display: false},
-								scales: {
-								   xAxes: [{
-									 ticks: {
-									   display: false
-									 },
-									gridLines: {
-									  display: false
-									},
-								  }],
-								  yAxes: [{
-									ticks: {
-									  display: false
-									},
-									gridLines: {
-									 display: false
-									}
-								  }],
-								}
-								}
-                                                          
-                            });
-                    </script>			
 
 					
 					
@@ -440,6 +299,150 @@
                                        
                                         document.getElementById('GOOGLpricearrow').className = "down-arrow";
                                         document.getElementById('GOOGLchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowAMZN');"class='item1'>
+                    <td><p class='companyname'id='AMZNname'></p><p class='symboltable'id='AMZNsymbol'></p></td>
+                    <td><div style='text-align:left;' id='AMZNpricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='AMZNpricejs'></p></td>
+                    <td><div style='text-align:left;'id='AMZNchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='AMZNchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='AMZNclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:88.73195716281234%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>81.43</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>145.86</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>0.73</p><p class='outstandingshares'>Undervalued</p></td></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>43,331,014</p><p style='color:#ff4d4d;'class='outstandingshares'>-17.91%</p></td></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>14.1</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
+                    <td><div style='text-align:left;' class='up-arrow'></div><p style='color:#33ff77;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>5.86</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Short Trend Strengthening</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >-</td>
+
+
+
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('AMZNsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('AMZNname').innerHTML=symbolquote['ShortName']
+						document.getElementById('AMZNpricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('AMZNchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('AMZNclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('AMZNpricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src='https://feeds.financialcontent.com/JSQuote?Ticker=AMZN'></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('AMZNpricejs').innerHTML > document.getElementById('AMZNclose').innerHTML){
+					document.getElementById('AMZNpricejs').style.color ='#33ff77'
+					document.getElementById('AMZNchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('AMZNpricearrow').className = "up-arrow";
+                                        document.getElementById('AMZNchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('AMZNpricejs').innerHTML < document.getElementById('AMZNclose').innerHTML){
+					
+					document.getElementById('AMZNpricejs').style.color ='#ff4d4d'
+					document.getElementById('AMZNchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('AMZNpricearrow').className = "down-arrow";
+                                        document.getElementById('AMZNchangearrow').className = "down-arrow";
+					}
+					
+					
+									
+			    
+                                  
+					</script>
+					
+
+					
+					</tr>
+           
+                                        
+                    
+
+             <tr onclick="showHideRow('hidden_rowTSLA');"class='item1'>
+                    <td><p class='companyname'id='TSLAname'></p><p class='symboltable'id='TSLAsymbol'></p></td>
+                    <td><div style='text-align:left;' id='TSLApricearrow'></div><p style='text-align:left;margin:0px; margin-bottom:12px;' id='TSLApricejs'></p></td>
+                    <td><div style='text-align:left;'id='TSLAchangearrow'></div><p style='margin-top:0px;margin-bottom:-8.5px;' id='TSLAchange'></p><p style='display:inline-block;margin-bottom:-3px;font-size:9px; text-align:center;' id='TSLAclose'></p></td>
+                    <td><div class='pricerangebar'><div style='position:absolute;width:59.82884342718249%; height:77%; background:; border-right:2px solid #fff; '></div><div class='pricebar'><p style='outline:1px black;font-size:13px;color:#b3b3b3; margin:0px;position:relative;float:left;'>101.81</p><p style='outline:1px black; font-size:13px;color:#b3b3b3; margin:0px; position:relative;float:right;'>299.29</p></div></div></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>20.66</p><p class='outstandingshares'>Overvalued</p></td></td>
+                    <td><p style='font-size:14px;margin-top:0px;margin-bottom:-7px;'>118,041,060</p><p style='color:#33ff77;'class='outstandingshares'>0.51%</p></td></td>
+                    <td><div style='text-align:left;' class='down-arrow'></div><p style=' text-align:left;color:#ff4d4d;font-size:14px;margin-top:0px;margin-bottom:-7px;'>25.84</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>Long Trend Weakening</p></td>
+                    <td><div style='text-align:left;' class=''></div><p style='color:;text-align:left;font-size:14px;margin-top:0px;margin-bottom:-7px;'>20.35</p><p style='margin-left:-10px;display:inline-block;margin-bottom:-3px;font-size:12px; text-align:center;'class='outstandingshares'>-</p></td>
+                    <td style=' font-size:13px;color:#7D827D;' >$TSLA is targeted to decrease by 2%</td>
+
+
+
+
+					
+					
+					<script>
+					function updateQuotes(data) {
+					   for (ticker in quote) {
+						var symbolquote = quote[ticker];
+						var outstandingsharesvalue = (symbolquote['SharesOutstanding'] * symbolquote['Last'])
+						var outstandingsharesvalue = Math.round(outstandingsharesvalue)
+						var outstandingsharesvalue = outstandingsharesvalue.toLocaleString("en-US")
+						var outstandingsharesvalue = "$"+outstandingsharesvalue
+						document.getElementById('TSLAsymbol').innerHTML=symbolquote['Ticker'] 
+						document.getElementById('TSLAname').innerHTML=symbolquote['ShortName']
+						document.getElementById('TSLApricejs').innerHTML=symbolquote['Last'].toFixed(2);
+                                                            
+						document.getElementById('TSLAchange').innerHTML=symbolquote['ChangePercent'].toFixed(2) +'%'; 
+                                                document.getElementById('TSLAclose').innerHTML=symbolquote['PrevClose']
+                                                document.getElementById('TSLApricerange').value=symbolquote['Last'].toFixed(2);
+					   }
+					  }
+					  
+					 </script>
+                                        <script src='https://feeds.financialcontent.com/JSQuote?Ticker=TSLA'></script>
+
+
+
+
+                                        <script>
+					if (document.getElementById('TSLApricejs').innerHTML > document.getElementById('TSLAclose').innerHTML){
+					document.getElementById('TSLApricejs').style.color ='#33ff77'
+					document.getElementById('TSLAchange').style.color ='#33ff77'
+                                     
+                                        document.getElementById('TSLApricearrow').className = "up-arrow";
+                                        document.getElementById('TSLAchangearrow').className = "up-arrow";
+					}
+					
+					
+					else if (document.getElementById('TSLApricejs').innerHTML < document.getElementById('TSLAclose').innerHTML){
+					
+					document.getElementById('TSLApricejs').style.color ='#ff4d4d'
+					document.getElementById('TSLAchange').style.color ='#ff4d4d'
+                                       
+                                        document.getElementById('TSLApricearrow').className = "down-arrow";
+                                        document.getElementById('TSLAchangearrow').className = "down-arrow";
 					}
 					
 					
