@@ -34,24 +34,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
         <header class='header'>
-        <div id="sc-ticker"></div>
-        <script src="https://top.softcapital.com/widget/widget.js"></script>
-    <style>
-        .sc-ticker {
-    background-color: #150f42
-}
-
-#widget-ticker > div {
-    width: 100%!important;
-}
-    
-    </style>
-    <script>
-    createSoftCapitalWidget("Ticker", "sc-ticker", {
-        symbols:"MSFT,FB,AA,INTC,TSLA",
         
-});
-</script>
         <div style='width:100%; height:100%; display:inline-block; text-align:center;'
          <script src=
         "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
@@ -63,6 +46,39 @@
                     <a class='cta' href='https://twitter.com/TradingSenseNet'><button>Follow Us</button></a>	
                   
         </div>   
+        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "description": "",
+      "proName": "BLACKBULL:US30"
+    },
+    {
+      "description": "",
+      "proName": "TVC:DJI"
+    },
+    {
+      "description": "",
+      "proName": "NASDAQ:NDX"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": true,
+  "displayMode": "regular",
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
         </header>
         <div style='height:20px;'></div>
         <div style='height:40px;'>
