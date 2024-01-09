@@ -76,3 +76,41 @@
 
 
         
+                         
+
+                                        </tbody>
+                                        
+                                        
+                                        
+                                        </table>
+
+                 <script>
+            $(document).ready(function() {
+                $("#gfg").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#geeks tr").filter(function() {
+                        $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>	 
+                        <div style='position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+  background-color: #0a0a0a;
+  color: grey;
+  text-align:center;
+  font-size:10px;
+  display:table;
+  vertical-align:middle;
+'
+  >
+			<p>2023 tradingsense.co | Not Financial Advice</p>
+			</div>
+
+                </html>
+
+                
