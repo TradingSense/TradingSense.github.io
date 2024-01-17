@@ -28,7 +28,7 @@ body{
 button{
 	
   background-color: #e63a14;
-  margin:5px;vertical-align:middle;float:right;color:#cccccc;font-size:18px;font-family: Dongle, sans-serif;border:none;border-radius:25px;'
+  margin:5px;vertical-align:middle;float:right;color:#cccccc;font-size:18px;font-family: Dongle, sans-serif;border:none;border-radius:2px;'
 }
 }
 .has-details {
