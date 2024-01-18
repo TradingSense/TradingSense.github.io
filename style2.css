@@ -267,7 +267,7 @@ width:70px;
 }
 .ider{
 		
-		border: none; background-color:#333333; height:2px; width:100%;
+		border: none; background-color:#333333; height:1px; width:100%;
 	}
 .searchbutton{display:none;}
 .searchcont{width:70%; display:inline-block; text-align:center;  margin-top:20px;}
