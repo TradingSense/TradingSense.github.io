@@ -28,7 +28,7 @@ body{
 button{
 	
   background-color: #e63a14;
-  margin:5px;vertical-align:middle;float:right;color:#fff;font-size:18px;font-family: Dongle, sans-serif;border:none;border-radius:2px;'
+  margin:5px;vertical-align:middle;float:left;color:#fff;font-size:16px;font-family: Dongle, sans-serif;border:none;border-radius:2px;'
 }
 }
 .has-details {
@@ -273,7 +273,7 @@ width:70px;
 .searchcont{width:70%; display:inline-block; text-align:center;  margin-top:20px;}
 .head1{
 	font-weight:Bold ;
-	font-size:20px;
+	font-size:16px;
 	text-align:left;
 	font-family: "Arial";
 	color:#f5fafa;
