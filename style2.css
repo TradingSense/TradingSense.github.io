@@ -821,7 +821,7 @@ width:auto;
 
 
 .sortable{
-	font-size:15px;
+	font-size:12px;
 	whitespace:nowrap;
 	color:#cccccc;
 	border-collapse: collapse;
@@ -835,7 +835,7 @@ width:auto;
 	overflow:auto;
 	position:relative;
 	border-spacing:0; 
-	margin-top:25px;
+	margin-top:20px;
 	
 }
 
