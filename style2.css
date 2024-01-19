@@ -7,7 +7,7 @@ a{
 	color:#fff;
 }
 
-
+.searchbar{color:#fff; border:0px;background-color:#1e2029;width:90%;margin-top:5px;margin-left:10px;height:28px;float:left;}
 body{
 	background-color:#13141a;
 	#background-image:linear-gradient(to bottom,#1a1f20,#000);
@@ -344,6 +344,7 @@ tr:hover{background-color:#1a1a1a;}
 
 .head2{font-weight:Bold ;font-size:16px;float:left;font-family: "Arial";color:#cccccc;}
 @media (max-width:828px){
+	.searchbar{color:#fff; border:0px;background-color:#1e2029;width:80%;margin-top:5px;margin-left:10px;height:28px;float:left;}
 	.searchhead{font-weight:Bold ;
 	font-size:27px;
 	text-align:center;
