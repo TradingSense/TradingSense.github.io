@@ -6,7 +6,7 @@ a{
 	font-size:16px;
 	color:#fff;
 }
-sortable tr td:hover:{background-color:#330a00;}
+sortable tr:hover:{background-color:#330a00;}
 .searchbar{color:#fff; border:0px;background-color:#1e2029;width:90%;margin-top:5px;margin-left:10px;height:28px;float:left;}
 body{
 	background-color:#13141a;
