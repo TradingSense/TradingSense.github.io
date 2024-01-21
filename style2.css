@@ -7,9 +7,9 @@ a{
 	color:#fff;
 }
 sortable tr:hover:{background-color:#330a00;}
-.searchbar{color:#fff; border:0px;background-color:#1a1a1a;width:90%;margin-top:5px;margin-left:10px;height:28px;float:left;}
+.searchbar{color:#fff; border:0px;background-color:#1e2029;width:90%;margin-top:5px;margin-left:10px;height:28px;float:left;}
 body{
-	background-color:#060606;
+	background-color:#13141a;
 	#background-image:linear-gradient(to bottom,#1a1f20,#000);
 	text-align: center;
 	font-family:  "monaco", monospace;
@@ -27,7 +27,7 @@ body{
 
 button{
 	
-  background-color: #7c1a1b;
+  background-color: #13141a;
   margin:5px;vertical-align:middle;float:left;color:#fff;font-size:16px;font-family: Dongle, sans-serif;border:none;border-radius:2px;'
 }
 }
@@ -184,12 +184,12 @@ width:70px;
 	left:0;
 	right:0;
 	align-items: center;
-	background-color:#060606;
+	background-color:#13141a;
 	#background-image:linear-gradient(to bottom,#000,#1a1f20);
 	z-index: 9;
 	height:65px;
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
-	border-bottom: 3px solid #1a1a1a
+	border-bottom: 3px solid #1e2029
 	
 	
 }
@@ -345,7 +345,7 @@ tr:hover{background-color:#1a1a1a;}
 
 .head2{font-weight:Bold ;font-size:16px;float:left;font-family: "Arial";color:#cccccc;}
 @media (max-width:828px){
-	.searchbar{color:#fff; border:0px;background-color:#1a1a1a;width:80%;margin-top:5px;margin-left:10px;height:28px;float:left;}
+	.searchbar{color:#fff; border:0px;background-color:#1e2029;width:80%;margin-top:5px;margin-left:10px;height:28px;float:left;}
 	.searchhead{font-weight:Bold ;
 	font-size:27px;
 	text-align:center;
@@ -400,7 +400,7 @@ tr:hover{background-color:#1a1a1a;}
 
 	.ider{
 		
-		border: none; background-color:#1a1a1a; height:3px; width:100%;
+		border: none; background-color:#1e2029; height:3px; width:100%;
 	}
 		
 		.navitem{
@@ -699,7 +699,7 @@ font-style: normal;
 }
 .sortable tr, td{
 
-border-bottom:0px solid #1a1a1a ;
+border-bottom:0px solid #1e2029 ;
 padding: 0px 0px;	
 
 
@@ -721,9 +721,9 @@ padding: 12px 10px;
 	
 }
 .sortable tr{
-background-color:#060606;
+background-color:##13141a;
 line-height:0px;
-border-bottom:solid 2px #1a1a1a;
+border-bottom:solid 2px #1e2029;
 
 }
 .link{
@@ -750,7 +750,7 @@ border-bottom:solid 2px #1a1a1a;
 
 /* Links inside the navbar */
 .navbar button {
-background-color:#0a0d0d;
+background-color:#13141a;
   font-size: 16px;
   color: white;
   text-align: center;
@@ -825,7 +825,7 @@ width:auto;
 	whitespace:nowrap;
 	color:#cccccc;
 	border-collapse: collapse;
-	background-color: #060606;
+	background-color: #13141a;
 	width:100%;
 	border-radius:8px;
 	
