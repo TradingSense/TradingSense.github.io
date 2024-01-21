@@ -365,7 +365,7 @@ tr:hover{background-color:#1a1a1a;}
 	.tablerank{ margin-left:5px;margin-top:-2px;border-radius:5px; padding:3px; background-color:#333231; border:;float:left; font-size:13px;}
 	.symboltable{font-size:12px; margin-top:-2px; margin-left:10px;float:left;}
 	.companyname{color:#7D827D; margin-left:5px;margin-top:5px;font-size:12px; text-align:left;}
-	.sortable tr td{ height:10px;font-size:15px;padding:0px 5px;max-width:100%;}
+	.sortable tr td{ height:10px;font-size:12px;padding:0px 0px;max-width:100%;}
 	.sortable td{white-space:nowrap;width:200px;}
 	.sortable thead{font-size:13px; border}
 	.sortable{color:#cccccc;background-color: #1a1f20;width:100%;border-radius:8px;#box-shadow:0px 10px 30px 5px rgba(0,0,0,0.1);margin: 0px auto;font-family: "Arial";text-align: left;}
