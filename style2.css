@@ -1,5 +1,10 @@
 #data .hidden_row{display: none;}
 
+.bigtext{
+
+text-align:center;padding-top:100px;color:#fff;font-family:Verdana;font-size:28px;
+	
+}
 a{
 	font-family:Arial;
 	font-weight:500;
@@ -345,6 +350,7 @@ tr:hover{background-color:#1a1a1a;}
 
 .head2{font-weight:Bold ;font-size:16px;float:left;font-family: "Arial";color:#cccccc;}
 @media (max-width:828px){
+	.bigtext{text-align:center;padding-top:80px;color:#fff;font-family:Verdana;font-size:23px;}
 	.searchbar{color:#fff; border:0px;background-color:#13141a;width:80%;margin-top:3px;margin-left:10px;height:28px;float:left;}
 	.searchhead{font-weight:Bold ;
 	font-size:27px;
