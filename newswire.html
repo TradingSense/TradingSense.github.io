@@ -16,7 +16,7 @@
         
                                 gtag('config', 'G-Y4QD0XT301');
                                 </script>
-        
+								
                                 
                                 <script src=
         "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
@@ -46,31 +46,42 @@
         <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
                                 <header class='header'>
         
-                                <div style='width:100%; height:100%; margin-bottom:5px;display:inline-block; text-align:center;'>
+                                <div style='width:100%; height:100%; margin-bottom:0px;display:inline-block; text-align:center;'>
                                 <script src=
                                 "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
                                 </script>
                                 <img  class='logo' src="austeritylogosmall.png">
-                                <input  class='searchbar'id="gfg" type="text" placeholder="Filter by Keyword/Category/Source...">
-                               
-   
+                                
+                               <div style=' border:2px solid #1e2029;float:left;background-color:#1e2029;margin-top:0px;box-shadow: inset 0px 0px 0px #999;height:25px;width:98.5px;'>
+         <a href='index.html'><button style='background-color:;padding:0;display:block;text-align:center;vertical-align:middle;font-size:20px;margin:0px;width:100%;border-radius:0px;height:100%'> Home</button></a>
+          </div>       
+		    <div style=' border:2px solid #1e2029;float:left;background-color:#1e2029;margin-top:0px;box-shadow: inset 0px 0px 0px #999;height:25px;width:98.5px;'>
+						<a href='newswire.html'><button style='padding:0;display:block;text-align:center;vertical-align:middle;font-size:20px;margin:0px;width:100%;border-radius:0px;height:100%'>Newswire</button></a>
+						
+						
+          </div>         
+   <input  class='searchbar'id="gfg" type="text" placeholder="Filter by Keyword/Category/Source...">
             <hr class='ider'>
             
          <div style=' border:2px solid #1e2029;float:left;background-color:#1e2029;margin-top:-11px;box-shadow: inset 0px 0px 0px #999;height:25px;width:98.5px;'>
          <h1 class='head1'> <span style = 'line-height:9px;font-type:Verdana;float:left;color:#fff;margin-left:5px;margin-top:px;'id="time"></span></h1>
-          </div>       
-		    <div style=' border:2px solid #1e2029;float:left;background-color:#1e2029;margin-top:-11px;box-shadow: inset 0px 0px 0px #999;height:25px;width:98.5px;'>
-         <a href='index.html'><button style='padding:0;display:block;text-align:center;vertical-align:middle;font-size:20px;margin:0px;width:100%;border-radius:0px;height:100%'> Home</button></a>
-          </div>       
-		    <div style=' border:2px solid #1e2029;float:left;background-color:#1e2029;margin-top:-11px;box-shadow: inset 0px 0px 0px #999;height:25px;width:98.5px;'>
-				<a href='newswire.html'><button style='padding:0;display:block;text-align:center;vertical-align:middle;font-size:20px;margin:0px;width:100%;border-radius:0px;height:100%'>Newswire</button></a>
-          </div>                                
-                              
+       
+	   </div>       
+		                           
+                                 
 
                                 </div>   
-      
+	  <div style = 'border-radius:0px;margin:0px;width:100%; height:25px; background-color: #1e2029;'>
+			<a href='newswire.html'><button type='button'id='all'class="btn btn-default btn-lg"  style='margin:0px;display:block;padding:0;width:68.5px;float:left;height:100%;border-radius:0px; border:2px solid #1e2029;'>All</button></a>
+			<button type='button'id='Politics'class="btn btn-default btn-lg" style='margin:0px;display:block;padding:0;width:68.5px;float:left;height:100%;border-radius:0px; border:2px solid #1e2029;'>Politics</button>
+				<button type='button' id ='Conflict'class="btn btn-default btn-lg" style='margin:0px;display:block;padding:0;width:68.5px;float:left;height:100%;border-radius:0px; border:2px solid #1e2029;'>Conflict</button>
+					<button type='button'id='Business' class="btn btn-default btn-lg" style='margin:0px;display:block;padding:0;width:68.5px;float:left;height:100%;border-radius:0px; border:2px solid #1e2029;'>Business</button>
+						<button type='button'id='Finance' class="btn btn-default btn-lg" style='margin:0px;display:block;padding:0;width:68.5px;float:left;height:100%;border-radius:0px; border:2px solid #1e2029;'>Finance</button>
+		</div>   
+       
                                 </header>
-                                <div style='height:30px;'></div>
+								
+                                <div style='height:80px;'></div>
                              
         
                                 </div>
@@ -78,6 +89,7 @@
         
         
                                 <body>
+								
                                
                                                                  <script type="text/javascript" charset="utf-8">
     let a;
@@ -94,15 +106,65 @@
                 </div>
         
         
+        <script>
+								jQuery(function ($) {
+    var filter;
+    $("#Politics").click(function () {
+        if (filter == 'politics') {
+            $('tr').show();
+            filter = undefined;
+        } else {
+            $('tr:not(.Politics)').hide();
+            $('tr.Politics').show();
+            filter = 'Politics';
+        }
+    });
+    $("#Conflict").click(function () {
+        if (filter == 'Conflict') {
+            $('tr').show();
+            filter = undefined;
+        } else {
+            $('tr:not(.Conflict)').hide();
+            $('tr.Conflict').show();
+            filter = 'Conflict';
+        }
+    });
+	$("#Business").click(function () {
+        if (filter == 'Business') {
+            $('tr').show();
+            filter = undefined;
+        } else {
+            $('tr:not(.Business)').hide();
+            $('tr.Business').show();
+            filter = 'Business';
+        }
+    });
+	$("#Finance").click(function () {
+        if (filter == 'Finance') {
+            $('tr').show();
+            filter = undefined;
+        } else {
+            $('tr:not(.Finance)').hide();
+            $('tr.Finance').show();
+            filter = 'Finance';
+        }
+    });
+});
+								</script>
         
         
         
-        
-        
+       
         </div>
-        
-        <div style='overflow-x:auto;'>
-        
+		
+
+	   <div style='
+		width:100%;
+		text-align:center;
+		display:inline-block;
+		border-top:2px solid #1e2029;
+    overflow: auto;'>
+     
         <table id ='live' class='sortable'>
         <tbody id = 'geeks'>
         
