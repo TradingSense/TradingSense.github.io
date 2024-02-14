@@ -44,14 +44,25 @@
                                 <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
-                                <header class='header'>
+                       <header style='height:50px;'class='header'>
         
                                 <div style='width:100%; height:100%; margin-bottom:5px;display:inline-block; text-align:center;'>
                                 <script src=
                                 "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
                                 </script>
-                                <img  class='logo' src="austeritylogosmall.png">
-								     <script type="text/javascript" charset="utf-8">
+                                <img  style='margin-right:3px;border-radius:5px;'class='logo' src="austeritylogosmall.png">
+                                <div style='margin:3px;border-radius:5px;float:left;background-color:#e63a14;margin-left:2px;box-shadow: inset 0px 0px 0px #999;height:35px;width:98.5px;color:#e63a14;font-size:25px;background-color:#461206;'>
+         <h1 class='head1'> <span style = 'line-height:9px;font-type:Verdana;float:left;color:#e63a14;margin-left:5px;margin-top:px;'id="time"></span></h1>
+          </div>       
+		    <div style=' margin:3px;border-radius:5px;float:left;background-color:#1e2029;margin-top:px;box-shadow: inset 0px 0px 0px #999;height:35px;width:98.5px;'>
+         <a href='index.html'><button style='border-radius:5px;padding:0;display:block;text-align:center;vertical-align:middle;font-size:20px;margin:0px;width:100%;height:100%;color:#e63a14;font-size:25px;background-color:#461206;'> Home</button></a>
+          </div>       
+		    <div style='margin:3px;float:left;background-color:#1e2029;margin-top:px;box-shadow: inset 0px 0px 0px #999;height:35px;width:98.5px;'>
+				<a href='newswire.html'><button style='border-radius:5px;padding:0;display:block;text-align:center;vertical-align:middle;font-size:20px;margin:0px;width:100%;height:100%;color:#e63a14;font-size:25px;background-color:#461206;'>Newswire</button></a>
+          </div>  
+                               
+   
+      <script type="text/javascript" charset="utf-8">
     let a;
     let time;
     setInterval(() => {
@@ -61,32 +72,11 @@
       document.getElementById('time').innerHTML = time;
     }, 1000);
   </script>
-                               
-                                <script> 
-$(document).ready(function(){
-setInterval(function(){
-      $("#live").load(window.location.href + " #live" );
-}, 300000);
-});
-</script>
-   
-            <hr class='ider'>
-            
-         <div style=' border:2px solid #1e2029;float:left;background-color:#1e2029;margin-top:-11px;box-shadow: inset 0px 0px 0px #999;height:25px;width:98.5px;'>
-         <h1 class='head1'> <span style = 'line-height:9px;font-type:Verdana;float:left;color:#fff;margin-left:5px;margin-top:px;'id="time"></span></h1>
-          </div>       
-		    <div style=' border:2px solid #1e2029;float:left;background-color:#1e2029;margin-top:-11px;box-shadow: inset 0px 0px 0px #999;height:25px;width:98.5px;'>
-         <a style='text-decoration:none;'href='index.html'><button style=' text-decoration:none;padding:0;display:block;text-align:center;vertical-align:middle;font-size:20px;margin:0px;width:100%;border-radius:0px;height:100%'>Home</button></a>
-          </div>       
-		    <div style=' border:2px solid #1e2029;float:left;background-color:#1e2029;margin-top:-11px;box-shadow: inset 0px 0px 0px #999;height:25px;width:98.5px;'>
-				<a style='text-decoration:none;'href='newswire.html'>	<button style='text-decoration:none;padding:0;display:block;text-align:center;vertical-align:middle;font-size:20px;margin:0px;width:100%;border-radius:0px;height:100%'>Newswire</button></a>
-          </div>       
-		  
-                    		  
+                             
                               
 
                                 </div>   
-
+    
                                 </header>
 								
 								<body>
